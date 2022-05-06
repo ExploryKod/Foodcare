@@ -1,18 +1,18 @@
-import "./styles/categories.scss";
 import imageVeg from "./assets/vegetables.jpeg";
 import beverage from "./assets/beverage.jpeg";
-import beans from "./assets/beans.jpeg";
 import proteines from "./assets/proteines.jpeg";
 import spices from "./assets/spices.jpeg";
 import feculents from "./assets/feculents.jpeg";
 
+import CategoryItem from "./components/category-food"; 
+import "./styles/categories.scss";
+
+
+
 const App = () => {
-  const categoriesList = [
-    {
-      id: 1,
-      title: "Légumes",
-      imageUrl: imageVeg,
-    },
+
+     const categories = [
+    { id: 1, title: "Légumes", imageUrl: imageVeg },
 
     { id: 2, title: "Protéines", imageUrl: proteines },
 
@@ -20,28 +20,14 @@ const App = () => {
 
     { id: 4, title: "Féculents", imageUrl: feculents },
 
-    {
-      id: 5,
-      title: "Boissons",
-      imageUrl: beverage,
-    },
+    { id: 5, title: "Boissons", imageUrl: beverage },
   ];
 
   return (
-    <div className="categories-container">
-      {categoriesList.map(({ title, id, imageUrl }) => (
-        <div key={id} className="category-container">
-          <div
-            className="background-image"
-            style={{ backgroundImage: `url(${imageUrl})` }}
-          />
-          <div className="category">
-            <h2>{title}</h2>
-            <p>Commander</p>
-          </div>
-        </div>
-      ))}
-    </div>
+     <div className="categories-container">
+        {categories.map( ( item ) => (
+            <CategoryItem key={item.id} category={item} /> ))};
+      </div>
   );
 };
 
@@ -81,3 +67,31 @@ export default App;
 
 // Importation des images - voir la documentation, ça marche - faire attention si c'est en fait dans le css qu'on renvoit
 // Si l'image est sur un lien http absolue ça ira, on le met comme d'hab. Sinon c la méthode avec import et utilisation de la variable créé
+
+// Composant : mettre dans app.js n'est pas une bonne pratique, nous créons donc un composant
+// category-food représente toute les catégories d'aliments
+// Le props s'appelle category - nous relions le titre et l'url de l'image à ce props dans le composant
+// Copie/colle le jsx qui est à l'intérieur de la balise jsx mère.
+// l'id en revanche ne peux pas passer comme ça : il doit être au même endroit que là où est appelé map
+// pas oublier : export default moncomposant - et de l'importer dans le App.js : le props va donc transférer les data
+// la fonction prédéfinis map reste dans le App.js - on lui passe le composant en tant que fonction
+// Le props sera mis en tant que argument à la place ded title, imageUrl, id
+
+// On va même prendre la balise mère pour en faire un composant : le categories-container 
+// On utilise le props categories pour faire passer les valeurs du tableau d'objets (via map).
+//  On importe alors le composant dans App.js qui reste la pièce maîtresse qui précède le index.js qui affiche le site ("render" le site via le DOM virtuel)
+// Le return ne prend plus qu'une ligne de jsx avec instanciation du composant avec un props qui permet de relier le tableau au composant et donc à map dans le composant.
+
+
+// Résolution de bug : 
+// Il renvoyé un typeError pour title et ImageUrl undefined => la destructuration de category n'accéder pas
+// C'est que le naming était pas respecté : je n'appelais pas chaque objet dans category={...} or c'est bien item qui doit être passé ici entre les {}.
+// Dans category-food on décide que category sera le props de CategoryItem
+// On utilise la déstructuration pour lui passer imageUrl et title : const { imageUrl, title } = category;
+// Dans App.js on a toujours notre fonction map dans les balises mères.
+// On instancie CategoryItem en JSX dans App.js ET on appel le props category
+// Ce props étant destructuré, il va renvoyer imageUrl et title à notre composant
+// Pour les renvoyer il doit acceder à chaque objet de la liste c'est à dire l'iterateur de map (item)
+// La clé est obligatoire (renvoi une erreur dans les dev tools sinon même si ça bloque pas l'affichage du site)
+// Pour accéder à la clé dans le jsx CategoryItem qui est dans map alors on va l'appeler directement dans App.js 
+
