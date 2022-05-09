@@ -1,27 +1,13 @@
-import imageVeg from "./assets/vegetables.jpeg";
-import beverage from "./assets/beverage.jpeg";
-import proteines from "./assets/proteines.jpeg";
-import spices from "./assets/spices.jpeg";
-import feculents from "./assets/feculents.jpeg";
-
-import CategoriesContainer from "./components/categories-container";
+import { Routes, Route } from 'react-router-dom';
+import Home from "./routes/home";
 
 const App = () => {
 
-     const categories = [
-    { id: 1, title: "Légumes", imageUrl: imageVeg },
-
-    { id: 2, title: "Protéines", imageUrl: proteines },
-
-    { id: 3, title: "Epices et autres", imageUrl: spices },
-
-    { id: 4, title: "Féculents", imageUrl: feculents },
-
-    { id: 5, title: "Boissons", imageUrl: beverage },
-  ];
-
   return (
-     <CategoriesContainer categories={categories} />
+    <Routes>
+      <Route path='/' element={<Home/>} />
+    </Routes>
+   
   );
 };
 
@@ -96,3 +82,16 @@ export default App;
 // Nous ne voulons pas que App.js affiche le composant ppal jusque là 
 // ça doit devenir la home page, l'entrée de notre app. 
 // On refais donc un composant
+// On va créer une série de composant d'un nouveau genre : ce sont le routes. 
+// C'est pas un mot réservé, mais c l'orga selon nous.
+
+// Routes : nous devons maintenant indiquer quelle route sera saisi dans app.js et ce qui sera rendu (affiché)
+// const App = () => {
+
+//   return (
+//     <Routes>
+// Ici le / c'est la racine donc le home - si on met qqchose comme /home la console nous dira qu'elle 
+// ne trouve pas le chemin si on charge juste sans le préciser car on charge à la racine
+//       <Route path='/' element={<Home/>} />
+//     </Routes>
+   
