@@ -1,10 +1,3 @@
-/* Nous laissons celui-ci en dehors pour que l'iteration se fasse avec map et pouvoir le changer sans devoir revenir ici*/
-.categories-container {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 
 .category-container {
   min-width: 30%;

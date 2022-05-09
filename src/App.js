@@ -4,10 +4,7 @@ import proteines from "./assets/proteines.jpeg";
 import spices from "./assets/spices.jpeg";
 import feculents from "./assets/feculents.jpeg";
 
-import CategoryItem from "./components/category-food"; 
-import "./styles/categories.scss";
-
-
+import CategoriesContainer from "./components/categories-container";
 
 const App = () => {
 
@@ -24,10 +21,7 @@ const App = () => {
   ];
 
   return (
-     <div className="categories-container">
-        {categories.map( ( item ) => (
-            <CategoryItem key={item.id} category={item} /> ))};
-      </div>
+     <CategoriesContainer categories={categories} />
   );
 };
 
@@ -95,3 +89,10 @@ export default App;
 // La clé est obligatoire (renvoi une erreur dans les dev tools sinon même si ça bloque pas l'affichage du site)
 // Pour accéder à la clé dans le jsx CategoryItem qui est dans map alors on va l'appeler directement dans App.js 
 
+// Bug : attention à ne pas confondre avec ce qui se met dans {} ou sans cela
+// <CategoriesContainer categories={categories} : ici bien noté que entre les {} c'est le tableau et le props issu du composant est "categories="
+
+// Aprés avoir pu importer le router (react router avec npm install) 
+// Nous ne voulons pas que App.js affiche le composant ppal jusque là 
+// ça doit devenir la home page, l'entrée de notre app. 
+// On refais donc un composant
