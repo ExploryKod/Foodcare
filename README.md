@@ -1,3 +1,6 @@
+
+<div align="center"><img src='src/assets/beans.jpeg' width="30%"></div>
+
 ## <p align="center"> Projet sur l'alimentation saine </p>
 
 Ce projet a pour but d'initier mon apprentissage de la librairie javascript React. <br/>
