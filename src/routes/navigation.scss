@@ -1,23 +1,24 @@
-.navigation-bar {
-  height: 10vh;
+.navigation {
+  height: 70px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5vh;
-  
+  margin-bottom: 25px;
+
   .logo-container {
     height: 100%;
     width: 70px;
-    padding: 25px;
+    padding: 2px;
 
     .logo {
       height:100%;
       width:auto;
     }
+
   }
 
   .nav-links-container {
-    width: 50%;
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
