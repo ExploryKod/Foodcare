@@ -1,22 +1,18 @@
-import { signInWithRedirect } from "firebase/auth";
 import { signInWithGooglePopup, createUserDocumentFromAuth } from "../utils/firebase/firebase.utils";
-// Asynchrone car on fait appel à une API et de la data externe
-// // before destructuring the response: const response = await signInWithGooglePopup();
-//         createUserDocumentFromAuth(response)
+import SignUpForm from "../components/sign-up-form.jsx";
 
 const SignIn = () => {
 
     const logGoogleUser = async () => {
         const { user } = await signInWithGooglePopup();
-        createUserDocumentFromAuth( user )
+        const userDocRef = await createUserDocumentFromAuth(user);
     }
 
     return (
         <div>
             <h1>Sign in page</h1>
-            <button onClick={logGoogleUser}>
-                Sign in with Google
-            </button>
+            <button onClick={logGoogleUser}>S'enregistrer avec Google</button>
+            <SignUpForm />
         </div>
     );
 };

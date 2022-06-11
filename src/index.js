@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from "react-router-dom";
-
-
+import { ProductsProvider } from './context/product.context'
+import { CartProvider } from './context/cart.context';
 
 import './index.scss';
 import App from './App';
@@ -11,9 +11,14 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-       <App />
+    <ProductsProvider>
+      <CartProvider>
+        <App />
+      </CartProvider>
+
+    </ProductsProvider>
   </BrowserRouter>
- 
+
 );
 
 // If you want to start measuring performance in your app, pass a function
@@ -21,9 +26,9 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-// Learning path 
+// Learning path
 
-// ROUTER 
-// Browser Router issu de react router se comporte comme un composant 
+// ROUTER
+// Browser Router issu de react router se comporte comme un composant
 // Nous voulons que toute notre app y ait accés donc il est mis là.
 // "we want to connect your app to the browser's URL: import BrowserRouter and render it around your whole app."

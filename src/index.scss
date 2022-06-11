@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  padding: 20px 40px;
   font-family: 'Orkney', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -16,10 +17,9 @@ code {
 
 a {
   text-decoration: none;
-  color:black;
+  color: black;
 }
 
 li {
   list-style: none;
 }
-

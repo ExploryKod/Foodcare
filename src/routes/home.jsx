@@ -8,7 +8,7 @@ import CategoriesContainer from "../components/categories-container";
 
 const Home = () => {
 
-     const categories = [
+  const categories = [
     { id: 1, title: "Légumes", imageUrl: imageVeg },
 
     { id: 2, title: "Protéines", imageUrl: proteines },
@@ -21,7 +21,7 @@ const Home = () => {
   ];
 
   return (
-     <CategoriesContainer categories={categories} />
+    <CategoriesContainer categories={categories} />
   );
 };
 
