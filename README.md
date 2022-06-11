@@ -3,7 +3,7 @@
 
 ## <p align="center"> Projet sur l'alimentation saine </p>
 
-Ce projet a pour but d'initier mon apprentissage de la librairie javascript React. <br/>
+Ce projet a pour but d'initier mon apprentissage de la librairie JavaScript React. <br/>
 
 Ce projet est en cours de conception. Il portera sur le thème de l'alimentation saine. <br/>
 
@@ -24,4 +24,4 @@ Affaire à suivre !<br/>
 
 ### Technologies
 
-En utilisant la librairie React et son mode spécifique de fonctionnement, je décide aussi d'utiliser sass et peut-être Typescript qui viendra remplacer alors mes premiers choix en javascript.
+En utilisant la librairie React et son mode spécifique de fonctionnement, je décide aussi d'utiliser sass et peut-être TypeScript qui viendra remplacer alors mes premiers choix en JavaScript.
