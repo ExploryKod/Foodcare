@@ -5,8 +5,8 @@
   border-bottom: 1px solid darkgrey;
   padding: 15px 0;
   font-size: 20px;
-  align-items: center;
-  justify-content: start;
+  align-items:center;
+  justify-content: flex-start;
 
   .image-container {
     width: 15%;
@@ -22,11 +22,15 @@
   .quantity,
   .price {
     width: 23%;
-    justify-self: end;
+  }
+
+  .price {
+    padding-left:100px;
   }
 
   .quantity {
     display: flex;
+   
 
     .arrow {
       cursor: pointer;
@@ -38,7 +42,7 @@
   }
 
   .remove-button {
-    padding-left: 100px;
+    padding-left: 230px;
     cursor: pointer;
   }
 }

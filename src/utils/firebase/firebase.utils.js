@@ -12,7 +12,7 @@ import {
     signInWithPopup, GoogleAuthProvider, signInWithRedirect
 } from 'firebase/auth'
 
-import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
+import { getFirestore, doc, getDoc, setDoc, collection, writeBatch, query, getDocs} from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -46,6 +46,32 @@ export const signInWithGoogleRedirect = () => signInWithRedirect(auth, provider)
 // Now we need to set things in firebase (in sign-in method in Authentication) => provide hability to sign with Google
 
 export const db = getFirestore();
+
+export const addCollectionAndDocuments = async (collectionKey, objectstoAdd) => {
+    const collectionRef = collection(db, collectionKey);
+    const batch = writeBatch(db);
+
+    objectstoAdd.forEach((object) => {
+        const docRef = doc(collectionRef, object.title.toLowerCase());
+        batch.set(docRef, object);
+    });
+    await batch.commit();
+    console.log('batch is sent');
+};   
+
+export const getCategoriesAndDocuments = async () => {
+    const collectionRef = collection(db, 'categories');
+    const q = query(collectionRef);
+
+    const querySnapshot = await getDocs(q);
+    const categoryMap = querySnapshot.docs.reduce((accumulator, docSnapshot) => {
+        const { title, items } = docSnapshot.data();
+        accumulator[title.toLowerCase()] = items;
+        return accumulator
+    }, {});
+
+    return categoryMap;
+}
 
 export const createUserDocumentFromAuth = async (userAuth) => {
     const userDocRef = doc(db, 'users', userAuth.uid);

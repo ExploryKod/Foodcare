@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from "react-router-dom";
-import { ProductsProvider } from './context/product.context'
+import { CategoriesProvider } from './context/categories.context'
 import { CartProvider } from './context/cart.context';
 
 import './index.scss';
@@ -11,12 +11,11 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <ProductsProvider>
+    <CategoriesProvider>
       <CartProvider>
         <App />
       </CartProvider>
-
-    </ProductsProvider>
+    </CategoriesProvider>
   </BrowserRouter>
 
 );
