@@ -1,12 +1,4 @@
-/* Nous laissons celui-ci en dehors pour que l'iteration se fasse avec map et pouvoir le changer sans devoir revenir ici*/
-.categories-container {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.category-container {
+.main-category-container {
   min-width: 30%;
   height: 240px;
   flex: 1 1 auto;
@@ -25,7 +17,7 @@
       transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
     }
 
-    & .category {
+    & .body {
       opacity: 0.9;
     }
   }
@@ -49,7 +41,7 @@
     background-position: center;
   }
 
-  .category {
+  .body {
     height: 90px;
     padding: 0 25px;
     display: flex;
