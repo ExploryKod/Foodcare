@@ -19,16 +19,19 @@ const Navigation = () => {
         <Fragment>
             <div className='navigation'>
                 <div className='logo-container'>
-                    <img src={logo} alt='logo' className='logo'></img>
+                    <Link to="/"><img src={logo} alt='logo' className='logo'></img></Link>
                 </div>
 
                 <div className='nav-links-container'>
                     <Link className='nav-link' to='/shop'>
+                        ACCUEIL
+                    </Link>
+                    <Link className='nav-link' to='/shop'>
                         BOUTIQUE
                     </Link>
-                    <Link className='nav-link' to='/sign-in'>
+                    {/* <Link className='nav-link' to='/sign-in'>
                         S'INSCRIRE
-                    </Link>
+                    </Link> */}
                     <CartIcon />
                 </div>
                 {isCartOpen && <CartDropdown />}

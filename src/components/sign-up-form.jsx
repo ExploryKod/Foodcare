@@ -1,4 +1,6 @@
-import useState  from 'react';
+import { useState }  from 'react';
+import '../styles/button.scss';
+import '../styles/form-input.styles.scss';
 
 // Nous créons cet objet qui sera la valeur de départ de useState
 // Nous destructurons l'objet ensuite dans notre composant pour utiliser séparément dans le form ses propriétés.
@@ -38,19 +40,19 @@ const SignUpForm = () => {
     return(
         <>
             <h1> S'inscrire avec son email</h1>
-            <form onSubmit = {() => {}}>
+            <form className="group" onSubmit = {() => {}}>
                 <label>Votre pseudo</label>
-                <input type='text' required onChange={handleChange} name='displayName' value={displayName}></input>
+                <input className='form-input' type='text' required onChange={handleChange} name='displayName' value={displayName}></input>
 
                 <label>Votre email</label>
-                <input type='email' required onChange={handleChange} name='email' value={email}></input>
+                <input className='form-input' type='email' required onChange={handleChange} name='email' value={email}></input>
 
                 <label>Votre mot de passe</label>
-                <input type='password' required onChange={handleChange} name='password' value={password}></input>
+                <input  className='form-input' type='password' required onChange={handleChange} name='password' value={password}></input>
 
                 <label>Confirmez le mot de passe</label>
-                <input type='password' required onChange={handleChange} name='confirmPassword' value={confirmPassword}></input>
-                <button type='submit'>S'enregistrer</button>
+                <input className='form-input' type='password' required onChange={handleChange} name='confirmPassword' value={confirmPassword}></input>
+                <button className="button-container" type='submit'>S'enregistrer</button>
             </form>
         </>
     );
