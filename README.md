@@ -1,7 +1,7 @@
 
 <div align="center"><img src='src/assets/beans.jpeg' width="30%"></div>
 
-## <p align="center"> Projet sur l'alimentation saine </p>
+## <p align="center"> Projet sur l'alimentation saine - <a href="https://gleeful-sorbet-733e50.netlify.app">FoodCare</a> </p>
 
 Ce projet a pour but d'initier mon apprentissage de la librairie JavaScript React. <br/>
 
