@@ -6,9 +6,11 @@
 
 Ce projet a pour but d'initier mon apprentissage de la librairie JavaScript React. <br/>
 
+Il a été conçu en suivant d'abord un cours permettant de poser de bonnes bases en React puis, peu à peu, je m'éloigne du caneva du cours.<br/>
+
 Ce projet est en cours de conception. Il portera sur le thème de l'alimentation saine. <br/>
 
-Cliquez sur le titre pour avoir un aperçue de certaines fonctionnalités<br/>
+Cliquez sur le titre pour avoir un aperçu de certaines fonctionnalités<br/>
 
 ### Installation 
 
