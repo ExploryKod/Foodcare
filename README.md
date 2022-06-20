@@ -11,7 +11,7 @@ Ce projet est en cours de conception. Il portera sur le thème de l'alimentation
 ## Installation 
 
 - Vérifier que vous avez node.js en tapant <code>node -v</code> en ligne de commande.<br/>
-Si non: installer Node.js <a href="https://nodejs.org/en/">en cliquant ici</a><br/>
+Si non: installez Node.js <a href="https://nodejs.org/en/">en cliquant ici</a><br/>
 - Vérifiez que vous avez bien un gestionnaire de paquet (yarn ou npm) sinon installez l'un d'eux<br/> 
 
 Commandes (ici avec npm) pour importer en local ce repo et les outils ajoutés en plus: <br/>
