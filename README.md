@@ -1,14 +1,16 @@
 
 <div align="center"><img src='src/assets/beans.jpeg' width="30%"></div>
 
-## <p align="center"> Projet sur l'alimentation saine <Br/> 
-   Voici un aperçu de certaines fonctionnalités: <a href="https://gleeful-sorbet-733e50.netlify.app">FoodCare</a> </p>
+## <p align="center"><a href="https://gleeful-sorbet-733e50.netlify.app">FoodCare</a></p>
+## <p align="center"> Projet sur l'alimentation saine</p> 
 
 Ce projet a pour but d'initier mon apprentissage de la librairie JavaScript React. <br/>
 
 Ce projet est en cours de conception. Il portera sur le thème de l'alimentation saine. <br/>
 
-## Installation 
+Cliquez sur le titre pour avoir un aperçue de certaines fonctionnalités<br/>
+
+### Installation 
 
 - Vérifier que vous avez node.js en tapant <code>node -v</code> en ligne de commande.<br/>
 Si non: installez Node.js <a href="https://nodejs.org/en/">en cliquant ici</a><br/>
