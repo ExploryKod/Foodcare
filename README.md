@@ -1,11 +1,40 @@
 
 <div align="center"><img src='src/assets/beans.jpeg' width="30%"></div>
 
-## <p align="center"> Projet sur l'alimentation saine - <a href="https://gleeful-sorbet-733e50.netlify.app">FoodCare</a> </p>
+## <p align="center"> Projet sur l'alimentation saine <Br/> 
+   Voici un aperçu de certaines fonctionnalités: <a href="https://gleeful-sorbet-733e50.netlify.app">FoodCare</a> </p>
 
 Ce projet a pour but d'initier mon apprentissage de la librairie JavaScript React. <br/>
 
 Ce projet est en cours de conception. Il portera sur le thème de l'alimentation saine. <br/>
+
+## Installation 
+
+- Vérifier que vous avez node.js en tapant <code>node -v</code> en ligne de commande.<br/>
+Si non: installer Node.js <a href="https://nodejs.org/en/">en cliquant ici</a><br/>
+- Vérifiez que vous avez bien un gestionnaire de paquet (yarn ou npm) sinon installez l'un d'eux<br/> 
+
+Commandes (ici avec npm) pour importer en local ce repo et les outils ajoutés en plus: <br/>
+
+```` 
+git clone <lien du repo> <nom du dossier où héberger le repo>
+````
+
+Puis vous devez installer les fichiers nécessaires au démarrage d'une app React : <br/>
+  
+```
+npm install
+```
+  
+Si vous n'avez pas déjà ces outils en locales, il faut alors aussi installer sass et react-router: 
+
+```
+npm i sass
+```
+
+```
+npm install react-router-dom@
+```
 
 ### Inspiration
 
