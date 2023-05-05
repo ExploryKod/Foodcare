@@ -19,11 +19,17 @@ const addCartItem = (cartItems, productToAdd) => {
     return [...cartItems, { ...productToAdd, quantity: 1 }];
 };
 
+const removeCartItem = (productToRemove) => {
+    console.log(productToRemove.id);
+
+};
+
 export const CartContext = createContext({
     isCartOpen: false,
     setIsCartOpen: () => { },
     cartItems: [],
     addItemToCart: () => { },
+    removeItemFromCart: () =>  { },
     cartCount: 0,
     total: 0
 });
@@ -53,10 +59,15 @@ export const CartProvider = ({ children }) => {
         setCartItems(addCartItem(cartItems, productToAdd))
     }
 
+    const removeItemFromCart = (productToRemove) => {
+        removeCartItem(productToRemove)
+    }
+
     const value = {
         isCartOpen,
         setIsCartOpen,
         addItemToCart,
+        removeItemFromCart,
         cartItems,
         cartCount,
         cartTotal,
