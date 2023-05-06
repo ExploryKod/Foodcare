@@ -29,9 +29,6 @@ export const CategoriesProvider = ({ children }) => {
     //     addCollectionAndDocuments('categories', SHOP_DATA);
     // }, [])
 
-
-
-
     const value = { categoriesMap };
     return (
         <CategoriesContext.Provider value={value}> {children}</CategoriesContext.Provider>
