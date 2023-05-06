@@ -6,6 +6,7 @@ import beverage from "../assets/beverage.jpeg";
 import proteines from "../assets/proteines.jpeg";
 import spices from "../assets/spices.jpeg";
 import feculents from "../assets/feculents.jpeg";
+import recipes from "../assets/recipes.jpg";
 
 const categories = [
     { id: 1, title: "Protéines", imageUrl: proteines, route: 'shop/proteines' },
@@ -17,6 +18,8 @@ const categories = [
     { id: 4, title: "Féculents", imageUrl: feculents, route: 'shop/feculents' },
 
     { id: 5, title: "Boissons", imageUrl: beverage, route: 'shop/boissons' },
+
+    { id: 6, title: "Nos recettes", imageUrl: recipes, route: 'shop/recettes' },
   ];
 
 

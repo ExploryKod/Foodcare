@@ -8,6 +8,7 @@ export const Category = () => {
     const { category } = useParams();
     const { categoriesMap } = useContext(CategoriesContext);
     const [products, setProducts] = useState(categoriesMap[category]);
+    const noProductsMessage = <p className="category-text">Il n'y a pas de produits à vendre pour le moment.</p>;
 
     useEffect( () => {
         setProducts(categoriesMap[category]);
@@ -16,12 +17,15 @@ export const Category = () => {
     return(
         <Fragment>
         <h2 className='category-title'>{category.toUpperCase()}</h2>
-        <div className='category-container'>
-            {products &&
-                products.map((product) => (
-                <ProductCard key={product.id} product={product} />
-                ))}
-        </div>
+            <div className='category-container'>
+                {!products || !products.length ? (
+                    noProductsMessage
+                ) : (
+                    products.filter((product) => product).map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                    ))
+                )}
+            </div>
         </Fragment>
     )
 }
