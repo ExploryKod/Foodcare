@@ -3,13 +3,13 @@ import "../styles/categories.scss";
 
 const CategoryItem = ({ category }) => {
   // We need image url so we pass it through props (here ou directly in parenthesis of the function)
-  const { imageUrl, title, route } = category;
+  const { imageUrl, title, route, id } = category;
   const navigate = useNavigate();
 
   const onNavigateHandler = () => navigate(route);
 
   return (
-    <div className="main-category-container" onClick={onNavigateHandler}>
+    <div className={`main-category-container card-${id}`} onClick={onNavigateHandler}>
       <div
         className="background-image"
         style={{ backgroundImage: `url(${imageUrl})` }}

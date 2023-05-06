@@ -13,7 +13,7 @@ export const ProductCard = ({ product }) => {
     const addProductToCart = () => addItemToCart(product);
 
     return (
-        <div className='product-card-container'>
+        <div className={`product-card-container card-${name}`}>
             <img src={imageUrl} alt={`${name}`} />
             <div className='footer'>
                 <span className='name'>{name}</span>
