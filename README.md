@@ -59,3 +59,5 @@ Affaire à suivre !<br/>
 ### Technologies
 
 En utilisant la librairie React et son mode spécifique de fonctionnement, je décide aussi d'utiliser sass et peut-être TypeScript qui viendra remplacer alors mes premiers choix en JavaScript.
+
+Nota: les photos sont libre de droit. Pour trouver les sources des photos utilisées dans le site allez voir dans le fichier SOURCES.md
