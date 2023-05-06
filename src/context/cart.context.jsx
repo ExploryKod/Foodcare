@@ -19,9 +19,22 @@ const addCartItem = (cartItems, productToAdd) => {
     return [...cartItems, { ...productToAdd, quantity: 1 }];
 };
 
-const removeCartItem = (productToRemove) => {
-    console.log(productToRemove.id);
+const removeCartItem = (cartItems, productToRemove) => {
+    const existingCartItem = cartItems.find(
+        (cartItem) => cartItem.id === productToRemove.id
+    );
 
+    if (existingCartItem.quantity === 1) {
+        // If the quantity of the existing cart item is 1, remove it from the cart
+        return cartItems.filter((cartItem) => cartItem.id !== productToRemove.id);
+    } else {
+        // Otherwise, decrement the quantity of the existing cart item by 1
+        return cartItems.map((cartItem) =>
+            cartItem.id === productToRemove.id
+                ? { ...cartItem, quantity: cartItem.quantity - 1 }
+                : cartItem
+        );
+    }
 };
 
 export const CartContext = createContext({
@@ -60,8 +73,9 @@ export const CartProvider = ({ children }) => {
     }
 
     const removeItemFromCart = (productToRemove) => {
-        removeCartItem(productToRemove)
-    }
+        setCartItems(removeCartItem(cartItems, productToRemove));
+    };
+
 
     const value = {
         isCartOpen,
