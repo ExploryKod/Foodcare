@@ -11,6 +11,8 @@ RUN npm install
 # add app
 COPY . .
 
+ENV CHOKIDAR_USEPOLLING=true
+
 # start app
 CMD ["npm", "start"]
 

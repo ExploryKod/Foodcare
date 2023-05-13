@@ -7,24 +7,24 @@ const Shopping = () => {
         fetch('http://localhost:5000/products')
             .then((response) => response.json())
             .then((data) => setProducts(data));
-    }, []);
+    }, [setProducts]);
 
-    return (
+    console.log('hello --'+products.map( (prod, index) => { 
+            console.log(prod)
+            return prod;
+     }) );
+
+     return (
         <div>
-            {products.map((product, index) => (
-                <div key={`${product.title || index}`}>
-                    <h2>{product.title}</h2>
-                    {product.items.map((item) => (
-                        <div key={item.id}>
-                            <p>{item.name}</p>
-                            <img src={item.imageUrl} alt={item.name} />
-                            <p>{item.price}</p>
-                        </div>
-                    ))}
-                </div>
-            ))}
+          {products.map((product) => (
+            <div key={product.id}>
+              <h2>{product.name}</h2>
+              <img src={product.image} alt={product.name} />
+              <p>{product.price}</p>
+            </div>
+          ))}
         </div>
-    );
+      );
 };
 
 export default Shopping;

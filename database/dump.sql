@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS products (
     price DECIMAL(10,2) NOT NULL
 );
 
-INSERT INTO products (category, name, image_url, price)
+INSERT INTO products (category, name, image, price)
 VALUES
     ('proteines', 'Poulet Bio', 'https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 25),
     ('proteines', 'Tofu', 'https://images.pexels.com/photos/4518586/pexels-photo-4518586.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 18),
