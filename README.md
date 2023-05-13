@@ -1,7 +1,6 @@
 
 <div align="center">
   <img src='beans.jpeg' width="20%">
-   <img src='logo.png' width="20%">
 </div>
 
 ## <p align="center"><a href="https://gleeful-sorbet-733e50.netlify.app">FoodCare</a></p>
