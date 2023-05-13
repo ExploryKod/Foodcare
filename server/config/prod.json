@@ -1,8 +1,5 @@
 {
   "server": {
     "port": 80
-  },
-  "database": {
-    "url": "mongodb://production-db-url/my-app"
   }
 }
