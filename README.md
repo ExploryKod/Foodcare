@@ -1,5 +1,8 @@
 
-<div align="center"><img src='beans.jpeg' width="30%"></div>
+<div align="center">
+  <img src='beans.jpeg' width="30%">
+   <img src='logo.svg' width="30%">
+</div>
 
 ## <p align="center"><a href="https://gleeful-sorbet-733e50.netlify.app">FoodCare</a></p>
 ## <p align="center"> Projet sur l'alimentation saine</p> 
