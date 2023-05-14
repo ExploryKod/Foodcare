@@ -9,7 +9,7 @@ const Shopping = () => {
             .then((data) => setProducts(data));
     }, [setProducts]);
 
-    console.log('hello --'+products.map( (prod, index) => { 
+    console.log('hello -- -'+products.map( (prod, index) => { 
             console.log(prod)
             return prod;
      }) );
@@ -18,9 +18,9 @@ const Shopping = () => {
         <div>
           {products.map((product) => (
             <div key={product.id}>
-              <h2>{product.name}</h2>
-              <img src={product.image} alt={product.name} />
-              <p>{product.price}</p>
+              <h2>{product.product_name}</h2>
+              {/* <img src={product.product_image ?? "Image not found"} alt={product.product_name} /> */}
+              <p>{product.product_price}</p>
             </div>
           ))}
         </div>

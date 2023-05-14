@@ -1,23 +1,23 @@
 import { useContext } from 'react';
-
 import '../styles/product-card.scss';
-
 import Button from './button';
 import { CartContext } from '../context/cart.context';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export const ProductCard = ({ product }) => {
-
-    const { name, price, imageUrl } = product;
+    const { product_name, product_price, product_image } = product;
     const { addItemToCart } = useContext(CartContext);
-
+   
     const addProductToCart = () => addItemToCart(product);
-
+    console.log(process.env);
     return (
-        <div className={`product-card-container card-${name}`}>
-            <img src={imageUrl} alt={`${name}`} />
+        <div className={`product-card-container card-${product_name}`}>
+            <img src={process.env.PUBLIC_URL + product_image} alt={`${product_name}`} />
             <div className='footer'>
-                <span className='name'>{name}</span>
-                <span className='price'>{price}€</span>
+                <span className='name'>{product_name}</span>
+                <span className='price'>{product_price}€</span>
             </div>
             <Button onClick={addProductToCart}>Choisir</Button>
         </div>);

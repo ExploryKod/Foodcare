@@ -5,14 +5,21 @@ import { ProductCard } from '../components/product-card';
 import '../styles/category.scss';
 
 export const Category = () => {
-    const { category } = useParams();
-    const { categoriesMap } = useContext(CategoriesContext);
-    const [products, setProducts] = useState(categoriesMap[category]);
+    let { category } = useParams();
+    const { categoriesData } = useContext(CategoriesContext);
+    const [products, setProducts] = useState(categoriesData);
     const noProductsMessage = <p className="category-text">Il n'y a pas de produits à vendre pour le moment.</p>;
 
     useEffect( () => {
-        setProducts(categoriesMap[category]);
-    }, [category, categoriesMap])
+        setProducts(categoriesData);
+    }, [category, categoriesData])
+    console.log(products);
+
+    function removeAccents(str) {
+        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    category = removeAccents(category);
 
     return(
         <Fragment>
@@ -21,7 +28,7 @@ export const Category = () => {
                 {!products || !products.length ? (
                     noProductsMessage
                 ) : (
-                    products.filter((product) => product).map((product) => (
+                    products.filter((product) => product.category === category.toLowerCase()).map((product) => (
                         <ProductCard key={product.id} product={product} />
                     ))
                 )}

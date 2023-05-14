@@ -1,3 +1,4 @@
+import React from 'react';
 import '../styles/button.scss';
 
 const BUTTON_CHANGE_CLASSES = {

@@ -6,7 +6,9 @@ WORKDIR /app
 
 # install app dependencies
 COPY package*.json ./
-RUN npm install
+RUN npm install --silent --progress=false --no-cache && \
+  npm install -g npm@7.16.0
+
 
 # add app
 COPY . .
@@ -14,5 +16,6 @@ COPY . .
 ENV CHOKIDAR_USEPOLLING=true
 
 # start app
-CMD ["npm", "start"]
+CMD ["npm", "run", "start:dev"]
+# CMD ["npm", "start"]
 
