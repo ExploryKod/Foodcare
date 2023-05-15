@@ -5,7 +5,8 @@ USE foodcare;
 CREATE TABLE IF NOT EXISTS food_categories (
     id INT PRIMARY KEY AUTO_INCREMENT,
     category_name VARCHAR(255) NOT NULL,
-    category_description TEXT
+    category_description TEXT NULL,
+    category_image BLOB NULL,
 );
 
 CREATE TABLE IF NOT EXISTS products (
@@ -13,15 +14,22 @@ CREATE TABLE IF NOT EXISTS products (
     category_id INT NOT NULL, 
     category VARCHAR(255) NOT NULL,
     product_name VARCHAR(255) NOT NULL,
-    product_image VARCHAR(255),
+    product_image_url VARCHAR(255),
     product_price DECIMAL(10,2) NOT NULL,
-    web_product_img VARCHAR(300),
     FOREIGN KEY (category_id) REFERENCES food_categories(id)
 );
 
-INSERT INTO food_categories (category_name) VALUES ('proteines'), ('legumes'), ('fruits');
+-- CREATE TABLE IF NOT EXISTS category_images (
+--     id INT PRIMARY KEY AUTO_INCREMENT,
+--     category_image_id INT NULL,
+--     image_path VARCHAR(255) NULL,
+--     image_blob BLOB NULL,
+--     FOREIGN KEY (category_image_id) REFERENCES food_categories(id)
+-- );
 
-INSERT INTO products (category, category_id, product_name, product_image, product_price)
+INSERT INTO food_categories (category_name) VALUES ('proteines'), ('legumes'), ('fruits'), ('epices'),('boissons');
+
+INSERT INTO products (category, category_id, product_name, product_image_url, product_price)
 VALUES
     ('proteines', 1,'Poulet Bio', 'assets/products/proteines_poulet_bio.jpg', 25),
     ('proteines', 1,'Tofu', 'assets/products/proteines_tofu.jpg', 18),

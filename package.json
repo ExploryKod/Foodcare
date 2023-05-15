@@ -1,7 +1,7 @@
 {
-  "name": "my-app",
+  "name": "foodcare",
   "version": "1.0.0",
-  "description": "Description de mon application",
+  "description": "E-commerce",
   "main": "server/app.js",
   "scripts": {
     "start": "cd server && node app.js",
@@ -11,6 +11,7 @@
   "dependencies": {
     "config": "^3.3.9",
     "cors": "^2.8.5",
+    "ejs": "^3.1.9",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
     "mysql2": "^3.3.1"
