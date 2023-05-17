@@ -32,10 +32,6 @@ services:
       - '1005:80'
     environment:
       - PMA_ARBITRARY=1
-  adminer:
-    image: adminer
-    ports:
-      - "1006:8080"
   frontend:
     build:
       context: ../client

@@ -2,14 +2,24 @@ CREATE DATABASE IF NOT EXISTS foodcare;
 
 USE foodcare;
 
-CREATE TABLE IF NOT EXISTS food_categories (
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+SET NAMES utf8mb4;
+
+DROP TABLE IF EXISTS `food_categories`;
+CREATE TABLE food_categories (
     id INT PRIMARY KEY AUTO_INCREMENT,
     category_name VARCHAR(255) NOT NULL,
     category_description TEXT NULL,
     category_image BLOB NULL,
-);
+    category_image_path VARCHAR(255) NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS products (
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE products (
     id INT PRIMARY KEY AUTO_INCREMENT,
     category_id INT NOT NULL, 
     category VARCHAR(255) NOT NULL,
@@ -17,15 +27,25 @@ CREATE TABLE IF NOT EXISTS products (
     product_image_url VARCHAR(255),
     product_price DECIMAL(10,2) NOT NULL,
     FOREIGN KEY (category_id) REFERENCES food_categories(id)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- CREATE TABLE IF NOT EXISTS category_images (
---     id INT PRIMARY KEY AUTO_INCREMENT,
---     category_image_id INT NULL,
---     image_path VARCHAR(255) NULL,
---     image_blob BLOB NULL,
---     FOREIGN KEY (category_image_id) REFERENCES food_categories(id)
--- );
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+                        `id` int(11) NOT NULL AUTO_INCREMENT,
+                        `username` varchar(100) NOT NULL,
+                        `first_name` varchar(100) DEFAULT NULL,
+                        `last_name` varchar(100) DEFAULT NULL,
+                        `email` varchar(150) DEFAULT NULL,
+                        `birth_date` varchar(50) DEFAULT NULL,
+                        `password` varchar(100) NOT NULL,
+                        `status` varchar(100) DEFAULT NULL,
+                        `creation_date` date DEFAULT NULL,
+                        PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `user` (`id`, `username`, `first_name`, `last_name`, `email`, `birth_date`, `password`, `status`, `creation_date`) 
+VALUES
+    (1,	'amaury',	'amaury',	'amosa',	'am@g.com',	'6/06/1236',	'password',	'admin',	NULL);
 
 INSERT INTO food_categories (category_name) VALUES ('proteines'), ('legumes'), ('fruits'), ('epices'),('boissons');
 
