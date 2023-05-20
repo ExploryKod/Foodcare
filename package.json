@@ -6,6 +6,7 @@
   "scripts": {
     "start": "cd server && node app.js",
     "dev": "cd server && nodemon app.js",
+    "sass-watch":"npx sass server/static/style/main.scss server/static/style/main.css",
     "build": "webpack --config webpack.config.js"
   },
   "dependencies": {
@@ -22,7 +23,9 @@
     "mysql2": "^3.3.1"
   },
   "devDependencies": {
+    "chokidar": "^3.5.3",
     "nodemon": "^2.0.22",
+    "sass": "^1.62.1",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1"
   }

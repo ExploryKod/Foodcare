@@ -1,0 +1,256 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper-front, .layout-front-wrapper {
+  height: calc(100% - 47px);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.btn-1 {
+  background-color: hsl(210, 35%, 27%);
+  color: #f5f5f7;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 10px;
+  height: 2.6em;
+  font-size: 17px;
+  width: 200px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-1:hover, .btn-1:focus {
+  color: hsl(210, 35%, 27%);
+  background-color: #f5f5f7;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.btn-1__medium {
+  height: 1.6em;
+  width: 130px;
+  font-size: 16px;
+}
+
+.btn-2 {
+  background-color: rgb(67, 67, 65);
+  color: #f5f5f7;
+  font-family: sans-serif;
+  border-radius: 10px;
+  height: 2.6em;
+  font-size: 17px;
+  width: 200px;
+  cursor: pointer;
+  border: none;
+}
+.btn-2:hover, .btn-2:focus {
+  color: rgb(67, 67, 65);
+  background-color: #f5f5f7;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.btn-2__medium {
+  height: 1.6em;
+  width: 130px;
+  font-size: 16px;
+}
+.btn-2__little {
+  height: 2em;
+  width: 80px;
+  font-size: 14px;
+}
+
+.edit-element-btn {
+  pointer-events: none;
+}
+
+.btn-initial {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #e81212;
+  margin-left: 10px;
+  border: none;
+  color: #f5f5f7;
+  font-family: "Montserrat", sans-serif;
+}
+.btn-initial:hover {
+  background-color: #4c5e0f;
+  cursor: pointer;
+}
+
+.btn-4 {
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  color: rgba(120, 211, 2, 0.9607843137);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-5 {
+  background-color: red;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 10px;
+  height: 2.6em;
+  font-size: 17px;
+  width: 200px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-5:hover, .btn-5:focus {
+  background-color: rgb(198, 7, 7);
+}
+.btn-5__medium {
+  height: 1.6em;
+  width: 130px;
+  font-size: 16px;
+}
+
+.filter-btn {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
+  cursor: pointer;
+}
+.filter-btn span {
+  display: flex;
+  flex-direction: column;
+}
+.filter-btn span svg {
+  font-size: 10px;
+}
+.filter-btn__desc svg:first-child {
+  color: #e81212;
+}
+.filter-btn__asc svg:nth-child(2) {
+  color: #e81212;
+}
+
+.btn-return {
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: color 0.2s ease-in-out;
+}
+.btn-return:hover {
+  color: #4c5e0f;
+}
+
+.btn-close-modal {
+  position: absolute;
+  color: rgb(67, 67, 65);
+  border: none;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-close-modal svg {
+  font-size: 30px;
+}
+.btn-close-modal:hover {
+  cursor: pointer;
+}
+.btn-close-modal:hover svg {
+  color: rgba(120, 211, 2, 0.9607843137);
+}
+
+.page-connexion .outer-connexion {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url("../../assets/land_lake.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-color: hsl(210, 35%, 27%);
+  background-blend-mode: multiply;
+}
+.page-connexion .outer-connexion .inner-connexion {
+  background-color: rgba(78, 120, 162, 0.9);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 650px;
+  height: 600px;
+  border-radius: 35px;
+  box-shadow: 0 11px 34px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+.page-connexion .outer-connexion .inner-connexion .container-connexion, .page-connexion .outer-connexion .inner-connexion .container-inscription {
+  padding: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-connexion .outer-connexion .inner-connexion .container-connexion .img-container img, .page-connexion .outer-connexion .inner-connexion .container-inscription .img-container img {
+  width: 100px;
+}
+.page-connexion .outer-connexion .inner-connexion .container-connexion .info-container, .page-connexion .outer-connexion .inner-connexion .container-inscription .info-container {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 36px;
+  margin-block-start: 37px;
+  text-align: center;
+}
+.page-connexion .outer-connexion .inner-connexion .container-connexion .form-container, .page-connexion .outer-connexion .inner-connexion .container-inscription .form-container {
+  width: 100%;
+}
+.page-connexion .outer-connexion .inner-connexion .container-connexion .form-container .form-elem, .page-connexion .outer-connexion .inner-connexion .container-inscription .form-container .form-elem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+.page-connexion .outer-connexion .inner-connexion .container-connexion .form-container .form-elem input, .page-connexion .outer-connexion .inner-connexion .container-inscription .form-container .form-elem input {
+  border: 1px solid #d6d6d6;
+  height: 2.6em;
+  border-radius: 6px;
+  font-size: 17px;
+  line-height: 1.29412;
+  font-weight: 400;
+  letter-spacing: -0.021em;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 70%;
+  padding-left: 10px;
+  background-color: #e4e4e7;
+}
+.page-connexion .outer-connexion .inner-connexion .container-connexion .form-container .form-elem .btn-1, .page-connexion .outer-connexion .inner-connexion .container-inscription .form-container .form-elem .btn-1 {
+  margin-top: 20px;
+}
+
+/*# sourceMappingURL=main.css.map */

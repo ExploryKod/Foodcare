@@ -1,0 +1,174 @@
+.btn-1 {
+    background-color: $blue;
+    color: $light;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 10px;
+    height: 2.6em;
+    font-size: 17px;
+    width: 200px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: $blue;
+      background-color: $light;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+    &__medium {
+      height: 1.6em;
+      width: 130px;
+      font-size: 16px;
+    }
+  }
+  
+  .btn-2 {
+    background-color: $grey;
+    color: $light;
+    font-family: sans-serif;
+    border-radius: 10px;
+    height: 2.6em;
+    font-size: 17px;
+    width: 200px;
+    cursor: pointer;
+    border: none;
+  
+    &:hover,
+    &:focus {
+      color: $grey;
+      background-color: $light;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+    &__medium {
+      height: 1.6em;
+      width: 130px;
+      font-size: 16px;
+    }
+    &__little {
+      height: 2em;
+      width: 80px;
+      font-size: 14px;
+    }
+  }
+  .edit-element-btn{
+    pointer-events: none;
+  }
+  
+  .btn-initial {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: $orange-1;
+    margin-left: 10px;
+    border: none;
+    color: $light;
+    font-family: 'Montserrat', sans-serif;
+    // min-width: 40px;
+    &:hover {
+      background-color: $orange-3;
+      cursor: pointer;
+    }
+  }
+  
+  .btn-4 {
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    color: $orange-2;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .btn-5 {
+    background-color: red;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+    height: 2.6em;
+    font-size: 17px;
+    width: 200px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      background-color: rgb(198, 7, 7);
+    }
+    &__medium {
+      height: 1.6em;
+      width: 130px;
+      font-size: 16px;
+    }
+  }
+  .filter-btn {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+    cursor: pointer;
+    span {
+      display: flex;
+      flex-direction: column;
+  
+      svg {
+        font-size: 10px;
+      }
+    }
+    &__desc {
+      svg:first-child {
+        color: $orange-1;
+      }
+    }
+    &__asc {
+      svg:nth-child(2) {
+        color: $orange-1;
+      }
+    }
+  }
+  
+  .btn-return {
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: color 0.2s ease-in-out;
+    &:hover {
+      color: $orange-3;
+    }
+  }
+  
+  .btn-close-modal {
+    position: absolute;
+    color: $grey;
+    border: none;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      font-size: 30px;
+    }
+  
+    &:hover {
+      cursor: pointer;
+      svg {
+        color: $orange-2;
+      }
+    }
+  }
