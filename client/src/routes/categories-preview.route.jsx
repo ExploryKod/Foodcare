@@ -4,11 +4,7 @@ import { CategoryPreview } from '../components/category-preview.component';
 
 export const CategoriesPreview = () => {
     const { categoriesMap } = useContext(CategoriesContext)
-    console.log('DATA FROM CAT  '+categoriesMap);
-    console.log('My DATA cat'+categoriesMap.map( (prod, index) => { 
-        console.log(prod)
-        return prod;
- }) );
+    
     return (
         <Fragment>
             {Object.keys(categoriesMap).map((title) =>{
