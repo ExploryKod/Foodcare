@@ -6,22 +6,9 @@ import ImageGallery from '../components/imageList';
 export const UploadForm = () => {
   
     const [flashMessage, setFlashMessage] = useState('');
-    const [getUpload, setGetUpload] = useState(false);
     const fileInputRef = useRef(null);
     const [toggleImages, setToggleImages] = useState(false);
     const [toggleFiles, setToggleFiles] = useState(false);
-
-    const getMyUpload = (e) => {  
-        if(!getUpload) {  
-        setGetUpload(true)
-        e.target.textContent = 'Cessez l\' affichage des fichiers';
-      }
-
-      if(getUpload) {  
-        setGetUpload(false)
-        e.target.textContent = 'Afficher les fichiers';
-      } 
-    }
 
     const handleToggleImages = (e) => {  
       if(!toggleImages) {  
@@ -53,8 +40,6 @@ export const UploadForm = () => {
       const sendFile = async (e) => {
           e.preventDefault();
           const form = document.getElementById('form');
-          const downloadButton = document.getElementById('download-btn');
-          downloadButton.style.display = 'block';
           console.log(form);
           const formData = new FormData(form);
           
@@ -72,7 +57,6 @@ export const UploadForm = () => {
 
           if (isEmpty) {
             setFlashMessage('Veuillez remplir tous les champs obligatoires');
-            downloadButton.style.display = 'none';
             setTimeout(() => {
               setFlashMessage('');
             }, 3000);
@@ -134,24 +118,33 @@ export const UploadForm = () => {
           <div className="container">
           {flashMessage && <div className="output-message">{flashMessage}</div>}
               <div className="container__inner-start">
-                  <h1>Envoyez vos photos de produits</h1>
+                <div className="inner-start__title">
+                <h1>Photos de produits</h1>
+                  <p>Nous vous invitons à nous faire part de nouveaux produits en envoyant ici des photos et une description.</p>
+                </div>
+                 
                   <form id='form'>
                       <div className="input-group">
-                          <label htmlFor='name'>Nom du fichier</label>
-                          <input name='name' id='name' placeholder="Nom de la catégorie d'image" required />
+                          <label htmlFor='name'>Nom de la catégorie d'image: </label>
+                          <input name='name' id='name' placeholder="legumes" required />
+                      </div>
+                      <div className="input-group">
+                          <label htmlFor='image-name'>Nom de l'image: </label>
+                          <input name='image_name' id='image-name' placeholder="tomate" required />
                       </div>
                       <div className="input-group">
                         <label htmlFor="files">Chargez le fichier: </label>
                         <input name="files" id="files" type="file" multiple required ref={fileInputRef} style={{ display: 'none' }}/>
                         <button className="custom-file-button" type="button" onClick={handleFileButtonClick}>Je choisis mon fichier</button>
                       </div>
-                      <button className="submit-btn" type='submit' onClick={sendFile}>Charger mes fichiers</button>
-                      <button className="submit-btn btn-download" type='button' id='download-btn' onClick={getMyUpload}>Afficher les fichiers</button>
+                      <div className="container__submit-btn">
+                        <button className="submit-btn upload-btn" type='submit' onClick={sendFile}>Charger mes fichiers</button>
+                      </div>
                   </form>
               </div>  
               <div className="container__inner-end">
-                <button className="submit-btn btn-images" type='button' onClick={handleToggleImages}>Ouvrir la gallerie</button>
-                <button className="submit-btn btn-list" type='button' onClick={handleToggleFile}>Lister les fichiers</button>  
+                <button className="upload-btn  btn-images" type='button' onClick={handleToggleImages}>Ouvrir la gallerie</button>
+                <button className="upload-btn  btn-list" type='button' onClick={handleToggleFile}>Lister les fichiers</button>  
               </div>
        
         <div>

@@ -32,7 +32,9 @@ app.use(session({
 // configuration pour le traitement du corps de la requête
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'static')));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 // charger les valeurs de configuration
 // const port = config.get('server.port');
 // const dbUrl = config.get('database.url');
@@ -44,7 +46,35 @@ const port = process.env.NODE_ENV === 'dockerdev' ? 5000 : 4000;
 app.set('view engine', 'ejs');
 app.use('/auth', authRoutes);
 app.use('/products', productsRoute);
-app.use('/uploads', uploadsRoute);
+// app.use('/uploads', uploadsRoute);
+
+// Count the number of files in the upload folder
+const getUploadCount = () => {
+  const uploadDir = path.join(__dirname, 'uploads');
+  try {
+    const files = fs.readdirSync(uploadDir);
+    return files.length;
+  } catch (err) {
+    console.error('Error reading upload folder:', err);
+    return 0;
+  }
+};
+
+// Serve the list of image names from the 'uploads' folder
+app.get('/images_names', (req, res) => {
+  const uploadDir = path.join(__dirname, 'uploads');
+
+  // Read the files in the uploads directory
+  fs.readdir(uploadDir, (err, files) => {
+    if (err) {
+      console.error('Error reading directory:', err);
+      return res.status(500).json({ error: 'Internal server error' });
+    }
+
+    // Send the list of image names as the response
+    res.json({ images: files });
+  });
+})
 
 app.get('/welcome', (req, res) => {
     res.send(`
@@ -82,66 +112,60 @@ app.get('/connexion', (req, res) => {
   res.render('connexion', { toggle });
 });
 
-// Handle the toggle action
-app.post('/toggle', (req, res) => {
-  const { toggle } = req.body;
-
-  // Perform any necessary logic here based on the toggle value
-  // Update the toggle state as needed
-
-  res.send({ success: true });
-});
-
-
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'uploads/');
+    const name = req.body.name;
+    cb(null, "uploads/");
   },
   filename: (req, file, cb) => {
-    const name = req.body.name; // Get the name entered in the form
-    // const randomLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26)); // Generate a random uppercase letter (A-Z)
-    const randomLetter='B';
-    const filename = `${name}_${randomLetter}${path.extname(file.originalname)}`;
+    const name = req.body.name;
+    const image_name = req.body.image_name;
+    const randomLetter = 'B';
+    const filename = `${name}_${image_name}${path.extname(file.originalname)}`;
 
-     // Check if file with the same name already exists
-     if (fs.existsSync(`uploads/${filename}`)) {
-      const errorMessage = 'File name already exists';
-      return cb(errorMessage);
+    if (fs.existsSync(`uploads/${filename}`) || fs.existsSync(`uploads/${name}/${filename}`)) {
+      req.fileValidationError = 'Image name already taken';
     }
 
     cb(null, filename);
   },
 });
 
-// Configuration de Multer pour gérer les fichiers téléchargés
 const uploadsFiles = multer({ storage });
 
-// Route pour le téléchargement des fichiers
 app.post('/upload_files', uploadsFiles.array('files'), (req, res) => {
-  // Error handling for file name already exists
-  if (req.fileValidationError) {
-    const errorMessage = req.fileValidationError;
-    return res.status(400).json({ error: errorMessage });
+  if (req.fileValidationError === 'Image name already taken') {
+    return res.status(409).json({ error: req.fileValidationError });
   }
-  // Traiter les fichiers téléchargés ici
-  console.log(req.files); // Affiche les informations sur les fichiers téléchargés
-  res.send('Téléchargement réussi !');
+
+  if (req.fileValidationError) {
+    return res.status(400).json({ error: req.fileValidationError });
+  }
+
+  // Get the current upload count
+  const uploadCount = getUploadCount();
+
+  if (uploadCount >= 20) {
+    // Maximum file count reached
+    return res.status(403).json({ error: req.fileValidationError });
+  }
+
+  dataToSend = req.files;
+  res.send(dataToSend);
 });
 
-// app.post("/upload_files", upload.array("files"), uploadFiles);
+app.get('/download_files', (req, res) => {
+  if (req.fileValidationError) {
+    return res.status(400).json({ error: req.fileValidationError });
+  }
+});
 
-// function uploadFiles(req, res) {
-//     console.log(req.body);
-//     console.log(req.files);
-//     res.json({ message: "Successfully uploaded files" });
-// }
 
 app.use((err, req, res, next) => {
   if (err) {
     res.status(500).json({ error: err.message });
   }
 });
-
 
 // démarrer le serveur
 app.listen(port, () => {

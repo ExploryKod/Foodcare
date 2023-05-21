@@ -40,7 +40,6 @@
     width: 50%;
 }
 
-
 form {
     margin-top: 40px;
     border-radius: 10px;
@@ -71,8 +70,26 @@ form input {
     width: 100%;
     border: 1px solid #ccc;
 }
+
+
+.container__submit-btn{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .submit-btn {
     width: 100%;
+}
+
+.inner-start__title {
+    width: 80%;
+    background-color:hsla(190, 100%, 35%, 1);
+    color: white;
+}
+
+.upload-btn { 
     border: none;
     cursor: pointer;
     background: hsla(190, 100%, 35%, 1);
@@ -83,7 +100,7 @@ form input {
     text-align: center;
 }
 
-.submit-btn:hover  { 
+.upload-btn:hover  { 
     filter:brightness(120%)
 }
 
