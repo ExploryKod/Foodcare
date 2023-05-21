@@ -3,26 +3,44 @@
 }
 
 .container  {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-   width: 100%;
-   height: 100vh;
-   background-color: rgb(0, 128, 128, 0.9); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    height: 100vh;
+    background-color: transparent; 
 }
 
-.container__inner {
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    background-color:hsla(170, 100%, 15%, 0.9);
-    border-radius: 20px;
-    max-width: 500px;
-    margin: 60px auto;
-}
 .container h1 {
     text-align: center;
     color: rgba(255, 255, 255, 0.919);
 }
+
+.container__inner-start {
+    width: 50%;
+}
+
+.container__inner-end{
+    width: 50%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: hsla(170, 100%, 15%, 0.9);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.container__inner-end button {
+    width: 50%;
+}
+
+
 form {
     margin-top: 40px;
     border-radius: 10px;
@@ -37,6 +55,16 @@ form label {
     margin-bottom: 10px;
     color: white;
 }
+
+form label::after {
+  content: '*';
+  position: relative;
+  top: 3px; 
+  color: red;
+  margin-left: 3px;
+  font-size: 1.5em;
+}
+
 form input {
     background-color: rgba(255, 255, 255, 0.938);
     padding: 12px 20px;
@@ -59,6 +87,11 @@ form input {
     filter:brightness(120%)
 }
 
+.btn-download  { 
+    display: none;
+    margin-top: 20px;
+}
+
 .output-message { 
     margin-top: 20px;
     margin-bottom: 30px;
@@ -67,4 +100,48 @@ form input {
     border-radius: 10px;
     color: white;
     background-color:hsla(190, 100%, 35%, 1);
+}
+
+.custom-file-button {
+    width: 50%;
+    margin-bottom:40px;
+    border: none;
+    cursor: pointer;
+    background: hsl(170, 100%, 25%);
+    font-size: 16px;
+    color: white;
+    border-radius: 3px;
+    padding: 10px 5px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.custom-file-button:hover {
+    background: rgba(255, 255, 255, 0.83);
+    color:hsl(170, 100%, 25%);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 2px;
+}
+
+.custom-file-button:active {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 2px;
+}
+
+.btn-images {
+    margin-top: 20px;
+}
+.btn-list  {
+    margin-top: 20px;
+}
+
+.upload-image-gallery {
+    max-width: 70%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+}
+
+.upload-image-gallery img {
+    max-width: 60px;
+    height: auto;
+    margin: 2px 5px;
 }

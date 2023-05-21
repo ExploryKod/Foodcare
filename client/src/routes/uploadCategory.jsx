@@ -30,7 +30,6 @@ export const UploadCategory = () => {
                     uploads.filter((upload) => upload.category === category_upload.toLowerCase()).map((upload) => (
                         <ul>
                             <li>{upload}</li>
-
                         </ul>
                     ))
                 )}
