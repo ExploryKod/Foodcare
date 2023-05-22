@@ -4,7 +4,7 @@ import Button from './button';
 import { CartContext } from '../context/cart.context';
 
 export const ProductCard = ({ product, category }) => {
-    const { product_name, product_price } = product;
+    let { product_name, product_price } = product;
     const [imageList, setImageList] = useState([]);
     const { addItemToCart } = useContext(CartContext);
     
@@ -28,17 +28,19 @@ export const ProductCard = ({ product, category }) => {
       fetchImages();
     }, []);
 
-    const food_name = product_name.toLowerCase();
-
+    let product_nameUrl = product_name.toLowerCase().split(' ').filter(word => word !== '').join('')
+    let imageUrl = `http://localhost:5000/uploads/${category}_${product_nameUrl}.jpeg`
+ 
     return (
+        <>
         <div className={`product-card-container card-${product_name}`}>
-            <img src={`http://localhost:5000/uploads/${category}_${food_name}.jpeg`} alt={`${product_name}`} />
+            <img src={imageUrl} alt={`${product_name}`} />
             <div className='footer'>
                 <span className='name'>{product_name}</span>
                 <span className='price'>{product_price}€</span>
             </div>
             <Button onClick={addProductToCart}>Choisir</Button>
-        </div>);
+        </div></>);
 
 }
 

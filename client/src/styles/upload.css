@@ -16,7 +16,7 @@ body {
     padding: 20px;
     width: 100%;
     background-color: white;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .container__inner-start {

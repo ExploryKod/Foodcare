@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const he = require('he');
 const multer = require('multer');
 const dotenv = require('dotenv')
 const bcrypt = require("bcryptjs")
@@ -118,10 +119,13 @@ const storage = multer.diskStorage({
     cb(null, "uploads/");
   },
   filename: (req, file, cb) => {
-    const name = req.body.name;
-    const image_name = req.body.image_name;
-    const randomLetter = 'B';
-    const filename = `${name}_${image_name}${path.extname(file.originalname)}`;
+    let name = req.body.name;
+    let image_name = req.body.image_name;
+    image_name = image_name.toLowerCase().split(' ').filter(word => word !== '').join('');
+    name = name.toLowerCase()
+    image_name = image_name.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    name = name.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const filename = `${name}_${image_name}.jpeg`;
 
     if (fs.existsSync(`uploads/${filename}`) || fs.existsSync(`uploads/${name}/${filename}`)) {
       req.fileValidationError = 'Image name already taken';

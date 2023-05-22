@@ -124,10 +124,14 @@ export const UploadForm = () => {
                 </div>
                  
                   <form id='form'>
-                      <div className="input-group">
-                          <label htmlFor='name'>Nom de la catégorie d'image: </label>
-                          <input name='name' id='name' placeholder="legumes" required />
-                      </div>
+                  <label htmlFor="name">Choix de la catégories d'aliment:</label>
+                      <select id="name" name="name" required>
+                        <option value="proteines">Proteines</option>
+                        <option value="legumes">Légumes</option>
+                        <option value="fruits">Fruits</option>
+                        <option value="boissons">Boissons</option>
+                        <option value="recettes">Recettes</option>
+                      </select>
                       <div className="input-group">
                           <label htmlFor='image-name'>Nom de l'image: </label>
                           <input name='image_name' id='image-name' placeholder="tomate" required />
