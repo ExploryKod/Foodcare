@@ -128,6 +128,7 @@ export const UploadForm = () => {
                       <select id="name" name="name" required>
                         <option value="proteines">Proteines</option>
                         <option value="legumes">Légumes</option>
+                        <option value="epices">Epices</option>
                         <option value="fruits">Fruits</option>
                         <option value="boissons">Boissons</option>
                         <option value="recettes">Recettes</option>
