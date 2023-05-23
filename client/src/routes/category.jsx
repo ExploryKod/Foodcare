@@ -13,12 +13,12 @@ export const Category = () => {
     useEffect( () => {
         setProducts(categoriesData);
     }, [category, categoriesData])
-  
+  console.log(products);
     function removeAccents(str) {
         return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     }
 
-    category = removeAccents(category);
+    category = removeAccents(category.toLowerCase());
 
     return(
         <Fragment>
