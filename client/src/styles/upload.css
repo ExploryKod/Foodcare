@@ -49,13 +49,50 @@ form {
 form .input-group {
     margin-bottom: 15px;
 }
+
+form .input-select {
+    min-width: 15%;
+    padding: 5px;
+}
+
+form .input-select, form .input-select option {
+    color:  hsla(170, 100%, 15%);
+    background-color: white;
+    font-weight: 600;
+}
+
+
 form label {
     display: block;
     margin-bottom: 10px;
     color: white;
 }
 
-form label::after {
+form .product-price input { 
+    max-width: 10%;
+}
+
+form .product-price span { 
+    margin-bottom:0;
+    padding-bottom: 0;
+    color: white;
+    text-align: center;
+    font-weight: semibold;
+}
+
+form .product-price label p {
+    color: white;
+    font-weight: semibold;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+form label .optional {
+    color: rgb(199, 233, 188);
+    
+}
+
+form label:not(.product-price label, .product-description label)::after {
   content: '*';
   position: relative;
   top: 3px; 

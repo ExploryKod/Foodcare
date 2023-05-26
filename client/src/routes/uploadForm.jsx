@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import '../styles/upload.css';
 import FileList from '../components/uploadList';
 import ImageGallery from '../components/imageList';
@@ -6,9 +6,19 @@ import ImageGallery from '../components/imageList';
 export const UploadForm = () => {
   
     const [flashMessage, setFlashMessage] = useState('');
+    const [selectedName, setSelectedName] = useState('');
+    const [categoryId, setCategoryId] = useState('');
     const fileInputRef = useRef(null);
     const [toggleImages, setToggleImages] = useState(false);
     const [toggleFiles, setToggleFiles] = useState(false);
+
+    const handleNameChange = (e) => {
+      const selectedOption = e.target.options[e.target.selectedIndex];
+      const categoryIdAttribute = selectedOption.getAttribute('data-category-id');
+  
+      setSelectedName(e.target.value);
+      setCategoryId(categoryIdAttribute);
+    };
 
     const handleToggleImages = (e) => {  
       if(!toggleImages) {  
@@ -63,6 +73,12 @@ export const UploadForm = () => {
             return;
           }
 
+          const categoryName = formData.get('category_name');
+          const categoryNameId = formData.get('category_name_id');
+          const imageName = formData.get('image_name');
+          const productImageUrl = categoryName+'_'+imageName+'.jpeg';
+          const productPrice = formData.get('purchasing_product_price') * 1.2;
+
           try {
             const response = await fetch('http://localhost:5000/upload_files', {
               method: 'POST',
@@ -73,7 +89,7 @@ export const UploadForm = () => {
               // Handle successful upload
               console.log('Upload successful!');
               const data = await response.json();
-                console.log(data)
+              console.log(data)
 
                 data.map((item) => {   
                   console.log(item.filename);
@@ -83,6 +99,35 @@ export const UploadForm = () => {
                   }, 3000);
                   return item.filename;
                 });
+
+                try {
+                  // Post the product data
+                  const productResponse = await fetch('http://localhost:5000/products', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ categoryNameId: categoryNameId, 
+                                           categoryName: categoryName, 
+                                           image_name: imageName,
+                                           productImageUrl: productImageUrl,
+                                           productPrice: productPrice }),
+                  });
+          
+                  if (productResponse.ok) {
+                    // Product post successful
+                    console.log('Product post successful!');
+                    const productData = await productResponse.json();
+                    setFlashMessage('le produit "'+productData.image_name+'" a bien été créé en base de donnée');
+                    // Reset the form or perform any additional actions
+                  } else {
+                    console.error('Product post failed!');
+                    setFlashMessage('Il y a eu un problème lors de la soumission du formulaire de produit');
+                  }
+                } catch (error) {
+                  console.error('Product post failed:', error);
+                  setFlashMessage('Il y a eu une erreur lors de la soumission du formulaire de produit');
+                }
             
             } else if (response.status === 409) {
               const data = await response.json();
@@ -124,18 +169,30 @@ export const UploadForm = () => {
                 </div>
                  
                   <form id='form'>
-                  <label htmlFor="name">Choix de la catégories d'aliment:</label>
-                      <select id="name" name="name" required>
-                        <option value="proteines">Proteines</option>
-                        <option value="legumes">Légumes</option>
-                        <option value="epices">Epices</option>
-                        <option value="fruits">Fruits</option>
-                        <option value="boissons">Boissons</option>
-                        <option value="recettes">Recettes</option>
+                  <label htmlFor="category_name">Choix de la catégories d'aliment:</label>
+                      <select className="input-select" id="category_name" name="category_name" value={selectedName} onChange={handleNameChange} required>
+                        <option value="proteines" data-category-id="1">Proteines</option>
+                        <option value="legumes" data-category-id="2">Légumes</option>
+                        <option value="epices" data-category-id="3">Epices</option>
+                        <option value="fruits" data-category-id="4">Fruits</option>
+                        <option value="boissons" data-category-id="5">Boissons</option>
+                        <option value="recettes" data-category-id="6">Recettes</option>
                       </select>
+                      <input type="hidden" name="category_name_id" value={categoryId} />
                       <div className="input-group">
                           <label htmlFor='image-name'>Nom de l'image: </label>
                           <input name='image_name' id='image-name' placeholder="tomate" required />
+                      </div>
+                      <div className="input-group product-price">
+                          <label htmlFor='product_price'>Proposition de prix <span className="optional">(optionnel)</span> :
+                          <p>Cette proposition sera augmentée des coûts de distribution (20%)</p>
+                          </label>
+                          <input type="number" name='purchasing_product_price' id='product_price' placeholder='0' />
+                          <span> €</span>
+                      </div>
+                      <div className="input-group product-description">
+                        <label for="product-description">Décrivez votre produit <span className="optional">(optionnel)</span> :</label>
+                        <textarea id="product-description" name="product-description" rows="2" cols="100"></textarea>
                       </div>
                       <div className="input-group">
                         <label htmlFor="files">Chargez le fichier: </label>

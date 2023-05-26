@@ -1,46 +1,35 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext } from 'react';
 import '../styles/product-card.scss';
 import Button from './button';
+import { removeAccent } from '../utils/dataValidation/stringValidation.utils';
 import { CartContext } from '../context/cart.context';
 
-export const ProductCard = ({ product, category }) => {
+export const ProductCard = ({ product, category, imageUrl }) => {
     let { product_name, product_price } = product;
-    const [imageList, setImageList] = useState([]);
+  
     const { addItemToCart } = useContext(CartContext);
     
     const addProductToCart = () => addItemToCart(product);
 
-    useEffect(() => {
-      const fetchImages = async () => {
-        try {
-          const response = await fetch('http://localhost:5000/images_names');
-          if (response.ok) {
-            const data = await response.json();
-            setImageList(data.images);
-          } else {
-            console.error('Error fetching images:', response.status);
-          }
-        } catch (error) {
-          console.error('Error fetching images:', error);
-        }
-      };
-  
-      fetchImages();
-    }, []);
+    if(category && product_name){
+      let product_nameUrl = product_name.toLowerCase().split(' ').filter(word => word !== '').join('')
+      imageUrl = `http://localhost:5000/uploads/${category}_${product_nameUrl}.jpeg`;
+    }
 
-    let product_nameUrl = product_name.toLowerCase().split(' ').filter(word => word !== '').join('')
-    let imageUrl = `http://localhost:5000/uploads/${category}_${product_nameUrl}.jpeg`
- 
+    const standardImage = 'http://localhost:5000/uploads/generic_food.jpg'
+
     return (
         <>
+        {product_name &&
         <div className={`product-card-container card-${product_name}`}>
-            <img src={imageUrl} alt={`${product_name}`} />
+        {category ? (<img src={imageUrl} alt={`${removeAccent(product_name)}`} />) : (<img src={standardImage} alt={`${product_name}`} />)}
             <div className='footer'>
-                <span className='name'>{product_name}</span>
-                <span className='price'>{product_price}€</span>
+                <span className='product-name'>{product_name}</span>
+                {product_price !== '' && product_price !== null ? (<span className='price'>{product_price}€</span>)
+                : (<span className='price-wait'>Prix indisponible</span>)}
             </div>
             <Button onClick={addProductToCart}>Choisir</Button>
-        </div></>);
+        </div>}</>);
 
 }
 

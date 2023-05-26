@@ -23,7 +23,7 @@ export const UploadCategory = () => {
     return(
         <Fragment>
         <h2 className='category-title'>{category_upload.toUpperCase()}</h2>
-            <div className='category-container'>
+            <div className='category-container upload-category'>
                 {!uploads || !uploads.length ? (
                     noUploadsMessage
                 ) : (
