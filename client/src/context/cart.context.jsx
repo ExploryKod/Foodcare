@@ -1,9 +1,6 @@
 import { useEffect } from "react";
 import { createContext, useState } from "react";
 
-// fonction qui retourne un nouveau tableau avec soit une modification du produit ajouté au panier soit un nouveau produit ajouté
-// Selon que le panier a déjà un produit ou non 
-// Si oui nous augmentons la quantité de 1
 const addCartItem = (cartItems, productToAdd) => {
 
     const existingCartItem = cartItems.find(
@@ -67,10 +64,12 @@ export const CartProvider = ({ children }) => {
 
         setCartTotal(newCartTotal);
     }, [cartItems]);
-
+    
     const addItemToCart = (productToAdd) => {
         setCartItems(addCartItem(cartItems, productToAdd))
     }
+
+    console.log(cartItems);
 
     const removeItemFromCart = (productToRemove) => {
         setCartItems(removeCartItem(cartItems, productToRemove));
