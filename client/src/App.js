@@ -19,7 +19,7 @@ const App = () => {
         <Route path='checkout' element={<Checkout />} />
         <Route path='shopping' element={<Shopping />} />
         <Route path='upload/*' element={<Upload />} />
-        <Route path='*' element={<NotFoundPage />} />
+        <Route path='*' element={<NotFoundPage category={""} />} />
       </Route>
     </Routes>
 

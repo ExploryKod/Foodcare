@@ -2,6 +2,7 @@ import { useContext, useState, useEffect, Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import { CategoriesContext } from '../context/categories.context';
 import { ProductCard } from '../components/product-card';
+import NotFoundPage from './notFoundPage';
 import { removeAccent } from '../utils/dataValidation/stringValidation.utils';
 import '../styles/category.scss';
 
@@ -10,7 +11,7 @@ export const Category = () => {
     const { categoriesData } = useContext(CategoriesContext);
     const [products, setProducts] = useState(categoriesData);
   
-
+    const categories = ['proteines', 'legumes','epices','recettes','boissons','feculents']
     useEffect( () => {
         setProducts(categoriesData);
     }, [category, categoriesData])
@@ -21,7 +22,8 @@ export const Category = () => {
  
     return(
         <Fragment>
-        <h2 className='category-title'>{category.toUpperCase()}</h2>
+            {categories.includes(category.toLowerCase) ?
+        (<h2 className='category-title'>{category.toUpperCase()}</h2>) : (<NotFoundPage category={category}/>)}
             <div className='category-container product-container'>
                 {((!products || !products.length)) ? (
                 <p className="category-text">Il n'y a pas de produits à vendre pour le moment.</p>
