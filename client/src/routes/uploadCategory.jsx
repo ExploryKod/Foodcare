@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect, Fragment } from 'react';
+import { removeAccent } from '../utils/dataValidation/stringValidation.utils';
 import { useParams } from 'react-router-dom';
 import { CategoriesUploadContext } from '../context/upload.context';
 import '../styles/category.scss';
@@ -14,11 +15,7 @@ export const UploadCategory = () => {
     }, [category_upload, categoriesUploadData])
     console.log(uploads);
 
-    function removeAccents(str) {
-        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    }
-
-    category_upload = removeAccents(category_upload);
+    category_upload = removeAccent(category_upload);
 
     return(
         <Fragment>

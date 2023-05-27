@@ -11,7 +11,7 @@ export const Category = () => {
     const { categoriesData } = useContext(CategoriesContext);
     const [products, setProducts] = useState(categoriesData);
   
-    let categories = ['proteines', 'legumes','epices','recettes','boissons','feculents']
+    let categories = ['proteines', 'legumes','epices','recettes','boissons','feculents','nosrecettes']
     useEffect( () => {
         setProducts(categoriesData);
     }, [category, categoriesData])
@@ -22,7 +22,7 @@ export const Category = () => {
  
     return(
         <Fragment>
-            {categories.includes(category.toLowerCase) ?
+            {categories.includes(category.toLowerCase().replace(" ","")) ?
         (<h2 className='category-title'>{category.toUpperCase()}</h2>) : (<NotFoundPage category={category}/>)}
             <div className='category-container product-container'>
                 {((!products || !products.length)) ? (
