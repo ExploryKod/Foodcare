@@ -14,8 +14,8 @@ const app = express();
 app.use(cors());
 dotenv.config({ path: '../.env'})
 // import your products route module
-const productsRoute = require('./api/routes/productsRoutes');
 const uploadsRoute = require('./api/routes/uploadsRoute');
+const productsRoute = require('./api/routes/productsRoutes');
 const authRoutes = require('./api/routes/authRoutes');
 
 app.use(session({
@@ -46,7 +46,6 @@ const port = process.env.NODE_ENV === 'dockerdev' ? 5000 : 4000;
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
 app.use('/auth', authRoutes);
-app.use('/products', productsRoute);
 // app.use('/uploads', uploadsRoute);
 
 // Count the number of files in the upload folder
@@ -115,19 +114,19 @@ app.get('/connexion', (req, res) => {
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    const name = req.body.name;
+    const categoryName = req.body.category_name;
     cb(null, "uploads/");
   },
   filename: (req, file, cb) => {
-    let name = req.body.name;
+    let categoryName = req.body.category_name;
     let image_name = req.body.image_name;
     image_name = image_name.toLowerCase().split(' ').filter(word => word !== '').join('');
-    name = name.toLowerCase()
+    categoryName = categoryName.toLowerCase()
     image_name = image_name.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    name = name.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    const filename = `${name}_${image_name}.jpeg`;
+    categoryName = categoryName.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const filename = `${categoryName}_${image_name}.jpeg`;
 
-    if (fs.existsSync(`uploads/${filename}`) || fs.existsSync(`uploads/${name}/${filename}`)) {
+    if (fs.existsSync(`uploads/${filename}`) || fs.existsSync(`uploads/${categoryName}/${filename}`)) {
       req.fileValidationError = 'Image name already taken';
     }
 
@@ -149,7 +148,7 @@ app.post('/upload_files', uploadsFiles.array('files'), (req, res) => {
   // Get the current upload count
   const uploadCount = getUploadCount();
 
-  if (uploadCount >= 20) {
+  if (uploadCount >= 40) {
     // Maximum file count reached
     return res.status(403).json({ error: req.fileValidationError });
   }
@@ -164,6 +163,7 @@ app.get('/download_files', (req, res) => {
   }
 });
 
+app.use('/products', productsRoute);
 
 app.use((err, req, res, next) => {
   if (err) {

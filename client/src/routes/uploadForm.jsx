@@ -160,7 +160,7 @@ export const UploadForm = () => {
   
      return (
         <>
-          <div className="container">
+          <div className="upload-page container">
           {flashMessage && <div className="output-message">{flashMessage}</div>}
               <div className="container__inner-start">
                 <div className="inner-start__title">

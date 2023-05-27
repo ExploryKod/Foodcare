@@ -11,7 +11,7 @@ export const Category = () => {
     const { categoriesData } = useContext(CategoriesContext);
     const [products, setProducts] = useState(categoriesData);
   
-    const categories = ['proteines', 'legumes','epices','recettes','boissons','feculents']
+    let categories = ['proteines', 'legumes','epices','recettes','boissons','feculents']
     useEffect( () => {
         setProducts(categoriesData);
     }, [category, categoriesData])

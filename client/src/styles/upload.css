@@ -40,39 +40,40 @@ body {
     width: 50%;
 }
 
-form {
+.upload-page form {
     margin-top: 40px;
     border-radius: 10px;
     background-color: hsla(170, 100%, 15%, 0.9);
     padding: 30px;
 }
-form .input-group {
+
+.upload-page form .input-group {
     margin-bottom: 15px;
 }
 
-form .input-select {
+.upload-page form .input-select {
     min-width: 15%;
     padding: 5px;
 }
 
-form .input-select, form .input-select option {
+.upload-page form .input-select, form .input-select option {
     color:  hsla(170, 100%, 15%);
     background-color: white;
     font-weight: 600;
 }
 
 
-form label {
+.upload-page form label {
     display: block;
     margin-bottom: 10px;
     color: white;
 }
 
-form .product-price input { 
+.upload-page form .product-price input { 
     max-width: 10%;
 }
 
-form .product-price span { 
+.upload-page form .product-price span { 
     margin-bottom:0;
     padding-bottom: 0;
     color: white;
@@ -80,19 +81,19 @@ form .product-price span {
     font-weight: semibold;
 }
 
-form .product-price label p {
+.upload-page form .product-price label p {
     color: white;
     font-weight: semibold;
     font-style: italic;
     font-size: 0.8em;
 }
 
-form label .optional {
+.upload-page form label .optional {
     color: rgb(199, 233, 188);
     
 }
 
-form label:not(.product-price label, .product-description label)::after {
+.upload-page form label:not(.product-price label, .product-description label)::after {
   content: '*';
   position: relative;
   top: 3px; 
@@ -101,7 +102,7 @@ form label:not(.product-price label, .product-description label)::after {
   font-size: 1.5em;
 }
 
-form input {
+.upload-page form input {
     background-color: rgba(255, 255, 255, 0.938);
     padding: 12px 20px;
     width: 100%;
