@@ -9,9 +9,11 @@ const connectionFactory = new ConnectionFactory('db', 'root', 'root', 'foodcare'
 router.post('/logged', async (request, response) => {
     try {
       const connection = await connectionFactory.createConnection();
-      console.log('Database connection successful!');
+      console.log('Login connexion database successful!');
       let username = request.body.username;
       let password = request.body.password;
+      console.log('username '+username)
+      console.log('mot de passe'+ password)
       if (username && password) {
       const [dbRows, dbFields] = await connection.execute('SELECT * FROM user WHERE username = ? AND password = ?', [username,password,]);
          // If the account exists
@@ -19,12 +21,15 @@ router.post('/logged', async (request, response) => {
             // Authenticate the user
             request.session.loggedin = true;
             request.session.username = username;
-            // Redirect to home page
-            response.redirect('/auth/home');
+            response.send({ message: 'Vous êtes bien celui que vous prétendez être',
+                            session_username: request.session.username,
+                            session_login: request.session.loggedin  });
           } else {
-            response.send('Incorrect Username and/or Password!');
+            response.send({ message: 'Mot de passe ou pseudo incorrecte' });
           }
       connection.end();
+      } else {
+        response.send('Il y a eu un probleme avec le mot de passe ou l\' username');
       }
     } catch (error) {
       console.error('Error connecting to database:', error);

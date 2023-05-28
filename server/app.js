@@ -13,7 +13,7 @@ const sass = require('sass');
 const app = express();
 app.use(cors());
 dotenv.config({ path: '../.env'})
-// import your products route module
+
 const uploadsRoute = require('./api/routes/uploadsRoute');
 const productsRoute = require('./api/routes/productsRoutes');
 const authRoutes = require('./api/routes/authRoutes');
@@ -42,11 +42,8 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 const port = process.env.NODE_ENV === 'dockerdev' ? 5000 : 4000;
 
-// use your products route module
-// Set EJS as the view engine
 app.set('view engine', 'ejs');
 app.use('/auth', authRoutes);
-// app.use('/uploads', uploadsRoute);
 
 // Count the number of files in the upload folder
 const getUploadCount = () => {

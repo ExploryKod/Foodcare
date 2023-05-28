@@ -2,6 +2,9 @@
 @import './styles/bases/variables';
 @import './styles/bases/reset';
 
+// Utilities
+@import './styles/utilities/alert.scss';
+
 // Components
 @import './styles/components/buttons';
 
