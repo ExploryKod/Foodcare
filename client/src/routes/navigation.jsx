@@ -33,7 +33,7 @@ const Navigation = () => {
                         UPLOADS
                     </Link>
                     <Link className='nav-link' to='/connexion'>
-                        S'INSCRIRE
+                        MON COMPTE
                     </Link>
                     <CartIcon />
                 </div>

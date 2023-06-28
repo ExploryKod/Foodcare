@@ -9,3 +9,33 @@ $blue : hsl(210, 35%, 27%);
 $blue-2: rgba(78, 120, 162,0.9);
 $SF-PRO-DISPLAY-MEDIUM: 'Arial';
 $SF-PRO-DISPLAY-REGULAR: 'Arial';
+$NotoSans: 'Noto Sans', sans-serif;
+
+/* Breakpoints */
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px,
+  fhd: 1900px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+  fhd: 1440px
+);
+
+/* Spacings */
+$spacing: 10px;
+
+$darkpink: #A3298B;
+$darkLavender: #A6A8C9;
+$darkLavender-80: rgba(166, 168, 201,80%);
+$darkBlue : #161C3D;
+$lightLavender : #F2F3F7;

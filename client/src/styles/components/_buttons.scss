@@ -1,7 +1,6 @@
 .btn-1 {
     background-color: $blue;
     color: $light;
-    font-family: 'Montserrat', sans-serif;
     border-radius: 10px;
     height: 2.6em;
     font-size: 17px;
@@ -28,7 +27,6 @@
   .btn-2 {
     background-color: $grey;
     color: $light;
-    font-family: sans-serif;
     border-radius: 10px;
     height: 2.6em;
     font-size: 17px;
@@ -69,7 +67,6 @@
     margin-left: 10px;
     border: none;
     color: $light;
-    font-family: 'Montserrat', sans-serif;
     // min-width: 40px;
     &:hover {
       background-color: $orange-3;
@@ -78,7 +75,6 @@
   }
   
   .btn-4 {
-    font-family: Arial, Helvetica, sans-serif;
     border: none;
     background-color: transparent;
     font-size: 16px;
@@ -90,7 +86,6 @@
   .btn-5 {
     background-color: red;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
     border-radius: 10px;
     height: 2.6em;
     font-size: 17px;
@@ -141,7 +136,6 @@
   
   .btn-return {
     cursor: pointer;
-    font-family: Arial, Helvetica, sans-serif;
     transition: color 0.2s ease-in-out;
     &:hover {
       color: $orange-3;
@@ -184,7 +178,6 @@
     background-color: black;
     color: white;
     text-transform: uppercase;
-    font-family: 'Open Sans Condensed';
     font-weight: bolder;
     border: none;
     cursor: pointer;
