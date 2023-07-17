@@ -1,0 +1,16 @@
+
+
+{ }
+#
+
+se connecter via phpmyadmin: 
+- server: db
+- user: root
+- password: root
+=> je retrouve bien foodcare dans ma liste des bdd 
+
+Avec adminer:
+
+
+
+Photo de Andrew Neel: https://www.pexels.com/fr-fr/photo/personne-debout-sur-le-chemin-2682462/
