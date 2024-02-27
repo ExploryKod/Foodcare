@@ -1,8 +1,9 @@
 import '../styles/cart-item.scss';
+import { Config } from '../config/config';
 
 const CartItem = ({ cartItem }) => {
     const { product_name, product_image_url, product_price, quantity } = cartItem;
-    const imageUrl = `http://localhost:5000/uploads/${product_image_url}.jpeg`;
+    const imageUrl = `${Config.siteUrl}/uploads/${product_image_url}.jpeg`;
     let price = Number(product_price) * quantity;
     return (
         <div className='cart-item-container'>

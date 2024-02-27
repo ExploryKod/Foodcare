@@ -9,6 +9,7 @@ services:
       - MYSQL_DATABASE=foodcare
       - MYSQL_ROOT_PASSWORD=root
     volumes:
+      - ../database/dump.sql:/docker-entrypoint-initdb.d/dump.sql
       - db_data:/var/lib/mysql
   phpmyadmin:
     image: phpmyadmin
@@ -18,8 +19,8 @@ services:
     environment:
       - PMA_ARBITRARY=1
   mysql-client:
+    container_name: mysql-client
     image: mysql:8
-    command: mysql -h localhost -u root --password=root foodcare
     depends_on:
       - db
     environment:

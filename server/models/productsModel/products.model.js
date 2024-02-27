@@ -1,6 +1,11 @@
 const { ConnectionFactory } = require('../factory/connectbdd');
 
-const connectionFactory = new ConnectionFactory('db', 'root', 'root', 'foodcare');
+const connectionFactory = new ConnectionFactory(
+    process.env.MYSQL_SERVER,
+    process.env.MYSQL_USER,
+    process.env.MYSQL_PASSWORD,
+    process.env.MYSQL_DATABASE
+);
 
 async function getAllProducts() {
   const connection = await connectionFactory.createConnection();
@@ -26,7 +31,7 @@ async function insertProduct(productData) {
   // Prepare the SQL query
   const query = 'INSERT INTO products (category_id, category, product_name, product_image_url, product_price) VALUES (?, ?, ?, ?, ?)';
   const values = [
-    productData.categoryNameId ?? null,
+    productData.categoryNameId ?? 0,
     productData.categoryName ?? null,
     productData.image_name ?? null,
     productData.productImageUrl ?? null,

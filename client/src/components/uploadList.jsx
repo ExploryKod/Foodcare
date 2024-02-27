@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Config } from '../config/config';
 import '../styles/fileList.css';
 
 const FileList = () => {
@@ -7,7 +8,7 @@ const FileList = () => {
   useEffect(() => {
     const fetchFiles = async () => {
       try {
-        const response = await fetch('http://localhost:5000/images_names');
+        const response = await fetch(`${Config.siteUrl}/images_names`);
         if (response.ok) {
           const data = await response.json();
           setFileList(data.images);

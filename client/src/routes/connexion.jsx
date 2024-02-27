@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Config } from '../config/config';
 
 const Connexion = () => {
   const [toggle, setToggle] = useState(true);
@@ -36,7 +37,7 @@ const Connexion = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/auth/logged', {
+      const response = await fetch(`${Config.siteUrl}/auth/logged`, {
         method: 'POST',
         body: new URLSearchParams({
           ...formData
@@ -106,7 +107,7 @@ const Connexion = () => {
           ) : (
             <div className="container-connexion">
               <div className="img-container">
-                <img src="http://localhost:5000/assets/boiler-logo-2.svg" alt="logo" />
+                <img src={`${Config.siteUrl}/assets/boiler-logo-2.svg`} alt="logo" />
               </div>
               <div className="info-container">
                 <div></div>

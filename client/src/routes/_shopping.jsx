@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
+import { Config } from '../config/config';
 
 const Shopping = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch(`${Config.siteUrl}/products`)
             .then((response) => response.json())
             .then((data) => setProducts(data));
     }, []);

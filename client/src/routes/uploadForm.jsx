@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import '../styles/upload.css';
 import FileList from '../components/uploadList';
 import ImageGallery from '../components/imageList';
+import { Config } from '../config/config';
 
 export const UploadForm = () => {
   
@@ -80,7 +81,7 @@ export const UploadForm = () => {
           const productPrice = formData.get('purchasing_product_price') * 1.2;
 
           try {
-            const response = await fetch('http://localhost:5000/upload_files', {
+            const response = await fetch(`${Config.siteUrl}/upload_files`, {
               method: 'POST',
               body: formData,
             });
@@ -102,7 +103,7 @@ export const UploadForm = () => {
 
                 try {
                   // Post the product data
-                  const productResponse = await fetch('http://localhost:5000/products', {
+                  const productResponse = await fetch(`${Config.siteUrl}/products`, {
                     method: 'POST',
                     headers: {
                       'Content-Type': 'application/json',
@@ -191,7 +192,7 @@ export const UploadForm = () => {
                           <span> €</span>
                       </div>
                       <div className="input-group product-description">
-                        <label for="product-description">Décrivez votre produit <span className="optional">(optionnel)</span> :</label>
+                        <label htmlFor="product-description">Décrivez votre produit <span className="optional">(optionnel)</span> :</label>
                         <textarea id="product-description" name="product-description" rows="2" cols="100"></textarea>
                       </div>
                       <div className="input-group">

@@ -1,7 +1,7 @@
 const mysql = require('mysql2/promise');
 
 class ConnectionFactory {
-    constructor(host = 'db', user = 'root', password = 'root', database = 'foodcare') {
+    constructor(host = '172.24.0.4', user = 'root', password = 'root', database = 'foodcare') {
       this.host = host;
       this.user = user;
       this.password = password;

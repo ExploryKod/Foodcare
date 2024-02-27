@@ -17,5 +17,5 @@ ENV CHOKIDAR_USEPOLLING=true
 
 # start app
 CMD ["npm", "run", "start:dev"]
-# CMD ["npm", "start"]
+
 
