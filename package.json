@@ -4,8 +4,8 @@
   "description": "E-commerce",
   "main": "server/app.js",
   "scripts": {
-    "start": "cd server && node app.js",
-    "dev": "cd server && nodemon app.js",
+    "start": "cd server && node server/app.js",
+    "dev": "cd server && nodemon server/app.js",
     "sass-watch": "npx sass server/static/style/main.scss server/static/style/main.css",
     "build": "webpack --config webpack.config.js"
   },
