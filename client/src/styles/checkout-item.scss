@@ -8,6 +8,10 @@
   align-items:center;
   justify-content: flex-start;
 
+  .cell {
+    flex:1;
+  }
+
   .image-container {
     width: 15%;
     padding-right: 10px;
@@ -30,7 +34,7 @@
 
   .quantity {
     display: flex;
-   
+    justify-content: center;
 
     .arrow {
       cursor: pointer;

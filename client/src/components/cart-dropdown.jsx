@@ -18,12 +18,17 @@ const CartDropdown = () => {
     };
 
     return (
-        <div className='cart-dropdown-container'>
-            <div className='cart-items'>
-                {cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)}
+        <div className={`cart-dropdown-container ${cartItems.length <= 0 ? "no-cart-items" : ""}`}>
+            {cartItems.length > 0 ?
+                (<>
+                <div className='cart-items'>
+                    {cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)}
+                </div>
+                <Button onClick={goToCheckoutPage}>Valider</Button>
+                </>
+                ): (<p> Vous n'avez pas encore d'articles </p>)}
+
             </div>
-            <Button onClick={goToCheckoutPage}>Valider</Button>
-        </div>
     )
 }
 

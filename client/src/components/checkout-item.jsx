@@ -12,13 +12,13 @@ export const CheckoutItem = ({cartItem}) => {
     const price = parseFloat(product_price) * quantity;
     
     return(
-        <div className='checkout-item-container'>
-            <div className='image-container'>
+        <div className='row checkout-item-container'>
+            <div className='cell image-container'>
                 <img src={imageUrl} alt={`${product_name}`} />
             </div>
-            <span className='name'> {product_name} </span>
-            <span className='quantity'> {quantity}</span>
-            <span className='price'>{price}€</span>
+            <span className='cell name'> {product_name} </span>
+            <span className='cell quantity'> {quantity}</span>
+            <span className='cell price'>{price}€</span>
             <div onClick={removeProductFromCart} className='remove-button'>&#10005;</div>
         </div>
     )

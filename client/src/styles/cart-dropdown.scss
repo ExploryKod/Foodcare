@@ -1,5 +1,7 @@
 .cart-dropdown-container {
   position: absolute;
+  top: 90px;
+  right: 40px;
   width: 240px;
   height: 340px;
   display: flex;
@@ -7,8 +9,6 @@
   padding: 20px;
   border: 1px solid black;
   background-color: white;
-  top: 90px;
-  right: 40px;
   z-index: 5;
 
   .empty-message {
@@ -21,6 +21,24 @@
     display: flex;
     flex-direction: column;
     overflow: scroll;
+  }
+
+  &.no-cart-items {
+    padding: 5px;
+    width: 240px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    p {
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 1.5;
+    }
   }
 
   button {

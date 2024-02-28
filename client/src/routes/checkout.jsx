@@ -26,7 +26,10 @@ const Checkout = () => {
         <div className='checkout-container'>
             <div className='checkout-header'>
                 <div className="header-block">
-                    <span>Description</span>
+                    <span>Produit</span>
+                </div>
+                <div className="header-block">
+                    <span>Nom</span>
                 </div>
                 <div className="header-block">
                     <span>Quantité</span>
@@ -40,7 +43,7 @@ const Checkout = () => {
                 </div>
             </div>
 
-            <div>
+            <div className="body-rows">
                 {cartItems.map((cartItem) => (
                     <CheckoutItem key={cartItem.id} cartItem={cartItem} />
                 ))}
