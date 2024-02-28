@@ -1,11 +1,6 @@
 const { ConnectionFactory } = require('../factory/connectbdd');
 
-const connectionFactory = new ConnectionFactory(
-    process.env.MYSQL_SERVER,
-    process.env.MYSQL_USER,
-    process.env.MYSQL_PASSWORD,
-    process.env.MYSQL_DATABASE
-);
+const connectionFactory = new ConnectionFactory();
 
 async function getAllProducts() {
   const connection = await connectionFactory.createConnection();

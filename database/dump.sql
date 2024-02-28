@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS foodcare;
-
-USE foodcare;
+-- CREATE DATABASE IF NOT EXISTS foodcare;
+--
+-- USE foodcare;
 
 SET NAMES utf8;
 SET time_zone = '+00:00';

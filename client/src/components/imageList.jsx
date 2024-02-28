@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Config } from '../config/config';
+
 const ImageGallery = () => {
   const [imageList, setImageList] = useState([]);
 
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await fetch(`${Config.siteUrl}/images_names`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/images_names`);
         if (response.ok) {
           const data = await response.json();
           setImageList(data.images);

@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import { Config } from '../config/config';
+
 export const CategoriesContext = createContext({
     categoriesData: {},
 });
@@ -9,10 +9,9 @@ export const CategoriesProvider = ({ children }) => {
 
     useEffect(() => {
         const fetchCategories = async () => {
-            console.log("site url", Config.siteUrl)
+
             try {
-                const response = await fetch(`${Config.siteUrl ? "localhost:5000": Config.siteUrl}/products`);
-                console.log(response.text())
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/products`);
                 const data = await response.json();
                 console.log("data products", data);
                 setCategoriesData(data);

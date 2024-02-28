@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Config } from '../config/config';
+
 
 const Connexion = () => {
   const [toggle, setToggle] = useState(true);
@@ -37,7 +37,7 @@ const Connexion = () => {
     }
 
     try {
-      const response = await fetch(`${Config.siteUrl}/auth/logged`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/logged`, {
         method: 'POST',
         body: new URLSearchParams({
           ...formData

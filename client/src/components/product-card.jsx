@@ -3,7 +3,7 @@ import '../styles/product-card.scss';
 import Button from './button';
 import { removeAccent } from '../utils/dataValidation/stringValidation.utils';
 import { CartContext } from '../context/cart.context';
-import { Config } from '../config/config';
+
 
 export const ProductCard = ({ product, category, imageUrl }) => {
     let { product_name, product_price } = product;
@@ -14,10 +14,10 @@ export const ProductCard = ({ product, category, imageUrl }) => {
 
     if(category && product_name){
       let product_nameUrl = product_name.toLowerCase().split(' ').filter(word => word !== '').join('')
-      imageUrl = `${Config.siteUrl}/uploads/${category}_${product_nameUrl}.jpeg`;
+      imageUrl = `${process.env.REACT_APP_API_URL}/uploads/${category}_${product_nameUrl}.jpeg`;
     }
 
-    const standardImage = `${Config.siteUrl}/uploads/generic_food.jpg`
+    const standardImage = `${process.env.REACT_APP_API_URL}/uploads/generic_food.jpg`
 
     return (
         <>

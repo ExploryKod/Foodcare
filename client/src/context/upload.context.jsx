@@ -10,7 +10,7 @@ export const CategoriesProvider = ({ children }) => {
     useEffect(() => {
         const fetchCategoriesUpload = async () => {
             try {
-                const response = await fetch("http://localhost:5000/download_files"); 
+                const response = await fetch(`${process.env.REACT_APP_API_URL}download_files`);
                 const data = await response.json();
                 setCategoriesUploadData(data);
             } catch (error) {

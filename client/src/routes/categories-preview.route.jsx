@@ -2,7 +2,7 @@ import { useState, useEffect, Fragment, useContext } from 'react';
 import { CategoryPreview } from '../components/category-preview.component';
 import { CategoriesContext } from '../context/categories.context';
 import { removeAccent } from '../utils/dataValidation/stringValidation.utils';
-import { Config } from '../config/config';
+
 
 const categoriesFood = [
     { id: 1, title: "Protéines", route: 'shop/proteines' },
@@ -26,7 +26,7 @@ export const CategoriesPreview = () => {
     useEffect(() => {
         const fetchProductByCategory = async () => {
           try {
-            const response = await fetch(`${Config.siteUrl}/products/${category}`);
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/products/${category}`);
             if (response.ok) {
               const data = await response.json();
               setProductsByCategory(data)

@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import '../styles/upload.css';
 import FileList from '../components/uploadList';
 import ImageGallery from '../components/imageList';
-import { Config } from '../config/config';
+
 
 export const UploadForm = () => {
   
@@ -81,7 +81,7 @@ export const UploadForm = () => {
           const productPrice = formData.get('purchasing_product_price') * 1.2;
 
           try {
-            const response = await fetch(`${Config.siteUrl}/upload_files`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/upload_files`, {
               method: 'POST',
               body: formData,
             });
@@ -103,7 +103,7 @@ export const UploadForm = () => {
 
                 try {
                   // Post the product data
-                  const productResponse = await fetch(`${Config.siteUrl}/products`, {
+                  const productResponse = await fetch(`${process.env.REACT_APP_API_URL}/products`, {
                     method: 'POST',
                     headers: {
                       'Content-Type': 'application/json',

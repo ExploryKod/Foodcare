@@ -1,7 +1,13 @@
 const mysql = require('mysql2/promise');
 
+const HOST = process.env.MYSQL_ADDON_HOST
+const USER = process.env.MYSQL_ADDON_USER
+const PASSWORD = process.env.MYSQL_ADDON_PASSWORD
+const DATABASE = process.env.MYSQL_ADDON_DB
+const PORT = process.env.MYSQL_ADDON_PORT
+
 class ConnectionFactory {
-    constructor(host = '172.24.0.4', user = 'root', password = 'root', database = 'foodcare') {
+    constructor(host = HOST, user = USER, password = PASSWORD, database = DATABASE) {
       this.host = host;
       this.user = user;
       this.password = password;
