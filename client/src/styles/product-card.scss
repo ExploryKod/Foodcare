@@ -40,13 +40,13 @@
     justify-content: space-between;
     font-size: 18px;
 
-    .name {
-      width: 90%;
+    .product-name {
+      max-width: 90%;
       margin-bottom: 15px;
     }
 
-    .price {
-      width: 10%;
+    .price-wait  {
+      color: red;
     }
   }
 }

@@ -13,7 +13,6 @@ const CartDropdown = () => {
 
     const { cartItems } = useContext(CartContext);
     const navigate = useNavigate();
-
     const goToCheckoutPage = () => {
         navigate('/checkout')
     };

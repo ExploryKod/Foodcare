@@ -7,7 +7,11 @@ server/node_modules
 
 /.pnp
 .pnp.js
+
 .idea
+
+=======
+/docs
 
 # testing
 /coverage
@@ -17,7 +21,7 @@ server/node_modules
 
 # env variables
 .env
-
+.idea
 # misc
 .DS_Store
 .env.local

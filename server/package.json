@@ -1,19 +1,33 @@
 {
-  "name": "my-app",
+  "name": "foodcare",
   "version": "1.0.0",
-  "description": "Description de mon application",
-  "main": "app.js",
+  "description": "E-commerce",
+  "main": "server/app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
+    "start": "cd server && node app.js",
+    "dev": "cd server && nodemon app.js",
+    "sass-watch": "npx sass server/static/style/main.scss server/static/style/main.css",
     "build": "webpack --config webpack.config.js"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "config": "^3.3.9",
-    "express": "^4.17.1"
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.17.1",
+    "express-session": "^1.17.3",
+    "hbs": "^4.2.0",
+    "he": "^1.2.0",
+    "mongodb": "^6.3.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.3.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.13",
+    "chokidar": "^3.5.3",
+    "nodemon": "^2.0.22",
+    "sass": "^1.62.1",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1"
   }

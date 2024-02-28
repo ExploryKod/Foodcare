@@ -1,0 +1,29 @@
+"id","category_name","category_description","category_image","category_image_path"
+"1","proteines",NULL,NULL,NULL
+"2","legumes",NULL,NULL,NULL
+"3","fruits",NULL,NULL,NULL
+"4","epices",NULL,NULL,NULL
+"5","boissons",NULL,NULL,NULL
+"id","category_id","category","product_name","product_image_url","product_price"
+"1","1","proteines","Poulet Bio","proteines_poulet_bio","25.00"
+"2","1","proteines","Tofu","proteines_tofu","18.00"
+"3","1","proteines","Poisson","proteines_poisson","35.00"
+"4","1","proteines","Edamam","proteines_edamam","25.00"
+"5","1","proteines","Lentilles","proteines_lentilles","18.00"
+"6","1","proteines","Pois Chiches","proteines_pois_chiches","14.00"
+"7","1","proteines","Viande rouge","proteines_viande_rouge","18.00"
+"8","1","proteines","Sardine","proteines_sardine","14.00"
+"9","1","proteines","Green Beans","proteines_green_beans","16.00"
+"10","2","legumes","chou fleur","legumes_chou_fleur","8.00"
+"11","2","legumes","Poivron","legumes_poivron","3.00"
+"12","2","legumes","Tomate","legumes_tomate","4.00"
+"13","2","legumes","Brocoli","legumes_brocoli","5.00"
+"14","2","legumes","Carotte","legumes_carotte","2.00"
+"15","3","fruits","Banane","fruits_banane","1.00"
+"16","3","fruits","Pomme","fruits_pomme","2.00"
+"17","3","fruits","Orange","fruits_orange","1.00"
+"18","3","fruits","Fraise","fruits_fraise","3.00"
+"19","3","fruits","Mangue","fruits_mangue","5.00"
+"20","3","fruits","Apple","proteines_apple","8.00"
+"id","username","first_name","last_name","email","birth_date","password","status","creation_date"
+"1","amaury","amaury","amosa","am@g.com","6/06/1236","password","admin",NULL

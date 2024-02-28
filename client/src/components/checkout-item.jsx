@@ -2,18 +2,21 @@ import '../styles/checkout-item.scss';
 import {useContext} from "react";
 import {CartContext} from "../context/cart.context";
 
-export const CheckoutItem = ({cartItem}) => {
 
-    const { name, imageUrl, price, quantity } = cartItem;
+export const CheckoutItem = ({cartItem}) => {
+    const { product_name, product_image_url, product_price, quantity } = cartItem;
     const {  removeItemFromCart } = useContext(CartContext);
     const removeProductFromCart = () => removeItemFromCart(cartItem);
-
+ 
+    const imageUrl = `${process.env.REACT_APP_API_URL}/uploads/${product_image_url}.jpeg`;
+    const price = parseFloat(product_price) * quantity;
+    
     return(
         <div className='checkout-item-container'>
             <div className='image-container'>
-                <img src={imageUrl} alt={`${name}`} />
+                <img src={imageUrl} alt={`${product_name}`} />
             </div>
-            <span className='name'> {name} </span>
+            <span className='name'> {product_name} </span>
             <span className='quantity'> {quantity}</span>
             <span className='price'>{price}€</span>
             <div onClick={removeProductFromCart} className='remove-button'>&#10005;</div>

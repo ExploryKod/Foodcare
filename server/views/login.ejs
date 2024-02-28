@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		<title>Login</title>
+		<link href="/style/main.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>	
+        <main class="page-connexion">
+            <div class="outer-connexion">
+				<div class="inner-connexion">
+					<% if (toggle) { %>
+					<div class="container-inscription">
+					<form class="form-container" action="" method="post">
+						<div class="form-elem">
+						<input type="text" name="username" id="username" placeholder="Votre prénom" />
+						</div>
+						<div class="form-elem">
+						<input type="text" name="lastname" id="lastname" placeholder="Votre nom" />
+						</div>
+						<div class="form-elem">
+						<input type="text" name="email" id="email" placeholder="Votre email" />
+						</div>
+						<div class="form-elem">
+						<input type="password" name="password" id="password" placeholder="mot de passe" />
+						</div>
+						<div class="form-elem">
+						<input type="number" name="phone" id="phone" placeholder="téléphone" />
+						</div>
+						<div class="form-elem">
+						<button class="btn-1" type="submit">Créer son compte</button>
+						</div>
+						<div class="form-elem">
+						<button type="button" class="btn-2" onclick="setToggle(!toggle)">Se connecter</button>
+						</div>
+					</form>
+					</div>
+					<% } else { %>
+					<div class="container-connexion">
+					<div class="img-container">
+						<img src="./assets/boiler-logo-2.svg" alt="logo" />
+					</div>
+					<div class="info-container">
+						<div></div>
+					</div>
+					<div class="form-container">
+						<form action="auth/logged" method="post">
+						<div class="form-elem">
+							<input type="text" name="username" id="email" placeholder="username" value="" />
+						</div>
+						<div class="form-elem">
+							<input type="password" name="password" id="password" placeholder="Mot de passe" value="" />
+						</div>
+						<div class="form-elem">
+							<button class="btn-1">Se connecter</button>
+						</div>
+						<!-- <div class="form-elem">
+							<button type="button" class="btn-2">Créer un compte</button>
+						</div> -->
+						</form>
+					</div>
+					</div>
+					<% } %>
+				</div>
+            </div>
+        </main>
+</body>
+</html>

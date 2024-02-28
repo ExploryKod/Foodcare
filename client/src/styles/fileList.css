@@ -1,0 +1,108 @@
+:root {
+
+    --font-family: sans-serif;
+
+    --dark-text-color: #03045e;
+    --white-text-color: #fff;
+
+    /* Couleurs des boutons */
+    --btn-border-color: #03045e;
+    --btn-bg-color: hsla(240, 2%, 38%, 0.216);
+    --btn-hover-bg-color: #03045e;
+    --btn-text-color: #03045e;
+    --btn-text-hover-color: #fff;
+
+    /* Couleurs du tableau des clients */
+    --table-header-color: #03045e;
+    --table-row-hover-color: #508AA8;
+    --table-text-hover-color: #fff;
+    --table-border-color: #03045e;
+
+    /* Couleurs du formulaire */
+    --textarea-focus-bg-color: rgba(3, 4, 94, 0.1);
+    --form-field-bg-color: rgba(3, 4, 94, 0.1);
+    --from-field-border-color: #03045e;
+    --required-star-color: #ff0000;
+    --input-border-bottom: #508AA8;
+
+    --input-border: #8b8a8b;
+    --input-focus-h: 245;
+    --input-focus-s: 100%;
+    --input-focus-l: 42%;
+
+    /* Couleur de la fenêtre de confirmation */
+    --modal-container-color: rgba(3, 4, 94, 0.5);
+    --modal-bg-color: #fff;
+    --icon-close-color-hover: #ff0000;
+    --icon-close-color: rgb(3, 4, 94);
+
+
+    --box-shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Liste des clients */
+
+.uplist-title {
+   color: hsl(170, 100%, 15%);
+   text-align: center;
+}
+
+.table-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    box-shadow: 0 0 20px var(--box-shadow-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.table {
+    background-color: transparent;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.table-header, .table-header div {
+    color: #fff;
+    background-color: #03045e;
+}
+
+.body-row, .body-row div {
+    color: #fff;
+    background-color: var(--table-row-hover-color);
+}
+
+.body-row .row-suppress a {
+    color: rgb(115, 14, 14);
+} 
+
+.table-row,
+.body-row {
+    display: grid;
+    text-decoration: none;
+    color: inherit;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    column-gap: 1em;
+    justify-items: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 1em;
+}
+
+.body-row:nth-of-type(odd) {
+    background-color: #caf0f8;
+}
+
+.body-row:nth-last-of-type(1) {
+    border-bottom: 2px solid #03045e;
+}
+
+.table a:hover {
+    background-color: var(--table-row-hover-color);
+    color: var(--table-text-hover-color);
+    cursor: pointer;
+}

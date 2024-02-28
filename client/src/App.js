@@ -4,6 +4,10 @@ import Navigation from "./routes/navigation";
 import Shop from "./routes/shop";
 import SignIn from "./routes/sign-in";
 import Checkout from "./routes/checkout";
+import Shopping from "./routes/shopping";
+import Upload from "./routes/upload";
+import Connexion from './routes/connexion';
+import NotFoundPage from './routes/notFoundPage';
 
 const App = () => {
 
@@ -12,8 +16,11 @@ const App = () => {
       <Route path='/' element={<Navigation />}>
         <Route index element={<Home />} />
         <Route path='shop/*' element={<Shop />} />
-        <Route path='sign-in' element={<SignIn />} />
+        <Route path='connexion' element={<Connexion />} />
         <Route path='checkout' element={<Checkout />} />
+        <Route path='shopping' element={<Shopping />} />
+        <Route path='upload/*' element={<Upload />} />
+        <Route path='*' element={<NotFoundPage category={""} />} />
       </Route>
     </Routes>
 
@@ -21,4 +28,3 @@ const App = () => {
 };
 
 export default App;
-

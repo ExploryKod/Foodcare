@@ -1,25 +1,13 @@
-* {
-  box-sizing: border-box;
-}
+// Bases
+@import './styles/bases/variables';
+@import './styles/bases/reset';
 
-body {
-  margin: 0;
-  padding: 20px 40px;
-  font-family: 'Orkney', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+// Utilities
+@import './styles/utilities/alert.scss';
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+// Components
+@import './styles/components/buttons';
 
-a {
-  text-decoration: none;
-  color: black;
-}
-
-li {
-  list-style: none;
-}
+// Pages
+@import './styles/pages/connexion';
+@import './styles/pages/404';

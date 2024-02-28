@@ -1,36 +1,32 @@
 import { createContext, useState, useEffect } from "react";
-import SHOP_DATA from "../shop-data";
-
-import { addCollectionAndDocuments, getCategoriesAndDocuments } from "../utils/firebase/firebase.utils";
 
 export const CategoriesContext = createContext({
-    categoriesMap: {},
+    categoriesData: {},
 });
 
 export const CategoriesProvider = ({ children }) => {
-    const [categoriesMap, setCategoriesMap] = useState({});
-    
+    const [categoriesData, setCategoriesData] = useState({});
+
     useEffect(() => {
-        addCollectionAndDocuments('categories', SHOP_DATA)
+        const fetchCategories = async () => {
+
+            try {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/products`);
+                const data = await response.json();
+                console.log("data products", data);
+                setCategoriesData(data);
+            } catch (error) {
+                console.error("Error fetching categories:", error);
+            }
+
+        };
+
+        fetchCategories()
     }, [])
+    
+    const data_product = { categoriesData };
 
-    useEffect(()  => {
-        const getCategoriesMap = async () => {
-            const categoryMap = await getCategoriesAndDocuments();
-            
-            setCategoriesMap(categoryMap);
-        }
-        getCategoriesMap();
-    }, [])
-
-
-    // Désactivation car on a en eu besoin que pour la crétion initial de la collection 'categories' dans Firestore
-    // useEffect(() => {
-    //     addCollectionAndDocuments('categories', SHOP_DATA);
-    // }, [])
-
-    const value = { categoriesMap };
     return (
-        <CategoriesContext.Provider value={value}> {children}</CategoriesContext.Provider>
+        <CategoriesContext.Provider value={data_product}> {children}</CategoriesContext.Provider>
     )
 }

@@ -1,26 +1,22 @@
 import { Link } from 'react-router-dom';
 import { ProductCard } from './product-card';
 import '../styles/category-preview.scss';
+import { removeAccent } from '../utils/dataValidation/stringValidation.utils';
 
-export const CategoryPreview = ({ title, products }) => {
+export const CategoryPreview = ({ title, categories, products }) => {
+
     return(
         <div className='category-preview-container'>
             <h2>
-                <Link  className='title' to={title}>
+                <Link  className='title' to={removeAccent(title.toLowerCase())}>
                     {title.toUpperCase()}
                 </Link>
             </h2>
             <div className='preview'>
-                {
-                    products
-                    .filter((_,idx) => idx < 4)
-                    .map((product) => 
-                    <ProductCard key={product.id} product={product} />
-                    )
-                }
+                <ProductCard product={products} category={categories}/>
             </div>
         </div>
-
+ 
     )
 }
 

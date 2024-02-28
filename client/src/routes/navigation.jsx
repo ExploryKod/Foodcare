@@ -29,9 +29,12 @@ const Navigation = () => {
                     <Link className='nav-link' to='/shop'>
                         BOUTIQUE
                     </Link>
-                    {/* <Link className='nav-link' to='/sign-in'>
+                    <Link className='nav-link' to='/upload'>
+                        UPLOADS
+                    </Link>
+                    <Link className='nav-link' to='/connexion'>
                         S'INSCRIRE
-                    </Link> */}
+                    </Link>
                     <CartIcon />
                 </div>
                 {isCartOpen && <CartDropdown />}
