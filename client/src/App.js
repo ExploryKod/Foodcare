@@ -2,12 +2,12 @@ import { Routes, Route } from 'react-router-dom';
 import Home from "./routes/home";
 import Navigation from "./routes/navigation";
 import Shop from "./routes/shop";
-import SignIn from "./routes/sign-in";
 import Checkout from "./routes/checkout";
 import Shopping from "./routes/shopping";
 import Upload from "./routes/upload";
 import Connexion from './routes/connexion';
 import NotFoundPage from './routes/notFoundPage';
+import CartSummary from "./routes/cartSummary";
 
 const App = () => {
 

@@ -1,13 +1,17 @@
 // Bases
 @import './styles/bases/variables';
 @import './styles/bases/reset';
+@import './styles/bases/responsive';
 
 // Utilities
 @import './styles/utilities/alert.scss';
 
 // Components
 @import './styles/components/buttons';
-
+@import 'styles/components/paiement';
+@import 'styles/components/tooltip';
 // Pages
 @import './styles/pages/connexion';
 @import './styles/pages/404';
+
+@import './styles/checkout';

@@ -23,7 +23,7 @@ const FileList = () => {
   }, []);
 
   return (
-    <div>
+    <div className={"file-list"}>
       <h2 className="uplist-title">Noms des fichiers dans votre espace</h2>
       <section className="table-container">
           <div id="table">
