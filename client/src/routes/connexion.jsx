@@ -107,7 +107,7 @@ const Connexion = () => {
           ) : (
             <div className="container-connexion">
               <div className="img-container">
-                <img src={`${Config.siteUrl}/assets/boiler-logo-2.svg`} alt="logo" />
+                {/*<img src={`${Config.siteUrl}/assets/boiler-logo-2.svg`} alt="logo" />*/}
               </div>
               <div className="info-container">
                 <div></div>

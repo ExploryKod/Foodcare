@@ -25,9 +25,9 @@ const ImageGallery = () => {
     <>
     <h1>Image Gallery</h1>
     <div className="upload-image-gallery">
-      {imageList.filter((image, index)=> index < 10).map((image, index) => (
-        <img key={index} src={`${Config.siteUrl}/uploads/${image}`} alt={`${index}`} />
-      ))}
+      {/*{imageList.filter((image, index)=> index < 10).map((image, index) => (*/}
+      {/*  <img key={index} src={`${Config.siteUrl}/uploads/${image}`} alt={`${index}`} />*/}
+      {/*))}*/}
     </div>
     </>
   );
