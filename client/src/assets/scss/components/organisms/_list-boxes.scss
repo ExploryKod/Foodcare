@@ -1,0 +1,63 @@
+#nos-avantages {
+    .container__inner {
+      z-index: -2;
+      width: 100%;
+      padding: 50px 50px 75px 50px;
+      background-color: $gray-100;
+    }
+
+    .upperRow > div {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+    }
+
+    .mainRow {
+      margin-top: 60px;
+      row-gap: 30px;
+
+      .box-asset {
+        display: flex;
+        flex-direction: column;
+        row-gap: 14px;
+
+        &__icon {
+          display: flex;
+          position: relative;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          color: $white;
+          font-size: 45px;
+
+          &::before {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            border-radius: 100px;
+            background-color: $primary;
+          }
+        }
+
+        &__title {
+          margin: 0;
+          font-family: $font-text;
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 1.2;
+          text-align: center;
+        }
+
+        &__text {
+          margin-top: 0;
+          font-family: $font-text;
+          font-size: 18px;
+          font-weight: 300;
+          line-height: calc(22 / 18);
+          text-align: center;
+        }
+      }
+    }
+  }

@@ -1,0 +1,15 @@
+.items-rows {
+  .mainRow {
+    margin-top: 32px;
+    justify-content: space-between;
+    row-gap: 30px;
+    div {
+      max-width: 150px;
+      img {
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
+  }
+}
+  

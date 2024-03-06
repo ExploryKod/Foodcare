@@ -1,5 +1,4 @@
 import { useState, useRef } from 'react';
-import '../styles/upload.css';
 import FileList from '../components/uploadList';
 import ImageGallery from '../components/imageList';
 
@@ -193,7 +192,7 @@ export const UploadForm = () => {
                       </div>
                       <div className="input-group product-description">
                         <label htmlFor="product-description">Décrivez votre produit <span className="optional">(optionnel)</span> :</label>
-                        <textarea id="product-description" name="product-description" rows="2" cols="100"></textarea>
+                        <textarea id="product-description" name="product-description" rows="10"></textarea>
                       </div>
                       <div className="input-group">
                         <label htmlFor="files">Chargez le fichier: </label>

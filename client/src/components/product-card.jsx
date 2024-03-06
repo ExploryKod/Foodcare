@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import '../styles/product-card.scss';
 import Button from './button';
 import { removeAccent } from '../utils/dataValidation/stringValidation.utils';
 import { CartContext } from '../context/cart.context';

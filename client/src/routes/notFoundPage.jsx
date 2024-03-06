@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import notFoundImage from '../assets/not_found.jpg';
+import notFoundImage from '../assets/img/not_found.jpg';
 
 export const NotFoundPage = ({category}) => {
     const path = window.location.pathname;

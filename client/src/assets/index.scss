@@ -1,0 +1,82 @@
+// 1. Configuration and helpers
+@import './scss/abstracts/functions';
+@import './scss/abstracts/mixins';
+@import './scss/abstracts/variables';
+
+@import './scss/abstracts/animations';
+@import './scss/abstracts/keyframes';
+@import './scss/abstracts/responsive';
+
+// 2. Vendors
+@import './lib/bootstrap5/scss/bootstrap-reboot';
+@import './lib/bootstrap5/scss/bootstrap-grid';
+@import './lib/bootstrap5/scss/card';
+@import './scss/vendors/reset';
+
+// 3. Base stuff
+@import './scss/base/root';
+@import './scss/base/base';
+@import './scss/base/fonts';
+@import './scss/base/typography';
+@import './scss/base/helpers';
+
+// 4. Layout-related sections (partials)
+@import './scss/partials/header';
+@import './scss/partials/footer';
+@import './scss/partials/navigation';
+
+// 5. Components
+
+// 5.1 Molecules
+@import './scss/components/molecules/alert';
+@import './scss/components/molecules/tooltip';
+@import './scss/components/molecules/button';
+@import './scss/components/molecules/buttons';
+@import './scss/components/molecules/items-rows';
+@import './scss/components/molecules/loader';
+@import './scss/components/molecules/alert';
+@import './scss/components/molecules/form-input.styles';
+@import './scss/components/molecules/cart-icon';
+@import './scss/components/molecules/cart-dropdown';
+
+// 5.2 Organisms
+@import './scss/components/organisms/text-cards-horizon';
+@import './scss/components/organisms/box-cards';
+@import './scss/components/organisms/three-col-block';
+@import './scss/components/organisms/list-boxes';
+@import './scss/components/organisms/paiement';
+@import './scss/components/organisms/cart-item';
+@import './scss/components/organisms/checkout-item';
+@import './scss/components/organisms/food-card';
+@import './scss/components/organisms/fileList';
+@import './scss/components/organisms/product-card';
+@import './scss/components/organisms/image-text';
+
+// 5.3 Other components
+@import './scss/components/modals/modal';
+
+// 6. Page-specific styles
+@import './scss/pages/home';
+@import './scss/pages/404';
+@import './scss/pages/connexion';
+@import './scss/pages/checkout';
+@import './scss/pages/shop';
+@import './scss/pages/upload/upload';
+
+// 6.1 layouts
+@import './scss/pages/layout/layout-main';
+@import './scss/pages/layout/categories';
+@import './scss/pages/layout/categories-container';
+@import './scss/pages/layout/category';
+@import './scss/pages/layout/category-preview';
+
+// 6.2 Page home sections
+@import './scss/pages/home/section-hero';
+@import './scss/pages/home/mission-section';
+@import './scss/pages/home/team-section';
+@import './scss/pages/home/our-projects';
+@import './scss/pages/home/section-contact';
+
+// 7. Themes
+@import './scss/themes/default';
+

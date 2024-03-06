@@ -1,0 +1,100 @@
+.main__contact-section {
+  background-color: $white;
+
+  .contact-address {
+    display: flex;
+    gap: 10px;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 30px;
+      min-width: 30px;
+      height: 30px;
+      //background: url('') no-repeat center center/cover;
+    }
+  }
+
+  .contact-tel {
+    display: flex;
+    position: relative;
+    gap: 10px;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 30px;
+      min-width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      //background: url('') no-repeat center center/cover;
+    }
+  }
+
+  .contact-schedules {
+    display: flex;
+    gap: 10px;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 30px;
+      min-width: 30px;
+      height: 30px;
+      //background: url('./img/icones/els-horaires.svg') no-repeat center center/cover;
+    }
+  }
+
+  // Leaflet map class
+  #map {
+    z-index: $z-index-high;
+    width: 90%;
+    height: 380px;
+
+    @include media-breakpoint-up(sm) {
+      max-width: 695px;
+      height: 474px;
+    }
+  }
+
+  .contact-container {
+    height: 100%;
+
+    &__email {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      @include media-breakpoint-up(lg) {
+        margin-top: 0;
+        width: 75%;
+        height: 75%;
+        padding: 20px 30px;
+        border: 2px solid $primary;
+        border-radius: 5px;
+      }
+
+      .contact-email-text {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        color: $primary;
+        display: flex;
+        gap: 10px;
+
+        &::before {
+          content: '';
+          display: block;
+          width: 30px;
+          min-width: 30px;
+          height: 30px;
+          //background: url('./img/icones/els-contact.svg') no-repeat center center/cover;
+        }
+      }
+
+      .contact-email__link {
+        color: $primary;
+      }
+    }
+  }
+}

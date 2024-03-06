@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { UploadForm }  from './uploadForm';
 import { UploadCategory } from './uploadCategory'
-import '../styles/shop.scss';
+
 
 const Upload = () => {
 

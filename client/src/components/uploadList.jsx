@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/fileList.css';
 
 const FileList = () => {
   const [fileList, setFileList] = useState([]);
@@ -23,7 +22,7 @@ const FileList = () => {
   }, []);
 
   return (
-    <div>
+    <div className={"file-list"}>
       <h2 className="uplist-title">Noms des fichiers dans votre espace</h2>
       <section className="table-container">
           <div id="table">

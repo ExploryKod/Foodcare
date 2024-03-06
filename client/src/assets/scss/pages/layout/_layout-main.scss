@@ -1,0 +1,27 @@
+.page-home {
+    flex: 1;
+    overflow: hidden;
+      
+    section {
+        padding-top: var(--section-padding-top);
+        padding-bottom: var(--section-padding-bottom);
+    }
+
+    #mission {
+        &:target {
+            padding-top: calc(var(--header-height)*1.2);
+        }
+    }
+
+    #nos-projets {
+        &:target {
+            padding-top: calc(var(--header-height)*1.2);
+        }
+    }
+
+    #qui-sommes-nous {
+        &:target {
+            padding-top: calc(var(--header-height)*1.2);
+        }
+    }
+}

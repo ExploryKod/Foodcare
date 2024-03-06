@@ -1,0 +1,289 @@
+// Img
+$pictures-path: '../img';
+
+//fonts
+$fonts-path: './fonts';
+$icomoon-font-path: '#{$fonts-path}';
+
+$font-montserrat: "Montserrat", sans-serif;
+
+$font-pretitle: $font-montserrat;
+$font-title: $font-montserrat;
+$font-text:  $font-montserrat;
+
+$theme-fonts: (
+  'font-title': $font-title,
+  'font-text': $font-text
+);
+
+// Font-sizes must be converted to rem, use function calculate-rem or min-max-interpolation
+$font-sizes: (
+  16: calculate-rem(16)
+);
+
+// Typography sizes
+$title-sizes-mobile: (
+  1: 36,
+  2: 28,
+  3: 25,
+  4: 22,
+  5: 20,
+  6: 17,
+  7: 16
+);
+
+$title-sizes-xl: (
+  1: 70,
+  2: 48,
+  3: 38,
+  4: 30,
+  5: 24,
+  6: 18,
+  7: 17
+);
+
+// Font Weight
+$fw-light: 300;
+$fw-bold: bold;
+
+$state-colors: (
+  'danger': #dc3545,
+  'warning': #ffc107,
+  'info': #17a2b8,
+  'success': #28a745
+);
+
+//colors
+$primary: #004aad;
+$primary-darken: darken(#004aad, 4%);
+$primary-05: rgb(0, 74, 173, 0.5);
+$primary-08: rgb(0, 74, 173, 0.8);
+
+$secondary: #0036a3;
+$secondary-darken: darken(#0036a3, 4%);
+$secondary-08: rgba(0, 54, 163, 0.8);
+
+$tertiary: #00AD9C;
+$tertiary-darken: darken($tertiary, 4%);
+$tertiary-08: rgba(0, 173, 156, 0.8);
+
+$horizon: hsl(215, 51%, 80%);
+$horizon-darken: darken($horizon, 4%);
+
+$gray-50: #fbfbfb; // custom ok
+$gray-100: #f6f6f6; // custom ok
+$gray-200: #e5e5e5;
+$gray-300: #d4d4d4;
+$gray-400: #a3a3a3;
+$gray-500: #727673; // custom ok
+$gray-600: #525252;
+$gray-700: #404040;
+$gray-800: #262626;
+$gray-900: #171717;
+
+$white: #fff;
+$black: #262c28;
+
+// Colors must be named in kebab case based on this : https://colornamer.robertcooper.me/
+$colors: (
+  'primary': $primary,
+  'primary-darken': $primary-darken,
+  'primary-08': $primary-08,
+  'secondary': $secondary,
+  'secondary-darken': $secondary-darken,
+  'secondary-08': $secondary-08,
+  'tertiary': $tertiary,
+  'tertiary-darken': $tertiary-darken,
+  'tertiary-08': $tertiary-08,
+
+  'gray-100': $gray-100,
+  'gray-200': $gray-200,
+  'gray-300': $gray-300,
+  'gray-400': $gray-400,
+  'gray-500': $gray-500,
+  'gray-600': $gray-600,
+  'gray-700': $gray-700,
+  'gray-800': $gray-800,
+  'gray-900': $gray-900,
+  'white': $white,
+  'black': $black,
+  'text-color': $gray-400,
+  'input-color': $gray-400,
+  'bg-color': $gray-100
+);
+
+$custom-variable-prefix: els-;
+
+$spacings: (
+  base: calculate-rem(30)
+);
+
+// breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px,
+  fhd: 1700px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+  fhd: 1440px
+);
+
+$z-index-max: 3;
+$z-index-high: 2;
+$z-index-medium: 1;
+$z-index-normal: 0;
+$z-index-less: -1;
+$z-index-max-less: -2;
+
+$contact-us-br: 30px 0 0 30px;
+
+// radius
+$border-radius-sm: 5px;
+$border-radius-md: 10px;
+$border-radius-xl: 20px;
+
+
+//general colors
+$dci-neutral-bg: #ffffff;
+$dci-dark-blue: #142cac;
+$dci-dark-black: #000000;
+$dci-medium-grey: #cccccc;
+$dci-beige: #f4ece4;
+
+// text colors
+$dci-title-blue: $dci-dark-blue;
+$text-dark-color: $dci-dark-black;
+$text-light-color: $dci-neutral-bg;
+
+// btn colors
+$btn-color: $dci-dark-blue;
+$btn-color-hover: #227ed4;
+$bg-color: $dci-neutral-bg;
+
+
+//---------
+
+$orange-1 : #e81212;
+$orange-2 : #78d302f5;
+$orange-3 : #4c5e0f;
+$orange-4 : #4a4b35;
+$grey : rgb(67, 67, 65);
+$grey-2:#e4e4e7;
+$light: #f5f5f7;
+$blue : hsl(210, 35%, 27%);
+$blue-2: rgba(78, 120, 162,0.9);
+$SF-PRO-DISPLAY-MEDIUM: 'Arial';
+$SF-PRO-DISPLAY-REGULAR: 'Arial';
+
+/* z index scale */
+$z-least: -9999;
+$z-less-xl: -1000;
+$z-less-lg: -100;
+$z-base: 1;
+$z-more-lg: 100;
+$z-more-xl: 1000;
+$z-toppest: 9999;
+
+/* Rouded corners */
+$round: 2px;
+$round-xxs: 4px;
+$round-xs: 8px;
+$round-sm: 10px;
+$round-md: 15px;
+$round-lg: 20px;
+$round-xl: 25px;
+$round-xxl: 30px;
+$round-circle: 50%;
+$round-pill: 500px;
+
+/* Breakpoints */
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1440px,
+        fhd: 1900px
+);
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px,
+        xxl: 1320px,
+        fhd: 1440px
+);
+
+/* Spacings */
+$spacing: 10px;
+
+/* General Colors */
+$darkpink: #A3298B;
+$darkLavender: #A6A8C9;
+$darkLavender-80: rgba(166, 168, 201,80%);
+$darkBlue : #161C3D;
+$mediumBlue: hsl(210, 35%, 27%);
+$light: #f5f5f7;
+$lightLavender : #F2F3F7;
+$lightLavender-80 : rgba(242, 243, 247,80%);
+
+/* greys */
+$grey : rgb(67, 67, 65);
+$grey-2:#e4e4e7;
+
+/* Semantic colors */
+$warning : #de392a;
+$success : #00ff00;
+$success-darker : #4c5e0f;
+$danger-2 : #e81212;
+$success-2 : #78d302f5;
+$required-star-color: #de392a;
+$blue-2: rgba(78, 120, 162,0.9);
+
+/* Text colors */
+$dark-text-color : #03045e;
+$white-text-color : #fff;
+
+/* Buttons colors */
+$btn-border-color: #03045e;
+$btn-bg-color: hsla(240, 2%, 38%, 0.216);
+$btn-hover-bg-color: #03045e;
+$btn-text-color: #03045e;
+$btn-text-hover-color: #fff;
+
+/* Table colors */
+$table-header-color: #03045e;
+$table-row-hover-color: #508AA8;
+$table-text-hover-color: #fff;
+$table-border-color: #03045e;
+
+/* forms colors */
+$textarea-focus-bg-color: rgba(3, 4, 94, 0.1);
+$form-field-bg-color: rgba(3, 4, 94, 0.1);
+$from-field-border-color: #03045e;
+$required-star-color: #ff0000;
+$input-border-bottom: #508AA8;
+
+$input-border: #8b8a8b;
+$input-focus-h: 245;
+$input-focus-s: 100%;
+$input-focus-l: 42%;
+
+/* modal colors */
+$modal-container-color: rgba(3, 4, 94, 0.5);
+$modal-bg-color: #fff;
+$icon-close-color-hover: #ff0000;
+$icon-close-color: rgb(3, 4, 94);
+$box-shadow-color: rgba(0, 0, 0, 0.2);

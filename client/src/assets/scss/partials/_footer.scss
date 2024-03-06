@@ -1,0 +1,44 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+.els-footer {
+  background-color: $tertiary;
+  padding: 10px;
+  color: $white;
+  font-size: 14px;
+
+  @include media-breakpoint-down(lg) {
+    text-align: center;
+  }
+
+  .mainRow {
+    justify-content: space-between;
+    row-gap: 20px;
+  }
+
+  .footer-list {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+
+    @include media-breakpoint-up(sm) {
+      flex-direction: row;
+    }
+
+    @include media-breakpoint-up(md) {
+      justify-content: flex-end;
+    }
+  }
+
+  a {
+    color: $white;
+
+    @include on-event {
+      color: $white;
+    }
+  }
+}

@@ -2,7 +2,7 @@ import { useContext, useState, useEffect, Fragment } from 'react';
 import { removeAccent } from '../utils/dataValidation/stringValidation.utils';
 import { useParams } from 'react-router-dom';
 import { CategoriesUploadContext } from '../context/upload.context';
-import '../styles/category.scss';
+
 
 export const UploadCategory = () => {
     let { category_upload } = useParams();

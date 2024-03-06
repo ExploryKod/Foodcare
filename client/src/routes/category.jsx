@@ -4,7 +4,7 @@ import { CategoriesContext } from '../context/categories.context';
 import { ProductCard } from '../components/product-card';
 import NotFoundPage from './notFoundPage';
 import { removeAccent } from '../utils/dataValidation/stringValidation.utils';
-import '../styles/category.scss';
+
 
 export const Category = () => {
     let { category } = useParams();

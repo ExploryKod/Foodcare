@@ -1,0 +1,113 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass functions.
+// -----------------------------------------------------------------------------
+
+@function get-unit($value) {
+  @return str-slice($value * 0 + '', 2, -1);
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    $temp: $number * 0 + 1;
+
+    @return calc($number / ($temp));
+  }
+
+  @return $number;
+}
+
+@function calculate-rem($size) {
+  @return calc(($size / 16) * 1rem);
+}
+
+// Get variables from object
+@function variable-get($group-name, $variable-name) {
+  @if map-has-key($group-name, $variable-name) {
+    @return map-get($group-name, $variable-name);
+  } @else {
+    @warn 'Unfortunately, no value could be retrieved from `#{$variable-name}`. ' + 'Please make sure it is defined in `#{$group-name}` map.';
+
+    @return null;
+  }
+}
+
+@function hex-to-rgb($hexColor) {
+  @return '#{red($hexColor)},#{green($hexColor)},#{blue($hexColor)}';
+}
+
+@function hex-to-hsl($hexColor) {
+  $h: strip-unit(hue($hexColor));
+  $s: saturation($hexColor);
+  $l: lightness($hexColor);
+
+  @return '#{calc($h / 100 * 100%)} #{$s} #{$l}';
+}
+
+@function variable-get-last-item($group-name) {
+  @each $key, $value in $group-name {
+    $var: index(($group-name), ($key $value));
+
+    @if $var == length($group-name) {
+      @return $value;
+    }
+  }
+}
+
+@function min-max-interpolation($min-value, $max-value, $min-breakpoint, $max-breakpoint, $container-unit: 1vw) {
+  // Convert en rem si la valeur est en pixels
+  @if get-unit($min-value) == 'px' {
+    $min-value: calculate-rem(strip-unit($min-value));
+  }
+  // Convert en rem si la valeur n'a pas d'unité
+  @if unitless($min-value) {
+    $min-value: calculate-rem($min-value);
+  }
+
+  @if get-unit($max-value) == 'px' {
+    $max-value: calculate-rem(strip-unit($max-value));
+  }
+  @if unitless($max-value) {
+    $max-value: calculate-rem($max-value);
+  }
+
+  @if get-unit($min-breakpoint) == 'px' {
+    $min-breakpoint: calculate-rem(strip-unit($min-breakpoint));
+  }
+  @if unitless($min-breakpoint) {
+    $min-breakpoint: calculate-rem($min-breakpoint);
+  }
+
+  @if get-unit($max-breakpoint) == 'px' {
+    $max-breakpoint: calculate-rem(strip-unit($max-breakpoint));
+  }
+  @if unitless($max-breakpoint) {
+    $max-breakpoint: calculate-rem($max-breakpoint);
+  }
+
+  $factor: calc(1 / ($max-breakpoint - $min-breakpoint) * ($max-value - $min-value));
+  $calc-value: unquote('#{$min-value - ($min-breakpoint * $factor)} + #{calc((100 * $container-unit) * $factor)}');
+
+  @return clamp(#{if($min-value > $max-value, $max-value, $min-value)}, #{$calc-value}, #{if($min-value > $max-value, $min-value, $max-value)});
+}
+
+//@function makeCSSVariables($css-variable-name) {
+//  // Colors
+//  @if map-has-key($theme-colors, $css-variable-name) {
+//    $value: variable-get($theme-colors, $css-variable-name);
+//
+//    @return var(--#{$custom-variable-prefix}#{$css-variable-name}, #{$value});
+//    // fonts
+//  } @else if map-has-key($theme-fonts, $css-variable-name) {
+//    $value: variable-get($theme-fonts, $css-variable-name); // fonts map (object)
+//    $fallback: variable-get($theme-fonts, 'font-fallback'); // fallback fonts map (object)
+//    $fallback-name: variable-get($fallback, $value); // fallback font selected map (object)
+//    $fallback-font: variable-get($fallback-name, 'font');
+//    $fallback-style: variable-get($fallback-name, 'style');
+//
+//    @return var(--#{$custom-variable-prefix}#{$css-variable-name}, #{$fallback-font}, #{$fallback-style});
+//  } @else {
+//    @warn "Unfortunately, no value could be retrieved from objects.";
+//
+//    @return null;
+//  }
+//}

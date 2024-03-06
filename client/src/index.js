@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { CategoriesProvider } from './context/categories.context'
 import { CartProvider } from './context/cart.context';
 
-import './index.scss';
+import './assets/index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

@@ -1,9 +1,7 @@
 import {React, useState, useEffect } from 'react';
 import { useContext } from 'react';
 import { CartContext } from '../context/cart.context';
-import { CheckoutItem } from '../components/checkout-item';
-
-import '../styles/checkout.scss';
+import CartSummary from "./cartSummary";
 const Checkout = () => {
     const { cartItems } = useContext(CartContext);
     const [total, setTotal] = useState(0);
@@ -22,34 +20,32 @@ const Checkout = () => {
     
 
     return (
+        <section className={"checkout-container"}>
+        {(cartItems && cartItems?.length > 0) ? (
+                <article className="table-container">
+                    <div className="table">
 
-        <div className='checkout-container'>
-            <div className='checkout-header'>
-                <div className="header-block">
-                    <span>Produit</span>
-                </div>
-                <div className="header-block">
-                    <span>Nom</span>
-                </div>
-                <div className="header-block">
-                    <span>Quantité</span>
-                </div>
-                <div className="header-block">
-                    <span>Prix</span>
-                </div>
-                <div className="header-block">
-                    <span>Retirer</span>
+                            <div className="table-header">
+                                <div>Produit</div>
+                                <div>Commande</div>
+                                <div>Quantité</div>
+                                <div>Prix</div>
+                                <div>Actions</div>
+                            </div>
 
-                </div>
-            </div>
+                        {cartItems && cartItems?.map((cartItem) => (
+                            <CartSummary key={cartItem.id} cartItem={cartItem} />
+                        ))}
+                    </div>
+                    <div className="result-container">
+                        <span className='total'>TOTAL: {`${total}`} €</span>
+                    </div>
+                </article>
 
-            <div className="body-rows">
-                {cartItems.map((cartItem) => (
-                    <CheckoutItem key={cartItem.id} cartItem={cartItem} />
-                ))}
-            </div>
-            <span className='total'>TOTAL: {`${total}`} €</span>
-        </div>
+            ): (<article className={"category-container"}>
+                <p className="category-text">Il n'y a pas de produits dans votre panier.</p>
+                </article>)}
+        </section>
     );
 };
 

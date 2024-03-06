@@ -1,0 +1,91 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass root properties.
+// -----------------------------------------------------------------------------
+
+:root {
+  --scrollbarsize: 17px;
+  --screen-size: calc(100vw - var(--scrollbarsize, 0px));
+  --header-height: 70px;
+  --header-padding: 5px 15px;
+  --header-logo-padding: 5px 0;
+
+  // Sections
+  --section-padding-top: 40px;
+  --section-padding-bottom: 40px;
+  --section-margin-top: 0;
+  --section-margin-bottom: 0;
+
+  // titles
+  --pre-title-size: 30px;
+  --title-xl-size: 40px;
+  --title-lg-size: 35px;
+  --text-xs-size: 14px;
+  --text-size: 18px;
+  --text-xl-size: 20px;
+  --font-list-size: 18px;
+
+  //--custom-vw: 100vw;
+
+  @include media-breakpoint-up(md) {
+    --title-xl-size: 40px;
+    --title-lg-size: 35px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    --header-height: 90px;
+    --header-padding: 10px;
+    --header-logo-padding: 0;
+    --title-xl-size: 35px;
+    --title-lg-size: 30px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    --header-height: 110px;
+    --header-padding: 15px;
+    --header-logo-padding: 0;
+    --title-xl-size: 40px;
+    --title-lg-size: 35px;
+  }
+
+  @each $state-color, $value in $state-colors {
+    --color-#{$state-color}: #{$value};
+    --color-rgb-#{$state-color}: #{hex-to-rgb($value)};
+    // --color-hsl-#{$state-color}: #{hex-to-hsl($value)};
+  }
+
+  @each $color, $value in $colors {
+    --color-#{$color}: #{$value};
+    --color-rgb-#{$color}: #{hex-to-rgb($value)};
+    // --color-hsl-#{$color}: #{hex-to-hsl($value)};
+  }
+
+  @each $spacing, $value in $spacings {
+    --spacing-#{$spacing}: #{$value};
+  }
+
+  @each $size, $value in $font-sizes {
+    --font-level-#{$size}: #{$value};
+  }
+
+  @each $color, $value in $theme-colors {
+    --#{$custom-variable-prefix}#{$color}: #{$value};
+  }
+
+  @each $bp, $value in $grid-breakpoints {
+    --#{$custom-variable-prefix}breakpoint-#{$bp}: #{$value};
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    --nomotion: none;
+  }
+
+  @each $bp, $value in $container-max-widths {
+    @include media-breakpoint-up(#{$bp}) {
+      --#{$custom-variable-prefix}container-max-width: #{$value};
+    }
+  }
+
+  @media (min-width: 2000px) {
+    --custom-vw: 2000px;
+  }
+}

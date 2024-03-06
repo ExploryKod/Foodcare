@@ -1,0 +1,63 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+/// Make a context based selector a little more friendly
+/// @author Kitty Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+
+@mixin text-shorten {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin hidden {
+  display: none;
+  visibility: hidden;
+}
+
+@mixin unselectable {
+  pointer-events: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+@mixin inset($number) {
+  @supports (inset: $number) {
+    inset: $number;
+  }
+  @supports not (inset: $number) {
+    top: $number;
+    left: $number;
+    bottom: $number;
+    right: $number;
+  }
+}
