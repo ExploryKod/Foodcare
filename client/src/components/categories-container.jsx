@@ -1,10 +1,10 @@
 import CategoryItem from "./category-food";
-import imageVeg from "../img/categories/vegetables.jpeg";
-import beverage from "../img/categories/beverage.jpeg";
-import proteines from "../img/categories/proteines.jpeg";
-import spices from "../img/categories/spices.jpeg";
-import feculents from "../img/categories/feculents.jpeg";
-import recipes from "../img/categories/recipes.jpg";
+import imageVeg from "../assets/img/categories/vegetables.jpeg";
+import beverage from "../assets/img/categories/beverage.jpeg";
+import proteines from "../assets/img/categories/proteines.jpeg";
+import spices from "../assets/img/categories/spices.jpeg";
+import feculents from "../assets/img/categories/feculents.jpeg";
+import recipes from "../assets/img/categories/recipes.jpg";
 
 const categories = [
     { id: 1, title: "Protéines", imageUrl: proteines, route: 'shop/proteines' },

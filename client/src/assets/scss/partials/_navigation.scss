@@ -1,6 +1,9 @@
 .navigation {
   position: absolute;
   top: 0;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%) ;
   height: var(--header-height);
   width: 100%;
   max-width: 1440px;

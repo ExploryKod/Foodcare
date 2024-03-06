@@ -1,7 +1,8 @@
 .category-preview-container {
+  max-width: 1440px;
+  margin: 30px auto;
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
 
   .title {
     font-size: 28px;

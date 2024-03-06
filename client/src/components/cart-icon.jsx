@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ReactComponent as BasketIcon } from '../img/categories/shopping-bag.svg';
+import { ReactComponent as BasketIcon } from '../assets/img/categories/shopping-bag.svg';
 import { CartContext } from '../context/cart.context';
 
 const CartIcon = () => {
