@@ -1,8 +1,5 @@
-import { useState, useEffect, Fragment, useContext } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import { CategoryPreview } from '../components/category-preview.component';
-import { CategoriesContext } from '../context/categories.context';
-import { removeAccent } from '../utils/dataValidation/stringValidation.utils';
-
 
 const categoriesFood = [
     { id: 1, title: "Protéines", route: 'shop/proteines' },

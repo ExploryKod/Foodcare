@@ -1,7 +1,4 @@
 import { useState }  from 'react';
-import '../styles/button.scss';
-import '../styles/form-input.styles.scss';
-
 // Nous créons cet objet qui sera la valeur de départ de useState
 // Nous destructurons l'objet ensuite dans notre composant pour utiliser séparément dans le form ses propriétés.
 // value="xxx" sera ce qui les relit.

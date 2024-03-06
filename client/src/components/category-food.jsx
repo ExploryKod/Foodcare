@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import "../styles/categories.scss";
 
 const CategoryItem = ({ category }) => {
   // We need image url so we pass it through props (here ou directly in parenthesis of the function)

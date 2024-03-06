@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/fileList.css';
 
 const FileList = () => {
   const [fileList, setFileList] = useState([]);

@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { ProductCard } from './product-card';
-import '../styles/category-preview.scss';
 import { removeAccent } from '../utils/dataValidation/stringValidation.utils';
 
 export const CategoryPreview = ({ title, categories, products }) => {

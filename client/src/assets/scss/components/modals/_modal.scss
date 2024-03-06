@@ -1,0 +1,121 @@
+
+.modal {
+    opacity: 0;
+    height: 0;
+    transform: translateY(-100%);
+    z-index: 9999;
+    margin-top: var(--header-height);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: $primary-08;
+    transition: all 0.35s ease-in-out;
+
+    &.modal-opened {
+        opacity: 1;
+        height: 100%;
+        transform: translateY(0%);
+
+        .modal-container {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+}
+
+.modal-container {
+    opacity: 0;
+    margin-top: 10%;
+    width: 80%;
+    height: 100%;
+	background-color: #fff;
+    box-shadow: 0 15px 30px 0 rgba(#000, 0.25);
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+    transform: translateY(199%);
+    transition: opacity 0.8s ease-in, transform 1.2s ease-in;
+
+    @include media-breakpoint-down(sm) {
+        margin-top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+.modal-container-header {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100px;
+	padding: 16px 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+.modal-container-title {
+    .title-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        background-color: $primary-08;
+        border-radius: 0 50px 50px 0;
+        padding: 12px 20px;
+        color: #fafafa;
+
+        h1 {
+            margin: 0;
+        }
+    }
+}
+
+.modal-container-body {
+    max-height: 80vh;
+    flex-grow: 1;
+	padding: 20px 10px;
+	overflow-y: auto;
+}
+
+.modal-container-footer {
+    display: none;
+    background-color: #fafafa;
+    min-height: 20vh;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+	padding: 20px 32px;
+}
+
+.modal-close-btn {
+	padding: 0;
+    margin-right: 32px;
+	border: 0;
+    background-color: $primary;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
+	cursor: pointer;
+	border-radius: 8px;
+	transition: 0.15s ease;
+	svg {
+        color: #fafafa;
+		width: 30px;
+		height: 30px;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: $primary-darken;
+	}
+}

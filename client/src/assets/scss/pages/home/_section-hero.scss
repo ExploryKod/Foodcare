@@ -1,0 +1,9 @@
+#hero {
+  background-color: $horizon;
+
+  .title {
+    @include media-breakpoint-up(xl) {
+      font-size: 40px;
+    }
+  }
+}

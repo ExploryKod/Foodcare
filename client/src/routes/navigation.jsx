@@ -6,9 +6,7 @@ import CartIcon from '../components/cart-icon'
 import CartDropdown from '../components/cart-dropdown'
 
 import { CartContext } from '../context/cart.context';
-
-import "../styles/navigation.scss";
-import logo from '../assets/logo.png';
+import logo from '../img/logo.png';
 
 
 const Navigation = () => {
