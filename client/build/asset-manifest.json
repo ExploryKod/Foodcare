@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b0e740aa.css",
+    "main.js": "/static/js/main.7663e0e6.js",
+    "static/js/787.008902a2.chunk.js": "/static/js/787.008902a2.chunk.js",
+    "static/media/spices.jpeg": "/static/media/spices.6d4e9457dcd40eb86e39.jpeg",
+    "static/media/beverage.jpeg": "/static/media/beverage.9f690fedba2a727fbc53.jpeg",
+    "static/media/not_found.jpg": "/static/media/not_found.c86d2ba1a5e7e3aa077f.jpg",
+    "static/media/recipes.jpg": "/static/media/recipes.05a6f963c219bf56629f.jpg",
+    "static/media/feculents.jpeg": "/static/media/feculents.a0738bac3e6040de8067.jpeg",
+    "static/media/proteines.jpeg": "/static/media/proteines.bfcaac4f6e7872c03af6.jpeg",
+    "static/media/vegetables.jpeg": "/static/media/vegetables.97c1b4c3f3c46ea91a95.jpeg",
+    "static/media/logo.png": "/static/media/logo.32e162e8524afc44cec4.png",
+    "static/media/icomoon.svg?3ktjl3": "/static/media/icomoon.2e0a90b5681b0fa66d15.svg",
+    "static/media/icomoon.eot?3ktjl3": "/static/media/icomoon.36133732e78975fc457b.eot",
+    "static/media/icomoon.woff?3ktjl3": "/static/media/icomoon.7c1b3d9a61fef9303ca8.woff",
+    "static/media/icomoon.ttf?3ktjl3": "/static/media/icomoon.33a88414fe177f3bf9f5.ttf",
+    "static/media/shopping-bag.svg": "/static/media/shopping-bag.a688874f6f1507316bdfa420328a4a53.svg",
+    "index.html": "/index.html",
+    "main.b0e740aa.css.map": "/static/css/main.b0e740aa.css.map",
+    "main.7663e0e6.js.map": "/static/js/main.7663e0e6.js.map",
+    "787.008902a2.chunk.js.map": "/static/js/787.008902a2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b0e740aa.css",
+    "static/js/main.7663e0e6.js"
+  ]
+}
