@@ -6,7 +6,7 @@ const ImageGallery = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/images_names`);
+        const response = await fetch(`https://foodcare.fly.dev/images_names`);
         if (response.ok) {
           const data = await response.json();
           setImageList(data.images);
