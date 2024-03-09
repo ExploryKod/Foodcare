@@ -4,7 +4,7 @@ export const CategoriesUploadContext = createContext({
     categoriesUploadData: {},
 });
 
-export const CategoriesProvider = ({ children }) => {
+export const CategoriesUploadProvider = ({ children }) => {
     const [categoriesUploadData, setCategoriesUploadData] = useState({});
 
     useEffect(() => {

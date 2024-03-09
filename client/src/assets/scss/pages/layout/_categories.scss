@@ -10,7 +10,7 @@
   margin: 0;
   overflow: hidden;
 
-  &.card-6{
+  &:last-of-type {
     min-width: 100%;
     .body {
       width: 300px;
@@ -18,11 +18,19 @@
   }
 
   &:nth-child(odd){
-    border-radius: 300px 100px 300px;
+    border-radius: 10px;
+    @include media-breakpoint-up(lg) {
+      border-radius: 300px 100px 300px;
+    }
+
   }
 
   &:nth-child(even){
-    border-radius: 5px 90px;
+    border-radius: 10px;
+    @include media-breakpoint-up(lg) {
+      border-radius: 5px 90px;
+    }
+
   }
 
   &:hover {

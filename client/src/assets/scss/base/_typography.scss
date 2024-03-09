@@ -32,6 +32,21 @@ a {
   }
 }
 
+// Foodcare original titles
+.category-title {
+  font-size:38px;
+  margin-bottom:25px;
+  text-align: center;
+}
+
+.category-text {
+  grid-column: 1 / span 4;
+  font-size:24px;
+  margin:15px 0;
+  text-align: center;
+}
+
+
 .pre-title {
   position: relative;
   margin-bottom: 20px;

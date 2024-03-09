@@ -1,35 +1,31 @@
 import { useContext, useState, useEffect, Fragment } from 'react';
 import { useParams } from 'react-router-dom';
-import { CategoriesContext } from '../context/categories.context';
+import { ProductsContext } from '../context/products.context';
 import { ProductCard } from '../components/product-card';
-import NotFoundPage from './notFoundPage';
-import { removeAccent } from '../utils/dataValidation/stringValidation.utils';
-
 
 export const Category = () => {
-    let { category } = useParams();
-    const { categoriesData } = useContext(CategoriesContext);
-    const [products, setProducts] = useState(categoriesData);
-  
-    let categories = ['proteines', 'legumes','epices','recettes','boissons','feculents','nosrecettes']
+    let { category_id } = useParams();
+    const { productsData, categoriesData } = useContext(ProductsContext);
+    const [products, setProducts] = useState(productsData);
+    const [categories, setCategories] = useState(categoriesData)
+    // Faire passer les catégories via un state Manager ou autrement et user de React Query
     useEffect( () => {
-        setProducts(categoriesData);
-    }, [category, categoriesData])
-   
-    category = removeAccent(category.toLowerCase());
-
-    let imageUrl = null;
- 
+        setCategories(categoriesData)
+        setProducts(productsData);
+    }, [category_id, categoriesData, categoriesData])
+    console.log('we are products', products)
+    console.log("categories", categoriesData)
     return(
         <Fragment>
-            {categories.includes(category.toLowerCase().replace(" ","")) ?
-        (<h2 className='category-title'>{category.toUpperCase()}</h2>) : (<NotFoundPage category={category}/>)}
+            {categories.filter((food_category) => food_category.id === parseInt(category_id)).map((food_category) => (
+                <h2 key={food_category.id} className='category-title'>{food_category.title}</h2>
+            ))}
             <div className='category-container product-container'>
-                {((!products || !products.length)) ? (
+                {(!products || !products.length) ? (
                 <p className="category-text">Il n'y a pas de produits à vendre pour le moment.</p>
                 ) : (
-                    products.filter((product) => product.category === category.toLowerCase()).map((product) => (
-                        <ProductCard key={product.id} product={product} category={category} imageUrl={imageUrl} />
+                    products.filter(product => product.category_id === parseInt(category_id)).map((product) => (
+                        <ProductCard key={product.id} product={product} category_food_id={product.category_id} />
                     ))
                 )}
             </div>
