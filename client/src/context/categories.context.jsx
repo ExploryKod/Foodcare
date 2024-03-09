@@ -11,7 +11,7 @@ export const CategoriesProvider = ({ children }) => {
         const fetchCategories = async () => {
 
             try {
-                const response = await fetch(`https://foodcare.fly.dev/products`);
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/products`);
                 const data = await response.json();
                 console.log("data products", data);
                 setCategoriesData(data);
