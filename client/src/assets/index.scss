@@ -66,9 +66,7 @@
 // 6.1 layouts
 @import './scss/pages/layout/layout-main';
 @import './scss/pages/layout/categories';
-@import './scss/pages/layout/categories-container';
-@import './scss/pages/layout/category';
-@import './scss/pages/layout/category-preview';
+@import 'scss/pages/layout/containers';
 
 // 6.2 Page home sections
 @import './scss/pages/home/section-hero';

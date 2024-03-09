@@ -11,6 +11,6 @@ se connecter via phpmyadmin:
 
 Avec adminer:
 
-
+Photo de Jane Doan: https://www.pexels.com/fr-fr/photo/tranches-de-fruits-sur-le-plateau-1132047/
 
 Photo de Andrew Neel: https://www.pexels.com/fr-fr/photo/personne-debout-sur-le-chemin-2682462/

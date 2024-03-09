@@ -1,33 +1,25 @@
 import CategoryItem from "./category-food";
-import imageVeg from "../assets/img/categories/vegetables.jpeg";
-import beverage from "../assets/img/categories/beverage.jpeg";
-import proteines from "../assets/img/categories/proteines.jpeg";
-import spices from "../assets/img/categories/spices.jpeg";
-import feculents from "../assets/img/categories/feculents.jpeg";
-import recipes from "../assets/img/categories/recipes.jpg";
-
-const categories = [
-    { id: 1, title: "Protéines", imageUrl: proteines, route: 'shop/proteines' },
-
-    { id: 2, title: "Epices", imageUrl: spices, route:'shop/epices' },
-
-    { id: 3, title: "Légumes", imageUrl: imageVeg, route: 'shop/légumes' },
-
-    { id: 4, title: "Féculents", imageUrl: feculents, route: 'shop/feculents' },
-
-    { id: 5, title: "Boissons", imageUrl: beverage, route: 'shop/boissons' },
-
-    { id: 6, title: "Nos recettes", imageUrl: recipes, route: 'shop/recettes' },
-  ];
-
+import {useContext, useEffect, useState} from "react";
+import { ProductsContext } from "../context/products.context";
+import {useParams} from "react-router-dom";
 
 const CategoriesContainer = () => {
+    const { productsData, categoriesData } = useContext(ProductsContext);
+    const [categories, setCategories] = useState([])
+    console.log('in accueil, categories ', categoriesData)
+    // Faire passer les catégories via un state Manager ou autrement et user de React Query
+    useEffect( () => {
+        setCategories(categoriesData)
+    }, [])
+    console.log('categories', categories)
     return (
-
-        <div className="categories-container">
-            {categories.map( ( item ) => (
+        <>
+        {categoriesData.length > 0 ?
+                (<div className="categories-container">
+            {categoriesData.map( ( item ) => (
                 <CategoryItem key={item.id} category={item} /> ))}
-        </div>
+        </div>): (<div> Aucune catégorie d'aliment pour le moment </div>)}
+        </>
     )
 }
 

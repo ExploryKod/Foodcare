@@ -7,7 +7,7 @@ import Shopping from "./routes/shopping";
 import Upload from "./routes/upload";
 import Connexion from './routes/connexion';
 import NotFoundPage from './routes/notFoundPage';
-import CartSummary from "./routes/cartSummary";
+
 
 const App = () => {
 
