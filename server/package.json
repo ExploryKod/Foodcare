@@ -2,12 +2,12 @@
   "name": "foodcare",
   "version": "1.0.0",
   "description": "E-commerce",
-  "main": "server/app.js",
+  "main": "app.js",
   "scripts": {
-    "start": "cd server && node app.js",
-    "dev": "cd server && nodemon app.js",
-    "sass-watch": "npx sass server/static/style/main.scss server/static/style/main.css",
-    "build": "webpack --config webpack.config.js"
+    "start": "node app.js",
+    "dev": "./node_modules/.bin/nodemon app.js",
+    "sass-watch": "npx sass static/style/main.scss static/style/main.css",
+    "build": "./node_modules/.bin/webpack --config webpack.config.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

@@ -13,7 +13,7 @@ const { MongoClient } = require('mongodb');
 // const config = require('config');
 const app = express();
 app.use(cors());
-dotenv.config({ path: '../.env'})
+dotenv.config({ path: './.env'})
 
 const uploadsRoute = require('./api/routes/uploadsRoute');
 const productsRoute = require('./api/routes/productsRoutes');

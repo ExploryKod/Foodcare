@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm install
 
 # Copy the rest of the application files to the container
-COPY . .
+COPY .. .
 
 # Expose port 5000 for the server
 EXPOSE 5000

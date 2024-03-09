@@ -21,7 +21,9 @@ server/node_modules
 
 # env variables
 .env
-.idea
+client/.env
+server/.env
+
 # misc
 .DS_Store
 .env.local
