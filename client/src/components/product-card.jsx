@@ -2,13 +2,14 @@ import {useContext, useEffect, useState} from 'react';
 import Button from './button';
 import { removeAccent } from '../utils/dataValidation/stringValidation.utils';
 import { CartContext } from '../context/cart.context';
+import CartDropdown from "./cart-dropdown";
 
 
 export const ProductCard = ({ product, category_food_id }) => {
     const { category_id, category, product_name, product_price, product_image_url } = product;
     const { addItemToCart } = useContext(CartContext);
     const addProductToCart = () => addItemToCart(product);
-
+    const { isCartOpen } = useContext(CartContext);
     const [imageUrl, setImageUrl] = useState('')
 
     // let product_nameUrl = product_name.toLowerCase().split(' ').filter(word => word !== '').join('')
@@ -37,7 +38,10 @@ export const ProductCard = ({ product, category_food_id }) => {
                 : (<span className='price-wait'>Prix indisponible</span>)}
             </div>
             <Button onClick={addProductToCart}>Choisir</Button>
-        </div>)}</>);
+        </div>)}
+            {isCartOpen && <CartDropdown />}
+        </>
+    );
 
 }
 

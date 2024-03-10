@@ -22,14 +22,16 @@ const ImageGallery = () => {
   }, []);
 
   return (
-    <>
-    <h1>Image Gallery</h1>
-    <div className="upload-image-gallery">
-      {/*{imageList.filter((image, index)=> index < 10).map((image, index) => (*/}
-      {/*  <img key={index} src={`${Config.siteUrl}/uploads/${image}`} alt={`${index}`} />*/}
-      {/*))}*/}
-    </div>
-    </>
+      <>
+        <h2 className="category-text">Vos images</h2>
+        <div className="upload-image-gallery">
+          {imageList.filter((image, index)=> index < 10).map((image, index) => (
+            <div className={"upload-list__image-wrapper"}>
+              <img key={index} src={`${process.env.REACT_APP_API_URL}/uploads/${image}`} alt={`${index}`} />
+            </div>
+          ))}
+        </div>
+      </>
   );
 };
 

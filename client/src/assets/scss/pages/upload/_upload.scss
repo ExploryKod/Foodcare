@@ -1,4 +1,4 @@
-.container  {
+.upload-container  {
     max-width: 1440px;
     width: 100%;
     margin: var(--header-height) auto 0 auto;
@@ -12,31 +12,20 @@
     min-height: 100vh;
 }
 
-.container__inner-start, .container__inner-end {
+.container__inner-start {
     max-width: 1200px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container__inner-start {
     margin-top:50px;
 }
 
-.container__inner-end{
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 5px;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.container__inner-end button {
-    width: 50%;
-}
-
 .upload-page form {
+    max-width: 650px;
     margin-top: 40px;
     padding: 30px;
     background-color: lighten(hsla(190, 100%, 35%, 1), 5%);
@@ -67,7 +56,7 @@
 }
 
 .upload-page form .product-price input { 
-    max-width: 10%;
+    max-width: 100px;
 }
 
 .upload-page form .product-price span { 
@@ -79,6 +68,7 @@
 }
 
 .upload-page form .product-price label p {
+    margin-top: 3px;
     color: white;
     font-weight: bold;
     font-style: italic;
@@ -102,8 +92,14 @@
 .upload-page form input {
     background-color: rgba(255, 255, 255, 0.938);
     padding: 12px 20px;
+    max-width: 650px;
     width: 100%;
     border: 1px solid #ccc;
+}
+
+.upload-page form textarea {
+    max-width: 650px;
+    width: 100%;
 }
 
 
@@ -144,10 +140,11 @@
     font-weight: 500;
  }
 
-.upload-btn { 
+.upload-btn {
+    max-width: 650px;
     border: none;
     cursor: pointer;
-    background: hsla(190, 100%, 35%, 1);
+    background: $primary;
     font-size: 18px;
     color: white;
     border-radius: 3px;
@@ -198,23 +195,73 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 2px;
 }
 
+// SHOW UPLOADS
+
+.show-upload-container {
+    margin: 0 auto;
+    max-width : 1440px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+
+    .uploads-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+        }
+    }
+
+    .uploads-show {
+
+        .file-list {
+          margin: 50px 0;
+          width: 100%;
+          max-width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 25px;
+        }
+        .upload-image-gallery {
+            margin: 50px 0;
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+
+            .upload-list__image-wrapper {
+                padding: 50px;
+                background-color: $primary-05;
+                width: 250px;
+                height: 250px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    max-width: 80%;
+                    height: auto;
+                    margin: 2px 5px;
+                }
+            }
+        }
+    }
+}
+
 .btn-images {
     margin-top: 20px;
 }
 .btn-list  {
     margin-top: 20px;
-}
-
-.upload-image-gallery {
-    max-width: 70%;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: auto;
-}
-
-.upload-image-gallery img {
-    max-width: 60px;
-    height: auto;
-    margin: 2px 5px;
 }
 

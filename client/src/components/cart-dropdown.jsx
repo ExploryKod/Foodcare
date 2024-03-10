@@ -16,7 +16,8 @@ const CartDropdown = () => {
     };
 
     return (
-        <div className={`cart-dropdown-container ${cartItems.length <= 0 ? "no-cart-items" : ""}`}>
+        <div className="cart-dropdown-container">
+            <div className={`cart-dropdown ${cartItems.length <= 0 ? "no-cart-items" : ""}`}>
             {cartItems.length > 0 ?
                 (<>
                 <div className='cart-items'>
@@ -27,6 +28,7 @@ const CartDropdown = () => {
                 ): (<p> Vous n'avez pas encore d'articles </p>)}
 
             </div>
+        </div>
     )
 }
 

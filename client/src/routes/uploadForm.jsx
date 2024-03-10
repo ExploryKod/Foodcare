@@ -2,15 +2,12 @@ import { useState, useRef } from 'react';
 import FileList from '../components/uploadList';
 import ImageGallery from '../components/imageList';
 
-
 export const UploadForm = () => {
   
     const [flashMessage, setFlashMessage] = useState('');
     const [selectedName, setSelectedName] = useState('');
     const [categoryId, setCategoryId] = useState('');
     const fileInputRef = useRef(null);
-    const [toggleImages, setToggleImages] = useState(false);
-    const [toggleFiles, setToggleFiles] = useState(false);
 
     const handleNameChange = (e) => {
       const selectedOption = e.target.options[e.target.selectedIndex];
@@ -19,33 +16,6 @@ export const UploadForm = () => {
       setSelectedName(e.target.value);
       setCategoryId(categoryIdAttribute);
     };
-
-    const handleToggleImages = (e) => {  
-      if(!toggleImages) {  
-        setToggleImages(true)
-        if(toggleFiles) {  
-          setToggleFiles(false)
-        }
-        e.target.textContent = 'Fermer la gallerie';
-      } else  {  
-        setToggleImages(false)
-        e.target.textContent = 'Ouvrir la gallerie';
-      }
-    }
-
-    const handleToggleFile = (e) => {  
-      if(!toggleFiles) {  
-        setToggleFiles(true)
-        if(toggleImages) {  
-          setToggleImages(false)
-        }
-        e.target.textContent = 'Fermer la liste';
-      } else  {  
-        setToggleFiles(false)
-        e.target.textContent = 'Lister les fichiers';
-      }
-    }
-
 
       const sendFile = async (e) => {
           e.preventDefault();
@@ -72,10 +42,14 @@ export const UploadForm = () => {
             }, 3000);
             return;
           }
-
+          //   todo: pbm avec le lien image dans le serveur et nom du chemin + si il y a trop d'image (attaque etc.)? + htmlspecialchar
+          // TOdo: img par role, dossier client etc...
+          //  Si deja un nom en image ca ajoute un 2 mais se bloque pas
+          // todo: flash message inopérants
+          // todo: images s'affiche pas et liste Se met pas a jour sans rafraichir
           const categoryName = formData.get('category_name');
           const categoryNameId = formData.get('category_name_id');
-          const imageName = formData.get('image_name');
+          const imageName = formData.get('image_name').replace(' ', '');
           const productImageUrl = categoryName+'_'+imageName+'.jpeg';
           const productPrice = formData.get('purchasing_product_price') * 1.2;
 
@@ -160,7 +134,7 @@ export const UploadForm = () => {
   
      return (
         <>
-          <div className="upload-page container">
+          <div className="upload-page upload-container">
           {flashMessage && <div className="output-message">{flashMessage}</div>}
               <div className="container__inner-start">
                 <div className="inner-start__title">
@@ -203,17 +177,7 @@ export const UploadForm = () => {
                         <button className="submit-btn upload-btn" type='submit' onClick={sendFile}>Charger mes fichiers</button>
                       </div>
                   </form>
-              </div>  
-              <div className="container__inner-end">
-                <button className="upload-btn  btn-images" type='button' onClick={handleToggleImages}>Ouvrir la gallerie</button>
-                <button className="upload-btn  btn-list" type='button' onClick={handleToggleFile}>Lister les fichiers</button>  
               </div>
-       
-        <div>
-        {toggleImages && <ImageGallery />}
-        {toggleFiles &&   <FileList /> }
-        
-        </div>
           </div>
         </>
       );
