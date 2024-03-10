@@ -30,6 +30,7 @@ const CategoryItem = ({ category }) => {
         .filter((image) => image.category_id === id)
         .map((image) => (
         <div
+            key={image.category_id}
             className="background-image"
             style={{ backgroundImage: `url(${image.imageUrl})` }}
         />
