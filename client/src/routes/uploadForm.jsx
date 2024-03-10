@@ -147,10 +147,10 @@ export const UploadForm = () => {
                       <select className="input-select" id="category_name" name="category_name" value={selectedName} onChange={handleNameChange} required>
                         <option value="proteines" data-category-id="1">Proteines</option>
                         <option value="legumes" data-category-id="2">Légumes</option>
-                        <option value="epices" data-category-id="3">Epices</option>
-                        <option value="fruits" data-category-id="4">Fruits</option>
-                        <option value="boissons" data-category-id="5">Boissons</option>
-                        <option value="recettes" data-category-id="6">Recettes</option>
+                        <option value="fruits" data-category-id="3">Fruits</option>
+                        <option value="epices" data-category-id="4">Epices</option>
+                          <option value="feculents" data-category-id="5">Féculents</option>
+                        <option value="boissons" data-category-id="6">Boissons</option>
                       </select>
                       <input type="hidden" name="category_name_id" value={categoryId} />
                       <div className="input-group">
@@ -174,7 +174,7 @@ export const UploadForm = () => {
                         <button className="custom-file-button" type="button" onClick={handleFileButtonClick}>Je choisis mon fichier</button>
                       </div>
                       <div className="container__submit-btn">
-                        <button className="submit-btn upload-btn" type='submit' onClick={sendFile}>Charger mes fichiers</button>
+                        <button className="submit-btn upload-btn" type='submit' onClick={sendFile}>Envoyer mon produit</button>
                       </div>
                   </form>
               </div>
