@@ -119,7 +119,7 @@ const storage = multer.diskStorage({
   filename: (req, file, cb) => {
     let categoryName = req.body.category_name;
     let image_name = req.body.image_name;
-    image_name = image_name.toLowerCase().split(' ').filter(word => word !== '').join('');
+    image_name = image_name.toLowerCase().split(' ').filter(word => word !== '').join('_');
     categoryName = categoryName.toLowerCase()
     image_name = image_name.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     categoryName = categoryName.normalize("NFD").replace(/[\u0300-\u036f]/g, "");

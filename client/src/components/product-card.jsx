@@ -3,7 +3,7 @@ import Button from './button';
 import { removeAccent } from '../utils/dataValidation/stringValidation.utils';
 import { CartContext } from '../context/cart.context';
 import CartDropdown from "./cart-dropdown";
-
+// todo: mettre cart dropdown dans un emplacement meilleur
 
 export const ProductCard = ({ product, category_food_id }) => {
     const { category_id, category, product_name, product_price, product_image_url } = product;

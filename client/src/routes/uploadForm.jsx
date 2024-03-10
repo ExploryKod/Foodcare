@@ -49,7 +49,7 @@ export const UploadForm = () => {
           // todo: images s'affiche pas et liste Se met pas a jour sans rafraichir
           const categoryName = formData.get('category_name');
           const categoryNameId = formData.get('category_name_id');
-          const imageName = formData.get('image_name').replace(' ', '');
+          const imageName = formData.get('image_name').toLowerCase().split(' ').filter(word => word !== '').join('_');
           const productImageUrl = categoryName+'_'+imageName+'.jpeg';
           const productPrice = formData.get('purchasing_product_price') * 1.2;
 
