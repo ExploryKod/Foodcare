@@ -6,13 +6,12 @@
         bottom:0;
         left:0;
         right:0;
-        //background-image: url('./img/categories/land_lake.jpg');
-        //background-repeat: no-repeat;
-        //background-position: center;
-        //background-size: 100%;
-        //background-color: $blue;
-        //background-blend-mode: multiply;
-        
+        background-image: url('../../img/land_lake.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        background-color: $blue;
+        background-blend-mode: overlay;
 
         .inner-connexion{
             background-color: $blue-2;
@@ -20,9 +19,9 @@
             top:50%;
             left:50%;
             transform: translate(-50%,-50%);
-            width:650px;
-            height:600px;
-            border-radius:35px;
+            max-width:650px;
+            min-height: 600px;
+            border-radius: 35px;
             box-shadow: 0 11px 34px 0 rgb(0 0 0 / 20%);
             padding: 20px;
           
@@ -31,6 +30,11 @@
                 display:flex;
                 flex-direction: column;
                 align-items: center;
+                min-width: 80vw;
+
+                @include media-breakpoint-up(md) {
+                    min-width: 600px;
+                }
 
                 .img-container{
                     img{
@@ -64,7 +68,8 @@
                             font-weight: 400;
                             letter-spacing: -.021em;
                             font-family: Arial, Helvetica, sans-serif;
-                            width: 70%;
+                            max-width: 300px;
+                            width: 100%;
                             padding-left: 10px;
                             background-color: $grey-2;
                         }

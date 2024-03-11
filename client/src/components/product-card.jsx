@@ -4,7 +4,7 @@ import { removeAccent } from '../utils/dataValidation/stringValidation.utils';
 import { CartContext } from '../context/cart.context';
 import CartDropdown from "./cart-dropdown";
 // todo: mettre cart dropdown dans un emplacement meilleur
-
+// todo: verifier product image path est ok
 export const ProductCard = ({ product, category_food_id }) => {
     const { category_id, category, product_name, product_price, product_image_url } = product;
     const { addItemToCart } = useContext(CartContext);
@@ -15,11 +15,11 @@ export const ProductCard = ({ product, category_food_id }) => {
     // let product_nameUrl = product_name.toLowerCase().split(' ').filter(word => word !== '').join('')
     useEffect(() => {
         fetch(
-            `${process.env.REACT_APP_API_URL}/uploads/${product_image_url}.jpeg`,
+            `${process.env.REACT_APP_API_URL}/uploads/${product_image_url}`,
             {method: 'HEAD'})
             .then(res => {
                 if (res.ok) {
-                    setImageUrl(`${process.env.REACT_APP_API_URL}/uploads/${product_image_url}.jpeg`);
+                    setImageUrl(`${process.env.REACT_APP_API_URL}/uploads/${product_image_url}`);
                 } else {
                     setImageUrl(`${process.env.REACT_APP_API_URL}/uploads/generic_food.jpg`);
                 }

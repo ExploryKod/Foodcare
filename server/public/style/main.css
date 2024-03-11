@@ -189,6 +189,12 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
+  background-image: url("./img/land_lake.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-color: hsl(210, 35%, 27%);
+  background-blend-mode: multiply;
 }
 .page-connexion .outer-connexion .inner-connexion {
   background-color: rgba(78, 120, 162, 0.9);
