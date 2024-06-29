@@ -24,7 +24,8 @@ router.get('/:category', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const productData = req.body; 
+    const productData = req.body;
+    console.log('product data is under way', productData)
     const insertedProduct = await productModel.insertProduct(productData);
     res.send(insertedProduct);
   } catch (error) {

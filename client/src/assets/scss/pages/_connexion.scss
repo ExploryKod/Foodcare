@@ -20,9 +20,9 @@
             top:50%;
             left:50%;
             transform: translate(-50%,-50%);
-            width:650px;
-            height:600px;
-            border-radius:35px;
+            max-width:650px;
+            min-height: 600px;
+            border-radius: 35px;
             box-shadow: 0 11px 34px 0 rgb(0 0 0 / 20%);
             padding: 20px;
 
@@ -54,7 +54,7 @@
             .container-inscription {
                 padding: 10px 70px;
             }
-          
+
             .container-connexion, .container-inscription{
                 display:flex;
                 flex-direction: column;
@@ -92,7 +92,8 @@
                             font-weight: 400;
                             letter-spacing: -.021em;
                             font-family: Arial, Helvetica, sans-serif;
-                            width: 70%;
+                            max-width: 300px;
+                            width: 100%;
                             padding-left: 10px;
                             background-color: $grey-2;
                         }

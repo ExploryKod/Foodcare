@@ -2,15 +2,12 @@ import { useState, useRef } from 'react';
 import FileList from '../components/uploadList';
 import ImageGallery from '../components/imageList';
 
-
 export const UploadForm = () => {
   
     const [flashMessage, setFlashMessage] = useState('');
     const [selectedName, setSelectedName] = useState('');
     const [categoryId, setCategoryId] = useState('');
     const fileInputRef = useRef(null);
-    const [toggleImages, setToggleImages] = useState(false);
-    const [toggleFiles, setToggleFiles] = useState(false);
 
     const handleNameChange = (e) => {
       const selectedOption = e.target.options[e.target.selectedIndex];
@@ -19,33 +16,6 @@ export const UploadForm = () => {
       setSelectedName(e.target.value);
       setCategoryId(categoryIdAttribute);
     };
-
-    const handleToggleImages = (e) => {  
-      if(!toggleImages) {  
-        setToggleImages(true)
-        if(toggleFiles) {  
-          setToggleFiles(false)
-        }
-        e.target.textContent = 'Fermer la gallerie';
-      } else  {  
-        setToggleImages(false)
-        e.target.textContent = 'Ouvrir la gallerie';
-      }
-    }
-
-    const handleToggleFile = (e) => {  
-      if(!toggleFiles) {  
-        setToggleFiles(true)
-        if(toggleImages) {  
-          setToggleImages(false)
-        }
-        e.target.textContent = 'Fermer la liste';
-      } else  {  
-        setToggleFiles(false)
-        e.target.textContent = 'Lister les fichiers';
-      }
-    }
-
 
       const sendFile = async (e) => {
           e.preventDefault();
@@ -72,10 +42,14 @@ export const UploadForm = () => {
             }, 3000);
             return;
           }
-
+          //   todo: pbm avec le lien image dans le serveur et nom du chemin + si il y a trop d'image (attaque etc.)? + htmlspecialchar
+          // TOdo: img par role, dossier client etc...
+          //  Si deja un nom en image ca ajoute un 2 mais se bloque pas
+          // todo: flash message inopérants
+          // todo: images s'affiche pas et liste Se met pas a jour sans rafraichir
           const categoryName = formData.get('category_name');
           const categoryNameId = formData.get('category_name_id');
-          const imageName = formData.get('image_name');
+          const imageName = formData.get('image_name').toLowerCase().split(' ').filter(word => word !== '').join('_');
           const productImageUrl = categoryName+'_'+imageName+'.jpeg';
           const productPrice = formData.get('purchasing_product_price') * 1.2;
 
@@ -160,7 +134,7 @@ export const UploadForm = () => {
   
      return (
         <>
-          <div className="upload-page container">
+          <div className="upload-page upload-container">
           {flashMessage && <div className="output-message">{flashMessage}</div>}
               <div className="container__inner-start">
                 <div className="inner-start__title">
@@ -173,10 +147,10 @@ export const UploadForm = () => {
                       <select className="input-select" id="category_name" name="category_name" value={selectedName} onChange={handleNameChange} required>
                         <option value="proteines" data-category-id="1">Proteines</option>
                         <option value="legumes" data-category-id="2">Légumes</option>
-                        <option value="epices" data-category-id="3">Epices</option>
-                        <option value="fruits" data-category-id="4">Fruits</option>
-                        <option value="boissons" data-category-id="5">Boissons</option>
-                        <option value="recettes" data-category-id="6">Recettes</option>
+                        <option value="fruits" data-category-id="3">Fruits</option>
+                        <option value="epices" data-category-id="4">Epices</option>
+                          <option value="feculents" data-category-id="5">Féculents</option>
+                        <option value="boissons" data-category-id="6">Boissons</option>
                       </select>
                       <input type="hidden" name="category_name_id" value={categoryId} />
                       <div className="input-group">
@@ -202,22 +176,12 @@ export const UploadForm = () => {
                       <div className="container__submit-btn">
                         <button className="submit-btn upload-btn" type='submit' onClick={sendFile}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-up"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M12 12v6"/><path d="m15 15-3-3-3 3"/></svg>
-                          Charger mes fichiers
-                          
+                          Envoyer mon produit
+
                         </button>
                       </div>
                   </form>
-              </div>  
-              <div className="container__inner-end">
-                <button className="upload-btn  btn-images" type='button' onClick={handleToggleImages}>Ouvrir la gallerie</button>
-                <button className="upload-btn  btn-list" type='button' onClick={handleToggleFile}>Lister les fichiers</button>  
               </div>
-       
-        <div>
-        {toggleImages && <ImageGallery />}
-        {toggleFiles &&   <FileList /> }
-        
-        </div>
           </div>
         </>
       );

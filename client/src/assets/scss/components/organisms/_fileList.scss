@@ -52,7 +52,6 @@
     width: 100%;
     height: auto;
     overflow: hidden;
-    box-shadow: 0 0 20px var(--box-shadow-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,6 +59,7 @@
 }
 
 .file-list .table {
+    box-shadow: 0 0 20px var(--box-shadow-color);
     background-color: transparent;
     display: block;
     width: 100%;

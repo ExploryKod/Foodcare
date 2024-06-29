@@ -7,6 +7,7 @@ import Shopping from "./routes/shopping";
 import Upload from "./routes/upload";
 import Connexion from './routes/connexion';
 import NotFoundPage from './routes/notFoundPage';
+import UploadFilesPage from "./routes/uploadFilesPage";
 
 
 const App = () => {
@@ -20,7 +21,8 @@ const App = () => {
         <Route path='checkout' element={<Checkout />} />
         <Route path='shopping' element={<Shopping />} />
         <Route path='upload/*' element={<Upload />} />
-        <Route path='*' element={<NotFoundPage category={""} />} />
+        <Route path='show-uploads' element={<UploadFilesPage />} />
+        <Route path='*' element={<NotFoundPage category={""} />}  />
       </Route>
     </Routes>
 

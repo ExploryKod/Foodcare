@@ -11,8 +11,6 @@ import logo from '../assets/img/logo.png';
 
 const Navigation = () => {
 
-    const { isCartOpen } = useContext(CartContext);
-
     return (
         <Fragment>
             <div className='navigation'>
@@ -35,7 +33,6 @@ const Navigation = () => {
                     </Link>
                     <CartIcon />
                 </div>
-                {isCartOpen && <CartDropdown />}
             </div>
 
             <Outlet />

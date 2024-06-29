@@ -59,6 +59,7 @@
 }
 
 .products-container {
+  position: relative;
   max-width: 1440px;
   margin: 0 auto;
   padding: 5px 20px;
@@ -66,9 +67,11 @@
   grid-template-columns: repeat(4, 1fr);
   column-gap: 10px;
   row-gap: 50px;
+  z-index: $z-index-products;
 }
 
 .category-container {
+  position: relative;
   max-width: 1440px;
   margin: 0 auto;
   padding: 5px 20px;

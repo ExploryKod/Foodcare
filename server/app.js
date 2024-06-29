@@ -14,7 +14,8 @@ const { MongoClient } = require('mongodb');
 const app = express();
 app.use(cors());
 dotenv.config({ path: './.env'})
-
+// todo: delete image from uploads while we delete column from databse (link to image path in bdd image path in uploads)
+// todo: pbm avec id quand upload
 const uploadsRoute = require('./api/routes/uploadsRoute');
 const productsRoute = require('./api/routes/productsRoutes');
 const foodCategoriesRoute = require('./api/routes/foodCategoriesRoute');
@@ -119,7 +120,7 @@ const storage = multer.diskStorage({
   filename: (req, file, cb) => {
     let categoryName = req.body.category_name;
     let image_name = req.body.image_name;
-    image_name = image_name.toLowerCase().split(' ').filter(word => word !== '').join('');
+    image_name = image_name.toLowerCase().split(' ').filter(word => word !== '').join('_');
     categoryName = categoryName.toLowerCase()
     image_name = image_name.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     categoryName = categoryName.normalize("NFD").replace(/[\u0300-\u036f]/g, "");

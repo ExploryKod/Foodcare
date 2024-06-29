@@ -18,12 +18,12 @@ const storage = multer.diskStorage({
 
 // Specify the accepted file formats and maximum file size
 const fileFilter = (req, file, cb) => {
-  if (file.mimetype === 'image/png' || file.mimetype === 'image/jpg' || file.mimetype === 'image/jpeg') {
+  if (file.mimetype === 'image/png' || file.mimetype === 'image/jpg' || file.mimetype === 'image/jpeg' || file.mimetype === 'image/webp') {
     // Accept the file
     cb(null, true);
   } else {
     // Reject the file
-    cb(new Error('Only PNG, JPG, and JPEG file formats are allowed.'), false);
+    cb(new Error('Only PNG, JPG, and JPEG, webp file formats are allowed.'), false);
   }
 };
 
