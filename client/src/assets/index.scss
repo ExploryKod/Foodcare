@@ -21,8 +21,6 @@
 @import './scss/base/helpers';
 
 // 4. Layout-related sections (partials)
-@import './scss/partials/header';
-@import './scss/partials/footer';
 @import './scss/partials/navigation';
 
 // 5. Components
@@ -64,16 +62,8 @@
 @import './scss/pages/upload/upload';
 
 // 6.1 layouts
-@import './scss/pages/layout/layout-main';
 @import './scss/pages/layout/categories';
 @import 'scss/pages/layout/containers';
-
-// 6.2 Page home sections
-@import './scss/pages/home/section-hero';
-@import './scss/pages/home/mission-section';
-@import './scss/pages/home/team-section';
-@import './scss/pages/home/our-projects';
-@import './scss/pages/home/section-contact';
 
 // 7. Themes
 @import './scss/themes/default';

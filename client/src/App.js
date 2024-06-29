@@ -13,10 +13,10 @@ const App = () => {
 
   return (
     <Routes>
+      <Route path='connexion' element={<Connexion />} />
       <Route path='/' element={<Navigation />}>
         <Route index element={<Home />} />
         <Route path='shop/*' element={<Shop />} />
-        <Route path='connexion' element={<Connexion />} />
         <Route path='checkout' element={<Checkout />} />
         <Route path='shopping' element={<Shopping />} />
         <Route path='upload/*' element={<Upload />} />
