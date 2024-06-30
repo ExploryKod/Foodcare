@@ -154,6 +154,10 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
+      .no-category__title {
+        text-align: center;
+      }
     }
   
   }
@@ -161,4 +165,17 @@
 
 .category-food-wrapper {
   min-height: calc(100vh - ( var(--header-height) + var(--header-margin-bottom)));
+}
+
+.upload-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 70px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  row-gap: 18px;
+  justify-content: space-between;
+  align-items: center;
 }

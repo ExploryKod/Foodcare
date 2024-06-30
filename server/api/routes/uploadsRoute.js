@@ -1,9 +1,12 @@
 // server/api/Route/uploads.js
 const router = require('express').Router();
-const { ConnectionFactory } = require('../../models/factory/connectbdd');
+const { ConnectionFactory } = require(`../../models/factories/mysql/connectbdd`);
 const multer = require('multer');
 // const upload = multer({ dest: '../../uploads/' });
+
 const connectionFactory = new ConnectionFactory('db', 'root', 'root', 'foodcare');
+
+
 
 // Specify the destination and filename for uploaded files
 const storage = multer.diskStorage({

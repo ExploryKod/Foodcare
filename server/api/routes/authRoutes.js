@@ -1,8 +1,5 @@
 const router = require('express').Router();
-const express = require('express');
-const mysql = require('mysql2/promise');
-const { ConnectionFactory } = require('../../models/factory/connectbdd');
-const app = express();
+const { ConnectionFactory } = require(`../../models/factories/mysql/connectbdd`);
 
 const connectionFactory = new ConnectionFactory('db', 'root', 'root', 'foodcare');
 

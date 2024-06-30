@@ -5,6 +5,7 @@ const USER = process.env.MYSQL_ADDON_USER
 const PASSWORD = process.env.MYSQL_ADDON_PASSWORD
 const DATABASE = process.env.MYSQL_ADDON_DB
 const PORT = process.env.MYSQL_ADDON_PORT
+
 console.log('The host', HOST);
 class ConnectionFactory {
     constructor(host = HOST, user = USER, password = PASSWORD, database = DATABASE) {
