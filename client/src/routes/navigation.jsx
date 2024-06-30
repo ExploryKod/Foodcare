@@ -26,7 +26,7 @@ const Navigation = () => {
                         BOUTIQUE
                     </Link>
                     <Link className='nav-link' to='/upload'>
-                        UPLOADS
+                        PROPOSITIONS
                     </Link>
                     <Link className='nav-link' to='/connexion'>
                         S'INSCRIRE

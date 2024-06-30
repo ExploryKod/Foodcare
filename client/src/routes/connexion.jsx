@@ -122,9 +122,6 @@ const Connexion = () => {
                   </div>
                   <div className="form-elem">
                     <button type="submit" className="btn-1">Se connecter</button>
-                    <div className="form-elem">
-                      <button type="button" className="btn-2" onClick={handleToggle}>S'inscrire</button>
-                    </div>
                   </div>
                   <div className="form-elem">
                     <button type="button" className="btn-2" onClick={handleToggle}>Je veux m'inscrire</button>

@@ -10,6 +10,7 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
   <BrowserRouter>
     <ProductsProvider>
       <CartProvider>
@@ -17,6 +18,7 @@ root.render(
       </CartProvider>
     </ProductsProvider>
   </BrowserRouter>
+
 
 );
 

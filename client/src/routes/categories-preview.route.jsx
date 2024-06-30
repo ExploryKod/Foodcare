@@ -1,24 +1,28 @@
 import { useState, useEffect, Fragment } from 'react';
 import { CategoryPreview } from '../components/category-preview.component';
 
-const categoriesFood = [
-    { id: 1, title: "Protéines", route: 'shop/1' },
+const CATEGORIES = [
 
-    { id: 2, title: "Légumes", route: 'shop/2' },
+    { id: 1, category_name: "Protéines", route: 'shop/1' },
 
-    { id: 3, title: "Fruits", route:'shop/3' },
+    { id: 2, category_name: "Légumes", route: 'shop/2' },
 
-    { id: 4, title: "Epices", route:'shop/4' },
+    { id: 3, category_name: "Fruits", route:'shop/3' },
 
-    { id: 5, title: "Féculents", route: 'shop/5' },
+    { id: 4, category_name: "Epices", route:'shop/4' },
 
-    { id: 6, title: "Boissons", route: 'shop/6' },
+    { id: 5, category_name: "Féculents", route: 'shop/5' },
 
-    { id: 7, title: "Nos recettes", route: 'shop/7' },
+    { id: 6, category_name: "Boissons", route: 'shop/6' },
+
+    { id: 7, category_name: "Nos recettes", route: 'shop/7' },
   ];
 
 export const CategoriesPreview = () => {
-    const [categories, setCategories] = useState(categoriesFood);
+    const [categories, setCategories] = useState(CATEGORIES);
+  
+
+  console.log("before fetch", categories)
 
     useEffect(() => {
         const fetchAllCategories = async () => {
@@ -29,26 +33,31 @@ export const CategoriesPreview = () => {
                     setCategories(data)
                 } else {
                     console.error('Error fetching categories of food:', response.status);
+                    setCategories([]);
                 }
             } catch (error) {
                 console.error('Error fetching categories of food:', error);
+                setCategories([]);
             }
         };
 
-        fetchAllCategories();
+       fetchAllCategories();
     }, []);
+    console.log('after fetch', categories)
 
-    console.log('categories from categoryPreview parent', categories)
-    return (
-        <>
+
+    return (  
+        <div  class="category-food-wrapper">
             {categories.map((category_food) =>{
                 return (
-                    <CategoryPreview key={category_food.id}
-                                        title={category_food.category_name}
-                                        category_food_id={category_food.id}
-                                        category={category_food.category_name} />
+
+                    <CategoryPreview 
+                    key={category_food.id}
+                    title={category_food.category_name}
+                    category_food_id={category_food.id}
+                    category={category_food.category_name} />
                 )
             })}
-        </>
-    );
+        </div>) 
+        
 };

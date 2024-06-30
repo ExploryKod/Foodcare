@@ -10,7 +10,27 @@
   max-width: 1440px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px;
+  margin-bottom: var(--header-margin-bottom);
+
+  @include media-breakpoint-down(md) {
+    position: fixed;
+    z-index: $z-toppest;
+    flex-direction: column;
+    background: #fafafa;
+    
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      content: "";
+      height: 10px;
+      width: 50%;
+      border-radius: 20px 40px;
+      transform: translate(-50%);
+      background: $tertiary;
+    }
+    
+  }
 
   .logo-container {
     height: 100%;
@@ -22,6 +42,16 @@
       width: auto;
     }
 
+    @include media-breakpoint-down(md) {
+      height: 70px;
+      object-fit: contain;
+      aspect-ratio: 1;
+
+      display: flex;
+      align-self: center;
+      justify-content: center;
+    }
+
   }
 
   .nav-links-container {
@@ -31,10 +61,29 @@
     align-items: center;
     justify-content: flex-end;
 
+    @include media-breakpoint-down(md) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      justify-content: center;
+      align-items: center;
+
+      .cart-icon-container {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+    }
+
     .nav-link {
       color: #262c28;
       padding: 10px 15px;
+      text-decoration: none;
       cursor: pointer;
+
+      @include media-breakpoint-down(md){
+        text-align: center;
+      } 
 
       &:hover,
       &:focus {

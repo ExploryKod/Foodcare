@@ -8,6 +8,13 @@
   --header-height: 70px;
   --header-padding: 5px 15px;
   --header-logo-padding: 5px 0;
+  --header-margin-bottom: 25px;
+
+  @include media-breakpoint-down(md) {
+    --header-height: 20vh;
+    --header-margin-bottom: 25px;
+  }
+
 
   // Sections
   --section-padding-top: 40px;

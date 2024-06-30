@@ -23,7 +23,7 @@ export const Category = () => {
             <>
             {categoriesData.filter((food_category) => parseInt(food_category.id) === parseInt(category_id))
                 .map((food_category) => (
-                <div  key={food_category.id} >
+                <div  className="category-title-container" key={food_category.id} >
                     <h2 className='category-title'>{food_category.category_name.toUpperCase()}</h2>
                 </div>
             ))}
@@ -39,9 +39,9 @@ export const Category = () => {
                 </div>)}
             </>
             ) : (
-                <div className='category-container product-container'>
+                <div className='category-container category-container--empty product-container'>
                     <div style={{ minHeight:'200px', padding:'30px', display:'flex', flexDirection:'column', justifyContent:'space-between', borderRadius:'10px', color: '#fff', backgroundColor:'#00AD9C', position:'absolute', top:'100px', right:'50%', transform: 'translateX(50%)'}}>
-                        <h2> Cette catégorie est indisponible </h2>
+                        <h2 class="title"> Cette catégorie est indisponible </h2>
                         <Link className="button-container els-text-link" to={'/shop'}>Revenir au magasin</Link>
                     </div>
                 </div>

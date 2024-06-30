@@ -1,5 +1,5 @@
 .main-category-container {
-  min-width: 30%;
+  min-width: 240px;
   height: 240px;
   flex: 1 1 auto;
   display: flex;
@@ -10,12 +10,14 @@
   margin: 0;
   overflow: hidden;
 
-  &:last-of-type {
-    min-width: 100%;
-    .body {
-      width: 300px;
+  @include media-breakpoint-up(md) {
+    &:last-of-type {
+      min-width: 100%;
+      .body {
+        width: 300px;
+      }
     }
-  }
+  } 
 
   &:nth-child(odd){
     border-radius: 10px;
@@ -77,8 +79,9 @@
     }
 
     p {
-      font-weight: lighter;
+      font-weight: 500;
       font-size: 16px;
+      color: #4a4a4a;
     }
   }
 }

@@ -13,7 +13,7 @@ const { MongoClient } = require('mongodb');
 // const config = require('config');
 const app = express();
 app.use(cors());
-dotenv.config({ path: './.env'})
+dotenv.config({ path: '../.env'})
 // todo: delete image from uploads while we delete column from databse (link to image path in bdd image path in uploads)
 // todo: pbm avec id quand upload
 const uploadsRoute = require('./api/routes/uploadsRoute');
