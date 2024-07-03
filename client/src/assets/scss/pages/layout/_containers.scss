@@ -112,6 +112,7 @@
   }
 
   .title {
+    padding: 0 5px;
     color: #262c28;
     text-decoration: none;
     font-size: 28px;
@@ -133,6 +134,7 @@
   }
 
   .preview {
+    padding: 0 5px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 20px;

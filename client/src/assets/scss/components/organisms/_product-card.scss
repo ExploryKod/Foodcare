@@ -3,12 +3,16 @@
   height: 350px;
   position: relative;
 
-  img {
+  &__product-img {
     position: relative;
     width: 100%;
     height: 95%;
     object-fit: cover;
     margin-bottom: 5px;
+
+    @include media-breakpoint-down(md) {
+      width: 324px;
+    }
   }
 
   button {
