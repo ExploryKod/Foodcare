@@ -4,9 +4,10 @@
 </div>
 
 ## <p align="center"><a href="https://gleeful-sorbet-733e50.netlify.app">FoodCare</a></p>
+
 ## <p align="center"> Projet sur l'alimentation saine</p> 
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/3844ecad-f052-47dd-b22d-322d3f0b1ea3/deploy-status)](https://app.netlify.com/sites/gleeful-sorbet-733e50/deploys)
+Statut du site en production : [![Netlify Status](https://api.netlify.com/api/v1/badges/3844ecad-f052-47dd-b22d-322d3f0b1ea3/deploy-status)](https://app.netlify.com/sites/gleeful-sorbet-733e50/deploys)
 
 Ce projet a pour but d'initier mon apprentissage de la librairie JavaScript React. <br/>
 
