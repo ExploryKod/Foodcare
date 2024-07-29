@@ -7,7 +7,7 @@
 
 ## <p align="center"> Projet sur l'alimentation saine</p> 
 
-###<p> Statut du site en production : <p/>
+#### Statut du site en production : 
   
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3844ecad-f052-47dd-b22d-322d3f0b1ea3/deploy-status)](https://app.netlify.com/sites/gleeful-sorbet-733e50/deploys) </p> 
 
