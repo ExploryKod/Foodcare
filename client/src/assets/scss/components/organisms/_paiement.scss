@@ -2,14 +2,13 @@
 .table-container {
   margin: 0 auto;
   padding: 0;
-  max-width: 1200px;
-  width: 80%;
+  max-width: 1440px;
+  width: 100%;
   height: auto;
   overflow: hidden;
   border-radius: $round-sm;
 
   @include media-breakpoint-up(md) {
-    box-shadow: 0 0 20px $box-shadow-color;
     margin-top: 40px;
     border-radius: 0;
   }
@@ -21,8 +20,8 @@
 
     .table-header {
       display: none;
-      color: $lightLavender;
-      background-color: #03045e;
+      color: #fafafa;
+      background-color: $tertiary;
 
       @include media-breakpoint-up(md) {
         display: grid;
@@ -32,7 +31,7 @@
         justify-items: center;
         align-items: center;
         padding: 1em;
-        color: $lightLavender;
+        color: #fafafa;
       }
     }
 
@@ -60,7 +59,10 @@
       @include media-breakpoint-up(md) {
         margin-top: 0;
         box-shadow: none;
-        border: none;
+        border-top: none;
+        border-bottom: none;
+        border-left: 1px solid $tertiary;
+        border-right: 1px solid $tertiary;
         border-radius: 0;
         display: grid;
         text-decoration: none;
@@ -161,15 +163,28 @@
 }
 
 .result-container {
-  background-color: #03045e;
-  color: #fff;
+  padding: 20px 0;
+  background-color: transparent;
+  border-left: 1px solid $tertiary;
+  border-right: 1px solid $tertiary;
+  border-bottom: 1px solid $tertiary;
+  color: $primary;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 30px;
 
   .total {
     padding-right: 10px;
     font-weight: bold;
+    font-size: 36px;
+  }
+
+  .paiement-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
   }
 }
 
@@ -178,4 +193,48 @@
   border: none;
   padding: 0;
   cursor: pointer;
+}
+
+.stripe-paiement-container {
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  form {
+
+    .stripe-form-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap:10px;
+
+      .stripe-text {
+        font-size: 14px;
+        color: $primary;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+
+        &--col {
+          flex-direction: column;
+        }
+      }
+    }
+
+    max-width: 1200px;
+    max-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
 }

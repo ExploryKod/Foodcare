@@ -202,7 +202,6 @@ export const CategoryPreview = ({ title, category_food_id, category }) => {
         </div>
     }
 
-    console.log("food products ---> ", foodProducts)
   
     return(
         <>

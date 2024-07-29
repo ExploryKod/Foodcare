@@ -65,6 +65,23 @@
   padding: 5px 20px;
 }
 
+.container-center-child {
+  @extend .category-title-container;
+  padding: 0;
+  display: flex;
+ 
+  &--row {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  &--column {
+    flex-direction: column;
+    align-items: center; 
+    gap: 20px;
+  }
+}
+
 .products-container {
   position: relative;
   max-width: 1440px;
@@ -77,7 +94,8 @@
   z-index: $z-index-products;
 
   @include media-breakpoint-down(md) {
-    max-width: 100%;
+    max-width: 324px;
+    width: 100%;
     grid-template-columns: auto;
   }
 }

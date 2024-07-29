@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: flex-start;
   margin: 50px auto 0;
+  gap: 40px;
 
   @include media-breakpoint-up(md) {
     padding: 0 20px;
@@ -26,11 +27,5 @@
         width: 8%;
       }
     }
-  }
-
-  .total {
-    margin-top: 30px;
-    margin-left: auto;
-    font-size: 36px;
   }
 }

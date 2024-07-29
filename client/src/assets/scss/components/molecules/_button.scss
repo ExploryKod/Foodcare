@@ -54,7 +54,7 @@
   z-index: 2;
   padding: 10px 30px;
   overflow: hidden;
-  //transition: border 0.2s ease-in-out, color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out, color 0.2s ease-in-out, background-color 0.2s ease-in-out;
   border: none;
   //border-radius: 10px;
   outline: none;
@@ -88,12 +88,30 @@
 
   &--secondary {
     background-color: #00AD9C;
+    color: #fff;
+    font-weight: 600;
 
     &:hover,
     &:active,
     &:focus {
       background-color: darken(#00AD9C, 4%);
+      color: #fff;
+      font-weight: 600;
     }
+  }
+
+  &--light {
+    background-color: #fafafa;
+    color: $primary-darken;
+    
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: darken(#fafafa, 8%);
+      color: $primary;
+    }
+
   }
 
   &--radius-light {
@@ -136,4 +154,11 @@
     width: 40px;
     height: 40px;
   }
+}
+
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }

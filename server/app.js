@@ -10,10 +10,37 @@ const fs = require('fs');
 const upload = multer({ dest: 'uploads/' });
 const sass = require('sass');
 const { MongoClient } = require('mongodb');
+const bodyParser = require("body-parser");
+
+dotenv.config({ path: '../.env'})
+
+const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 // const config = require('config');
 const app = express();
 app.use(cors());
-dotenv.config({ path: '../.env'})
+app.use(bodyParser.json());
+
+const calculateTotalOrderAmount = (items) => {
+  return items[0].amount * 100;
+};
+
+app.post("/create-payment-intent", async (req, res) => {
+  const { items } = req.body;
+
+  const paymentIntent = await stripe.paymentIntents.create({
+      amount: calculateTotalOrderAmount(items),
+      currency: "usd",
+      description: "This is for GFG Stripe API Demo",
+      automatic_payment_methods: {
+          enabled: true,
+      },
+  });
+
+  res.send({
+      clientSecret: paymentIntent.client_secret,
+  });
+});
+
 // todo: delete image from uploads while we delete column from databse (link to image path in bdd image path in uploads)
 // todo: pbm avec id quand upload
 const uploadsRoute = require('./api/routes/uploadsRoute');
