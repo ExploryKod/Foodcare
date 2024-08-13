@@ -56,10 +56,11 @@ const Checkout = () => {
                     <div className="result-container">
                         {totalQuality.points > 3 ?
                         <>
-                        (<a className="button button--secondary paiement-btn" href="/payment">J'achète <CreditCard /></a>
-                        <span className='total'>TOTAL: {`${total}`} €</span>)
+                        <a className="button button--secondary paiement-btn" href="/payment">J'achète <CreditCard /></a>
+                        <span className='total'>TOTAL: {`${total}`} €</span>
                         </>
-                        : (<p className='quality-total'>
+                        : (
+                        <p className='quality-total'>
                             Votre indice de nutrition est de <span className="points">{totalQuality.points.toString()}</span> donc vous ne pouvez pas encore prétendre à l'achat du panier.</p>)}
                     </div>
                     <div className="result-container">
