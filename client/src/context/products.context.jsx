@@ -188,15 +188,13 @@ export const ProductsProvider = ({ children }) => {
         fetchProducts()
     }, [])
 
-    console.log('products data', productsData)
-
     useEffect(() => {
         const fetchProducts = async () => {
 
             try {
                 const response = await fetch(`${process.env.REACT_APP_API_URL}/category_food`);
                 const data = await response.json();
-                console.log("data categories in context fetch api >> ", data);
+      
                 setCategoriesData(data);
             } catch (error) {
                 console.error("Error fetching products:", error);

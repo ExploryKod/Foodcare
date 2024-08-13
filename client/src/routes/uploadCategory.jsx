@@ -13,7 +13,6 @@ export const UploadCategory = () => {
     useEffect( () => {
         setUploads(categoriesUploadData);
     }, [category_upload, categoriesUploadData])
-    console.log(uploads);
 
     category_upload = removeAccent(category_upload);
 

@@ -169,7 +169,7 @@ const PRODUCTS = [
 
 export const CategoryPreview = ({ title, category_food_id, category }) => {
 
-   console.log('current category', category)
+  
    const [ foodProducts, setFoodProducts ] = useState([])
    const [ isLoading, setIsLoading] = useState(false)
 
@@ -180,7 +180,7 @@ export const CategoryPreview = ({ title, category_food_id, category }) => {
                 const response = await fetch(`${process.env.REACT_APP_API_URL}/products/${category}`);
                 if (response.ok) {
                     const data = await response.json();
-                    console.log('DATA CATEGORY  ', data)
+                 
                     setFoodProducts(data)
                 } else {
                     console.error('Error fetching product by category:', response.status);

@@ -9,13 +9,7 @@ export const Category = () => {
     let { category_id } = useParams();
     const { isCartOpen } = useContext(CartContext);
     const { productsData, categoriesData } = useContext(ProductsContext);
-    // const [products, setProducts] = useState([]);
-    // const [categoriesFood, setCategoriesFood] = useState([])
-    // Faire passer les catégories via un state Manager ou autrement et user de React Query
-    console.log('categories food in cat.jsx >> ', categoriesData)
-    console.log('categories products in cat.jsx >> ', productsData)
-    // todo: proposer d'envoyer un email si la stock est ok si rupture de stock
-    // todo: nouvelle entrée dans le tableau pour les slug vs title (epices > Nos épices)
+
     return(
         <>
         {categoriesData.length > 0 ?

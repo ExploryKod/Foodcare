@@ -20,7 +20,7 @@ export const UploadForm = () => {
       const sendFile = async (e) => {
           e.preventDefault();
           const form = document.getElementById('form');
-          console.log(form);
+
           const formData = new FormData(form);
           
           // Check if the required fields are empty
@@ -61,12 +61,11 @@ export const UploadForm = () => {
             
             if (response.ok) {
               // Handle successful upload
-              console.log('Upload successful!');
+  
               const data = await response.json();
-              console.log(data)
 
                 data.map((item) => {   
-                  console.log(item.filename);
+
                   setFlashMessage('Vous avez bien créer votre fichier image nommé: '+item.filename);
                   setTimeout(() => {
                     setFlashMessage('');
@@ -90,7 +89,7 @@ export const UploadForm = () => {
           
                   if (productResponse.ok) {
                     // Product post successful
-                    console.log('Product post successful!');
+
                     const productData = await productResponse.json();
                     setFlashMessage('le produit "'+productData.image_name+'" a bien été créé en base de donnée');
                     // Reset the form or perform any additional actions
@@ -105,7 +104,7 @@ export const UploadForm = () => {
             
             } else if (response.status === 409) {
               const data = await response.json();
-              console.log(data.error);
+
               setFlashMessage(data.error);
             } else if (response.status === 403) {
               console.error('number max');

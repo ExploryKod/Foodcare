@@ -23,10 +23,10 @@ export const ProductCard = ({ product, category_food_id }) => {
                     setImageUrl(`${image_7}`);
                 }
             })
-            .catch(err => console.log('Error:', err))
+            .catch(err => console.error('Error:', err))
     },[category])
 
-    console.log(imageUrl);
+
 
     return (
         <>

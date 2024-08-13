@@ -21,9 +21,6 @@ const CATEGORIES = [
 export const CategoriesPreview = () => {
     const [categories, setCategories] = useState(CATEGORIES);
   
-
-  console.log("before fetch", categories)
-
     useEffect(() => {
         const fetchAllCategories = async () => {
             try {
@@ -43,9 +40,7 @@ export const CategoriesPreview = () => {
 
        fetchAllCategories();
     }, []);
-    console.log('after fetch', categories)
-
-
+ 
     return (  
         <div  className="category-food-wrapper">
             {categories.map((category_food) =>{

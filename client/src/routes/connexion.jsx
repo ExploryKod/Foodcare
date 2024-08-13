@@ -13,10 +13,7 @@ const Connexion = () => {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     const form = document.getElementById('login-form');
-    // console.log(form);
-    // const formData = new FormData(form);
-    
-    // Check if the required fields are empty
+
     const requiredInputs = form.querySelectorAll('[required]');
     let isEmpty = false;
     requiredInputs.forEach((input) => {
@@ -46,13 +43,13 @@ const Connexion = () => {
       
       if (response.ok) {
         // Handle successful upload
-        console.log('log réussit');
+
         const data = await response.json();
-        console.log(data)
+
         setFlashMessage(data.message);
 
       } else {
-        console.log('échec de login');
+        console.error('échec de login');
       }
     } catch (error) {
       console.error('log failed:', error);
