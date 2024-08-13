@@ -1,6 +1,4 @@
 import CategoryItem from "./category-food";
-import {useContext, useEffect, useState} from "react";
-import { ProductsContext } from "../context/products.context";
 
 const CATEGORIES = [
 
@@ -21,19 +19,12 @@ const CATEGORIES = [
 
 
 const CategoriesContainer = () => {
-    const { productsData, categoriesData } = useContext(ProductsContext);
-    const [categories, setCategories] = useState(CATEGORIES)
-    console.log('in accueil, categories ', categories)
-    // Faire passer les catégories via un state Manager ou autrement et user de React Query
-    useEffect( () => {
-        setCategories(categories)
-    }, [])
-    console.log('categories', categories)
+  
     return (
         <>
-        {categories.length > 0 ?
+        {CATEGORIES.length > 0 ?
                 (<div className="categories-container">
-            {categories.map( ( item ) => (
+            {CATEGORIES.map( ( item ) => (
                 <CategoryItem key={item.id} category={item} /> ))}
         </div>): (<div className="categories-container__no-category"> 
                 <h1 className="no-category__title">Aucune catégorie disponible pour le moment </h1>
