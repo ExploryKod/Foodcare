@@ -168,7 +168,7 @@ const PRODUCTS = [
   ]
 
 export const ProductsProvider = ({ children }) => {
-    const [productsData, setProductsData] = useState([]);
+    const [productsData, setProductsData] = useState(PRODUCTS);
     const [categoriesData, setCategoriesData] = useState([]);
    
     useEffect(() => {
