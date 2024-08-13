@@ -50,7 +50,9 @@ const Checkout = () => {
                             </div>
 
                         {cartItems && cartItems?.map((cartItem) => (
-                            <CartSummary key={cartItem.id} cartItem={cartItem} />
+                            <div key={cartItem.id}>
+                                 <CartSummary cartItem={cartItem} />
+                            </div>
                         ))}
                     </div>
                     <div className="result-container">

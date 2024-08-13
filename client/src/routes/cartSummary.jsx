@@ -11,11 +11,11 @@ const CartSummary = ({key, cartItem}) => {
 
     const removeProductFromCart = () => removeItemFromCart(cartItem);
 
-    const imageUrl = `${process.env.REACT_APP_API_URL}/uploads/${product_image_url}.jpeg`;
+    const imageUrl = product_image_url ? `${process.env.REACT_APP_API_URL}/uploads/${product_image_url}.jpeg` : "../assets/img/products/generic_food.jpg";
     const price = parseFloat(product_price) * quantity;
 
     return (
-        <div key={key} className="body-row">
+        <div className="body-row">
             <div className="table-row__image">
                <img src={imageUrl} alt={product_name} />
             </div>
