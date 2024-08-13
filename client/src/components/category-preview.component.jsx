@@ -222,7 +222,7 @@ export const CategoryPreview = ({ title, category_food_id, category }) => {
         (<div className="category-preview-container">
         
                 <h2>
-                <Link  className='title' to={category}>
+                <Link  className='title' to={`/shop/${category_food_id}`}>
                     {title?.toUpperCase()}
                 </Link>
                 </h2>

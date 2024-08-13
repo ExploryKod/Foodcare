@@ -2,13 +2,16 @@ import { useContext } from 'react';
 import {Link, useParams} from 'react-router-dom';
 import { ProductsContext } from '../context/products.context';
 import { ProductCard } from '../components/product-card';
-import CartDropdown from "../components/cart-dropdown";
-import {CartContext} from "../context/cart.context";
+
 
 export const Category = () => {
     let { category_id } = useParams();
-    const { isCartOpen } = useContext(CartContext);
     const { productsData, categoriesData } = useContext(ProductsContext);
+
+    const isProducts = productsData.find(product => product.category_id === parseInt(category_id))
+
+    console.log('is product ?', isProducts)
+    console.log('product data', productsData)
 
     return(
         <>
@@ -21,7 +24,7 @@ export const Category = () => {
                     <h2 className='category-title'>{food_category.category_name.toUpperCase()}</h2>
                 </div>
             ))}
-            {productsData.find(product => product.category_id === parseInt(category_id)) ?
+            {isProducts ?
                     (<div className='products-container'>
                 {productsData.filter(product => product.category_id === parseInt(category_id)).map((product) =>
                     (<ProductCard key={product.id} product={product} category_food_id={product.category_id} />))}
