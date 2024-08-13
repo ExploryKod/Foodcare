@@ -7,10 +7,7 @@ import { ProductCard } from '../components/product-card';
 export const Category = () => {
     let { category_id } = useParams();
     const { productsData, categoriesData } = useContext(ProductsContext);
-
-    const isProducts = productsData.find(product => product.category_id === parseInt(category_id))
-
-    console.log('is product ?', isProducts)
+    console.log(category_id)
     console.log('product data', productsData)
 
     return(
@@ -24,7 +21,7 @@ export const Category = () => {
                     <h2 className='category-title'>{food_category.category_name.toUpperCase()}</h2>
                 </div>
             ))}
-            {isProducts ?
+            {productsData && productsData.length > 0 ?
                     (<div className='products-container'>
                 {productsData.filter(product => product.category_id === parseInt(category_id)).map((product) =>
                     (<ProductCard key={product.id} product={product} category_food_id={product.category_id} />))}
