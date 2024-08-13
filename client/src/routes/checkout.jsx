@@ -54,7 +54,7 @@ const Checkout = () => {
                         ))}
                     </div>
                     <div className="result-container">
-                        {totalQuality > 3 ?
+                        {totalQuality.points > 3 ?
                         <>
                         (<a className="button button--secondary paiement-btn" href="/payment">J'achète <CreditCard /></a>
                         <span className='total'>TOTAL: {`${total}`} €</span>)
