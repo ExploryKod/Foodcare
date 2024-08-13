@@ -64,7 +64,7 @@ const Navigation = () => {
             {totalQuality.points > 0 ?
             (<div className="container"> 
                 <div className="indice-container">
-                    <p className="category-text">Mon indice de repas équilibré: <span>{totalQuality.points}</span></p>)  
+                    <p className="category-text">Mon indice de repas équilibré: <span class="points"> {totalQuality.points}</span></p>  
                 </div>
             </div>): null}
 

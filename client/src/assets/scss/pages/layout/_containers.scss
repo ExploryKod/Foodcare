@@ -75,6 +75,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  .category-text {
+    color: $tertiary;
+    font-weight: 600;
+    .points {
+      color: $primary;
+      font-weight: 600;
+    }
+  }
 }
 
 .container-center-child {
