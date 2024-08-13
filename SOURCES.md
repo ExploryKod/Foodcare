@@ -38,3 +38,5 @@ Mangue - Photo by Pixabay: https://www.pexels.com/photo/sliced-fruits-on-choppin
 Orange - Photo by Pixabay: https://www.pexels.com/photo/orange-fruit-161559/
 Orange dans un pot - Photo by Pixabay: https://www.pexels.com/photo/close-up-of-fruits-in-bowl-327098/
 Pommes - Photo by Aphiwat  chuangchoem: https://www.pexels.com/photo/close-up-photo-of-red-and-yellow-apple-fruits-on-green-leaves-347926/
+Bananes - Photo by Juan Salamanca: https://www.pexels.com/photo/riped-banana-61127/
+Fraises - Photo by Pixabay: https://www.pexels.com/photo/white-bowl-of-whole-strawberries-89778/
