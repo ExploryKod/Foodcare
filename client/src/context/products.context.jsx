@@ -170,15 +170,15 @@ const PRODUCTS = [
 export const ProductsProvider = ({ children }) => {
     const [productsData, setProductsData] = useState([]);
     const [categoriesData, setCategoriesData] = useState([]);
-    console.log("API URL", `${process.env.REACT_APP_API_URL}/products`)
+   
     useEffect(() => {
         const fetchProducts = async () => {
                 
             try {
                 const response = await fetch(`${process.env.REACT_APP_API_URL}/products`);
                 const data = await response.json();
-                console.log("data products in context fetch api >> ", data);
-                setProductsData(data);
+               
+                setProductsData(data ? data : PRODUCTS);
             } catch (error) {
                 console.error("Error fetching products:", error);
             }
