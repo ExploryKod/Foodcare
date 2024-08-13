@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect, Fragment } from 'react';
+import { useContext } from 'react';
 import {Link, useParams} from 'react-router-dom';
 import { ProductsContext } from '../context/products.context';
 import { ProductCard } from '../components/product-card';
@@ -40,20 +40,6 @@ export const Category = () => {
                     </div>
                 </div>
             )}
-            {isCartOpen && <CartDropdown />}
         </>)
-    //
-    //
-    //
-    // <div className='category-container product-container'>
-    //                 {(!products || !products.length) ? (
-    //                 <p className="category-text">Il n'y a pas de produits à vendre pour le moment.</p>)
-    //                     :
-    //                 (
-    //                     products.filter(product => product.category_id === parseInt(category_id)).map((product) => (
-    //                         <ProductCard key={product.id} product={product} category_food_id={product.category_id} />
-    //                 )}
-    //             </div>
-    //
-    // )
+    
 }

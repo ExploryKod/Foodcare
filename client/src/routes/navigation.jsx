@@ -1,18 +1,31 @@
 import { Fragment } from 'react';
 import { useContext, useState, useEffect } from 'react';
 import { Outlet, Link } from 'react-router-dom';
-
 import CartIcon from '../components/cart-icon'
-
 import { CartContext } from '../context/cart.context';
 import logo from '../assets/img/logo.png';
-
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
+import CartDropdown from '../components/cart-dropdown';
+import Button from '../components/button';
+import CartItem from '../components/cart-item'
+import { useNavigate } from 'react-router-dom';
 
 const Navigation = () => {
 
     const { cartItems } = useContext(CartContext);
     const [total, setTotal] = useState(0);
     const [totalQuality, setTotalQuality] = useState({points: 0, color: ''});
+    const [open, setOpen] = useState(false);
+
+    const onOpenModal = () => setOpen(true);
+    const onCloseModal = () => setOpen(false);
+    const navigate = useNavigate();
+    const goToCheckoutPage = () => {
+        navigate('/checkout')
+        setOpen(false);
+    };
+
     useContext(CartContext);
 
     function sumArray(arr) {
@@ -58,7 +71,7 @@ const Navigation = () => {
                     {/* <Link className='nav-link' to='/connexion'>
                         S'INSCRIRE
                     </Link> */}
-                    <CartIcon />
+                    <CartIcon onOpenModal={onOpenModal} />
                 </div>
             </div>
             {totalQuality.points > 0 ?
@@ -67,6 +80,23 @@ const Navigation = () => {
                     <p className="category-text">Mon indice de repas équilibré: <span class="points"> {totalQuality.points}</span></p>  
                 </div>
             </div>): null}
+
+            <Modal open={open} onClose={onCloseModal} center >
+            <div className="cart-dropdown-container">
+            <div className={`cart-dropdown ${cartItems.length <= 0 ? "no-cart-items" : ""}`}>
+            {cartItems.length > 0 ?
+                (<>
+                <div className='cart-items'>
+                    {cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)}
+                </div>
+                <Button onClick={goToCheckoutPage}>Valider</Button>
+                </>
+                ): (<p> Vous n'avez pas encore d'articles </p>)}
+
+            </div>
+        </div>
+                
+            </Modal>
 
             <Outlet />
 
