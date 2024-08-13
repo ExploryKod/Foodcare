@@ -40,3 +40,6 @@ Orange dans un pot - Photo by Pixabay: https://www.pexels.com/photo/close-up-of-
 Pommes - Photo by Aphiwat  chuangchoem: https://www.pexels.com/photo/close-up-photo-of-red-and-yellow-apple-fruits-on-green-leaves-347926/
 Bananes - Photo by Juan Salamanca: https://www.pexels.com/photo/riped-banana-61127/
 Fraises - Photo by Pixabay: https://www.pexels.com/photo/white-bowl-of-whole-strawberries-89778/
+Wheat - Photo by Pixabay: https://www.pexels.com/photo/wheat-kernels-54084/
+Corn - Photo by Cats Coming: https://www.pexels.com/photo/corn-kernels-on-strainer-1359315/
+Udon - Photo by Christina Polupanova: https://www.pexels.com/photo/unrecognizable-hand-taking-rice-pasta-with-chopsticks-from-ceramic-bowl-10281095/
