@@ -77,8 +77,8 @@ const Connexion = () => {
     <main className="page-connexion">
       <div className="outer-connexion">
         <div className="inner-connexion">
-          <a href="/" class="inner-connexion__back-icon">
-             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-left"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m12 8-4 4 4 4"/><path d="M16 12H8"/></svg>
+          <a href="/" className="inner-connexion__back-icon">
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide-square-arrow-left lucide"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m12 8-4 4 4 4"/><path d="M16 12H8"/></svg>
           </a>
         {flashMessage && <div className="output-message x-center-position">{flashMessage}</div>}
           {toggle ? (

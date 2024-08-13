@@ -34,15 +34,15 @@ export const Category = () => {
             </div>): ( <div className='category-container product-container'>
                     <div style={{ minHeight:'200px', padding:'30px', display:'flex', flexDirection:'column', justifyContent:'space-between', borderRadius:'10px', color: '#fff', backgroundColor:'#00AD9C', position:'absolute', top:'100px', right:'50%', transform: 'translateX(50%)'}}>
                         <h2 className="category-text"> Nous sommes en rupture de stock pour cette catégorie </h2>
-                        <Link className="button-container els-text-link" to={'/shop'}>Revenir au magasin</Link>
+                        <Link className="els-text-link button-container" to={'/shop'}>Revenir au magasin</Link>
                     </div>
                 </div>)}
             </>
             ) : (
                 <div className='category-container category-container--empty product-container'>
                     <div style={{ minHeight:'200px', padding:'30px', display:'flex', flexDirection:'column', justifyContent:'space-between', borderRadius:'10px', color: '#fff', backgroundColor:'#00AD9C', position:'absolute', top:'100px', right:'50%', transform: 'translateX(50%)'}}>
-                        <h2 class="title"> Cette catégorie est indisponible </h2>
-                        <Link className="button-container els-text-link" to={'/shop'}>Revenir au magasin</Link>
+                        <h2 className="title"> Cette catégorie est indisponible </h2>
+                        <Link className="els-text-link button-container" to={'/shop'}>Revenir au magasin</Link>
                     </div>
                 </div>
             )}

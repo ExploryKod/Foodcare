@@ -47,7 +47,7 @@ export const CategoriesPreview = () => {
 
 
     return (  
-        <div  class="category-food-wrapper">
+        <div  className="category-food-wrapper">
             {categories.map((category_food) =>{
                 return (
 

@@ -7,6 +7,7 @@ const dataFilePath = path.join(__dirname, '..', 'data', 'data.json');
 
 router.get('/', (req, res) => {
     const data = JSON.parse(fs.readFileSync(dataFilePath));
+    res.set('Access-Control-Allow-Origin', process.env.REACT_APP_SITE_URL);
     res.send(data.users);
 });
 

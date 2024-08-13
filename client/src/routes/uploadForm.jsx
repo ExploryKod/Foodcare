@@ -134,7 +134,7 @@ export const UploadForm = () => {
   
      return (
         <>
-          <div className="upload-page upload-container">
+          <div className="upload-container upload-page">
           {flashMessage && <div className="output-message">{flashMessage}</div>}
               <div className="container__inner-start">
                 <div className="inner-start__title">
@@ -175,7 +175,7 @@ export const UploadForm = () => {
                       </div>
                       <div className="container__submit-btn">
                         <button className="submit-btn upload-btn" type='submit' onClick={sendFile}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-up"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M12 12v6"/><path d="m15 15-3-3-3 3"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-file-up"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M12 12v6"/><path d="m15 15-3-3-3 3"/></svg>
                           Envoyer mon produit
 
                         </button>

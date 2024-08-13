@@ -4,7 +4,7 @@ import CategoriesContainer from "../components/categories-container";
 const Home = () => {
 
   return (
-    <div class="home">
+    <div className="home">
     <CategoriesContainer/>
     <Outlet/>
     </div>

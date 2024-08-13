@@ -4,7 +4,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import axios from "axios";
 import { Ban } from 'lucide-react'
 import PaymentForm from "../components/PaymentForm";
- 
+
 const stripe = loadStripe('pk_test_51PYk4pEM5RDezzKdAc0G3CC6HFef0aat4IPHIJH7qMUHUubLVyoEKlmy0QrQxmm9wSoi7O5szE592w0jfaBzoE9P00i9nUE1oN');
  
 const StripePayment = () => {

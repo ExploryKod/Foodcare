@@ -4,6 +4,7 @@ const productModel = require('../../models/productsModel/products.model');
 router.get('/', async (req, res) => {
   try {
     const allProducts = await productModel.getAllProducts();
+    res.set('Access-Control-Allow-Origin', process.env.REACT_APP_SITE_URL);
     res.send(allProducts);
   } catch (error) {
     console.error('Error retrieving products:', error);
