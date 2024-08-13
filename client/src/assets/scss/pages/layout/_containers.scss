@@ -65,6 +65,18 @@
   padding: 5px 20px;
 }
 
+.indice-container {
+  border-bottom: 1px solid $tertiary;
+  max-width: 1440px;
+  margin: 5px auto;
+  padding: 5px 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .container-center-child {
   @extend .category-title-container;
   padding: 0;
