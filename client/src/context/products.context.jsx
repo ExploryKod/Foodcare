@@ -178,7 +178,7 @@ export const ProductsProvider = ({ children }) => {
                 const response = await fetch(`${process.env.REACT_APP_API_URL}/products`, {mode: 'cors'});
                 const data = await response.json();
                
-                setProductsData(data ? data : PRODUCTS);
+                setProductsData(data.length > 0 ? data : PRODUCTS);
             } catch (error) {
                 console.error("Error fetching products:", error);
             }
