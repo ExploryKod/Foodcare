@@ -175,7 +175,7 @@ export const ProductsProvider = ({ children }) => {
         const fetchProducts = async () => {
                 
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/products`);
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/products`, {mode: 'cors'});
                 const data = await response.json();
                
                 setProductsData(data ? data : PRODUCTS);
