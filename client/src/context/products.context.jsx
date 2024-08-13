@@ -188,7 +188,7 @@ export const ProductsProvider = ({ children }) => {
         fetchProducts()
     }, [])
 
-    console.log(productsData)
+    console.log('products data', productsData)
 
     useEffect(() => {
         const fetchProducts = async () => {

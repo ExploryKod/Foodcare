@@ -168,11 +168,13 @@ const PRODUCTS = [
 
 
 export const CategoryPreview = ({ title, category_food_id, category }) => {
-    console.log('current title', title)
+
    console.log('current category', category)
    const [ foodProducts, setFoodProducts ] = useState([])
-    console.log(process.env.REACT_APP_API_URL)
+   const [ isLoading, setIsLoading] = useState(false)
+
     useEffect(() => {
+        setIsLoading(true)
         const fetchProductByCategory = async () => {
             try {
                 const response = await fetch(`${process.env.REACT_APP_API_URL}/products/${category}`);
@@ -187,19 +189,30 @@ export const CategoryPreview = ({ title, category_food_id, category }) => {
             } catch (error) {
                 console.error('Error fetching product by category:', error);
                 setFoodProducts([])
-            }
+            }  finally {
+              setIsLoading(false); // Set loading state to false once data is fetched or an error occurs
+          }
         };
 
        fetchProductByCategory();
     }, [category]);
 
+    if(isLoading) {
+        return (<div className="category-preview-container__no-category">
+           <h1 className="no-category__title">Chargement des produits... </h1>
+           <div className="no-category__icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-cooking-pot"><path d="M2 12h20"/><path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="m4 8 16-4"/><path d="m8.86 6.78-.45-1.81a2 2 0 0 1 1.45-2.43l1.94-.48a2 2 0 0 1 2.43 1.46l.45 1.8"/></svg>
+            </div>
+           </div>)
+    }
+
     if(PRODUCTS.length <= 0) { 
-        <div className="category-preview-container__no-category"> 
+        return (<div className="category-preview-container__no-category"> 
             <h1 className="no-category__title">Aucune série de produit pour le moment </h1>
             <div className="no-category__icon-wrapper">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-cooking-pot"><path d="M2 12h20"/><path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="m4 8 16-4"/><path d="m8.86 6.78-.45-1.81a2 2 0 0 1 1.45-2.43l1.94-.48a2 2 0 0 1 2.43 1.46l.45 1.8"/></svg>
             </div>
-        </div>
+        </div>)
     }
 
   
