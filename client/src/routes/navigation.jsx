@@ -55,9 +55,9 @@ const Navigation = () => {
                     {/* <Link className='nav-link' to='/upload'>
                         PROPOSITIONS
                     </Link> */}
-                    <Link className='nav-link' to='/connexion'>
+                    {/* <Link className='nav-link' to='/connexion'>
                         S'INSCRIRE
-                    </Link>
+                    </Link> */}
                     <CartIcon />
                 </div>
             </div>
