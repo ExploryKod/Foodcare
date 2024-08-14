@@ -8092,6 +8092,7 @@ body.menu-opened .mainHeader .burger-menu .line3 {
   align-items: flex-start;
   margin: 50px auto 0;
 }
+
 @media (min-width: 768px) {
   .checkout-container {
     padding: 0 20px;

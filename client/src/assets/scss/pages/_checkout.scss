@@ -1,4 +1,5 @@
 .checkout-container {
+  @extend .container;
   overflow-x: hidden;
   overflow-y: scroll;
   width: 100%;
