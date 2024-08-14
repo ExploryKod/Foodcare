@@ -170,17 +170,23 @@ const PRODUCTS = [
 export const ProductsProvider = ({ children }) => {
     const [productsData, setProductsData] = useState(PRODUCTS);
     const [categoriesData, setCategoriesData] = useState([]);
+    const [loading, setIsLoading] = useState(false);
    
     useEffect(() => {
+        setIsLoading(true);
         const fetchProducts = async () => {
+
                 
             try {
                 const response = await fetch(`${process.env.REACT_APP_API_URL}/products`, {mode: 'cors'});
                 const data = await response.json();
                
                 setProductsData(data.length > 0 ? data : PRODUCTS);
+                setIsLoading(false);
             } catch (error) {
                 console.error("Error fetching products:", error);
+            } finally {
+              setIsLoading(false)
             }
 
         };
@@ -189,15 +195,20 @@ export const ProductsProvider = ({ children }) => {
     }, [])
 
     useEffect(() => {
+      setIsLoading(true);
         const fetchProducts = async () => {
+
 
             try {
                 const response = await fetch(`${process.env.REACT_APP_API_URL}/category_food`);
                 const data = await response.json();
       
                 setCategoriesData(data);
+                setIsLoading(false);
             } catch (error) {
                 console.error("Error fetching products:", error);
+            } finally {
+              setIsLoading(false)
             }
 
         };
@@ -205,7 +216,7 @@ export const ProductsProvider = ({ children }) => {
         fetchProducts()
     }, [])
     
-    const data_product = { productsData, categoriesData };
+    const data_product = { productsData, categoriesData, loading };
 
     return (
         <ProductsContext.Provider value={data_product}> {children}</ProductsContext.Provider>

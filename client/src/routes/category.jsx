@@ -1,14 +1,26 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import {Link, useParams} from 'react-router-dom';
 import { ProductsContext } from '../context/products.context';
 import { ProductCard } from '../components/product-card';
 
 
 export const Category = () => {
+
     let { category_id } = useParams();
-    const { productsData, categoriesData } = useContext(ProductsContext);
+    const { productsData, categoriesData, loading } = useContext(ProductsContext);
     console.log(category_id)
     console.log('product data', productsData)
+
+    if(loading) {
+        return (
+            <div className='category-container product-container'>
+                    <div style={{ minHeight:'200px', padding:'30px', display:'flex', flexDirection:'column', justifyContent:'space-between', borderRadius:'10px', color: '#fff', backgroundColor:'transparent', position:'absolute', top:'100px', right:'50%', transform: 'translateX(50%)'}}>
+                        <h2 className="category-text"> Produits en cours de changement ... </h2>
+                        <Link className="button-container" to={'/shop'}>Revenir au magasin</Link>
+                    </div>
+                </div>
+        )
+    }
 
     return(
         <>

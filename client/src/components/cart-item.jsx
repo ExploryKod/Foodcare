@@ -2,7 +2,7 @@
 
 const CartItem = ({ cartItem }) => {
     const { product_name, product_image_url, product_price, quantity } = cartItem;
-    const imageUrl = `${process.env.REACT_APP_API_URL}/uploads/${product_image_url}.jpeg`;
+    const imageUrl = `${process.env.REACT_APP_API_URL}/uploads/${product_image_url}.jpeg` || `../assets/img/products/${product_image_url}.jpeg`;
     let price = Number(product_price) * quantity;
     return (
         <div className='cart-item-container'>
