@@ -14,9 +14,10 @@ export const Category = () => {
     if(loading) {
         return (
             <div className='category-container product-container'>
-                    <div style={{ minHeight:'200px', padding:'30px', display:'flex', flexDirection:'column', justifyContent:'space-between', borderRadius:'10px', color: '#000', backgroundColor:'transparent', position:'absolute', top:'100px', right:'50%', transform: 'translateX(50%)'}}>
+                    <div style={{ minWidth:'300px', minHeight:'200px', padding:'30px', display:'flex', flexDirection:'column', justifyContent:'space-between', borderRadius:'10px', color: '#000', backgroundColor:'transparent', position:'absolute', top:'100px', right:'50%', transform: 'translateX(50%)'}}>
                         <h2 className="category-text"> Produits en cours de changement ... </h2>
-                        <span className="category-text"> <span>Le saviez-vous ?</span> 
+                        <span className="mb-2 category-text"> 
+                            Le saviez-vous ? 
                         </span>
                         <p className='mb-4 category-text'>Au Cameroun mais aussi dans d'autres pays, il existe des "sac marmites" en tissu fait pour accueillir des marmites 
                             bouillantes et permette de finir la cuisson des aliments. 
