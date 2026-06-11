@@ -9,7 +9,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.12.0",
-    "firebase": "^9.22.0",
+    "firebase": "^12.14.0",
     "fs": "^0.0.1-security",
     "lucide-react": "^0.417.0",
     "os": "^0.1.2",
